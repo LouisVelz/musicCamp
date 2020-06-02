@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
     if @user.save!
         sign_in!(@user)
         # redirect_to root_url
+        render :show
     else
         render json: @user.errors.full_message
     end
@@ -13,5 +14,5 @@ class Api::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :username)
   end
-  
+
 end
