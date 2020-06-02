@@ -23,6 +23,7 @@ class MenuBar extends React.Component{
         <li>{heart}</li>
         <li>{bolt}</li>
         <li><div className='circle'></div></li>
+        <li><button onClick={() => this.props.logout()}>Log Out</button></li>
       </ul>
 
     }else {
