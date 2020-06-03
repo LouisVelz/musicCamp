@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
         # redirect_to root_url
         render :show
     else
-      debugger
+      
         # render json: ['Invalid creadentials'], status: 422
         render @user.errors.full_messages
     end

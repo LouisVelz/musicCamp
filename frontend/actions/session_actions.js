@@ -24,7 +24,7 @@ const receiveErrors = (errors) => {
 }
 
 export const signup = formUser => dispatch => {
-  // debugger
+  
   return postUser(formUser).then(
     user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors))
@@ -32,7 +32,7 @@ export const signup = formUser => dispatch => {
 }
 
 export const login = formUser => dispatch => {
-  // debugger
+  
   return postSession(formUser).then(
     user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
@@ -40,7 +40,7 @@ export const login = formUser => dispatch => {
 }
 
 export const logout = () => dispatch => {
-  // debugger
+  
   return deleteSession().then(
     () => dispatch(logoutCurrentUser()),
     errors => dispatch(receiveErrors(errors.responseJSON))
