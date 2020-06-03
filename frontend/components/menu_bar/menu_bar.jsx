@@ -11,9 +11,9 @@ class MenuBar extends React.Component{
   }
 
   render(){
-    let heart = <FontAwesomeIcon icon={faHeart} />
-    let bolt = <FontAwesomeIcon icon={faBolt} />
-    let search = <FontAwesomeIcon icon={faSearch} />
+    let heart = <FontAwesomeIcon icon={faHeart} size= '2x'/>
+    let bolt = <FontAwesomeIcon icon={faBolt} size='2x'/>
+    let search = <FontAwesomeIcon icon={faSearch} size='1x'/>
 
     const { currentUser } = this.props
 
