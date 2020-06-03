@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
       },
-      session: { id: window.currentUser.id }
+      session: { currentUser: window.currentUser.id }
     }
     const secretInfo = document.querySelector("#bootstrap-current-user")
     secretInfo.parentElement.removeChild(secretInfo)
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // debugger
   
 
-  // window.getState = store.getState;
+  window.getState = store.getState;
   // window.dispatch = store.dispatch;
 
   ReactDOM.render(<Root store={ store }/>, root);

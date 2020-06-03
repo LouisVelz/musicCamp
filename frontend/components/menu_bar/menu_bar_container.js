@@ -6,7 +6,8 @@ import MenuBar from './menu_bar'
 const mSTP = (state) => {
   const { entities, session } = state
   return {
-    currentUser: entities.users[session.id]
+    errors: state.errors.session,
+    currentUser: entities.users[session.currentUser]
   }
 }
 const mDTP = dispatch => {

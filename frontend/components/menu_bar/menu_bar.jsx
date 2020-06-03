@@ -36,6 +36,7 @@ class MenuBar extends React.Component{
     return(
       <div className='menu-bar'>
         <ul>
+          <li className='rhomboid'></li>
           <li>bandcamp</li>
           <li>
             <input type="text" placeholder='Search and discover music'/>

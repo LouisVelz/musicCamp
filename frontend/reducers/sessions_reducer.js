@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from './../actions/session_
 // import LOGOUT_USER from './../actions/session_actions';
 
 const _nullSession = {
-  user: null
+  currentUser: null
 }
 
 const sessionReducer = (oldState = _nullSession, action) => {
@@ -11,9 +11,9 @@ const sessionReducer = (oldState = _nullSession, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       // debugger
-      return Object.assign({}, { "id": action.currentUser.id });
+      return Object.assign({}, { "currentUser": action.currentUser.id });
     case LOGOUT_CURRENT_USER:
-      return Object.assign({},{'id': _nullSession});
+      return Object.assign({}, _nullSession);
     default:
       return oldState
   }
