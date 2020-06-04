@@ -12,14 +12,14 @@ class Footer extends React.Component{
               <li><Link to='/'>About Us</Link></li>
               <li><Link to='/'>Fair Trade Music Policy</Link></li>
               <li><Link to='/'>Jobs</Link></li>
-              <li><p>Apps:</p><Link to='/'>Android</Link> | <Link to='/'>IOS</Link></li>
+              <li><p>Apps: <Link to='/'>Android</Link> | <Link to='/'>IOS</Link></p></li>
               <li><Link to='/'>Buttons / Logos</Link></li>
             </ul>
 
             <ul>
               <li><Link to='/'>Musiccamp Daily</Link></li>
               <li><Link to='/'>Facebook</Link></li>
-              <li><Link to='/'>Twitter</Link> | <Link to ='/'>Status</Link></li>
+              <li><p><Link to='/'>Twitter</Link> | <Link to='/'>Status</Link></p></li>
               <li><Link to='/'>Instagram</Link></li>
               <li><Link to='/'>Connect/Help</Link></li>
             </ul>
@@ -39,10 +39,15 @@ class Footer extends React.Component{
               <li><Link to='/'>Terms of use</Link></li>
               <li><Link to='/'>Privacy</Link></li>
               <li><Link to='/'>Copyrigth Policy</Link></li>
+           
             </ul>
 
             <ul>
-            <li><p>Language:</p><Link to='/'>English</Link></li>
+              <li></li>
+            </ul>
+
+            <ul>
+              <li className='english-link'><p>Language: <Link to='/'>English</Link></p></li>
             </ul>
 
         </div>

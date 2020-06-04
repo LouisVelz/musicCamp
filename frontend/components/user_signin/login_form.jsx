@@ -60,7 +60,7 @@ class LogInForm extends React.Component {
           </form>
           <h6><Link to='/root'>Forgot your password?</Link></h6>
           <br/>
-          <h6>Don't have an account?<Link to='/signup'>Sign up</Link>.</h6>
+          <h6>Don't have an account? <Link to='/signup'>Sign up</Link>.</h6>
         </div>
         <Footer/>
       </div>
