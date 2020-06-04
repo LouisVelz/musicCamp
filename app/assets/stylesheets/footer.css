@@ -1,0 +1,77 @@
+.footer-main{
+  /* display: flex; */
+
+  background-color: #477986;
+  color: white;
+  height: 400px;
+  font-size: 14px;
+  padding-left: 12%;
+  width: 100%;
+  
+}
+.footer-main > ul li a:hover{
+  text-decoration: underline;
+} 
+
+.footer-main ul li {
+  display: flex;
+  padding: 7px;
+}
+.footer-main ul li p {
+  color: #abc1c7;
+}
+
+.upper{
+  display: flex;
+  /* justify-content: space-around; */
+  /* flex-flow: column wrap;
+  height: 150px; */
+  padding-top: 30px;
+}
+/* .upper ul:first-child { */
+  /* padding-left: 300px; */
+  /* flex: 1 1 0; */
+  /* color: green; */
+
+/* } */
+.upper ul:nth-child(2) {
+  /* padding-left: 300px; */
+  /* flex: 1 1 0; */
+  padding-left: 8.4%;
+}
+.upper ul:last-child {
+  padding-left: 30.5%;
+  /* flex: 1 1 0; */
+}
+
+
+/* .upper-left{
+  display: flex;
+  justify-content: space-around;
+  height: 130px;
+
+} */
+/* .upper-left:last-child{
+  padding-left: 12%;
+  margin-left: 100px;
+}
+.upper-right{
+  padding-left: 30%;
+} */
+
+.lower{
+  display: flex;
+  padding-top: 30px;
+  /* justify-content: space-around; */
+}
+
+.lower ul:last-child{
+  padding-left: 49.5%;
+}
+.lower ul:last-child:hover{
+  opacity: 0.8;
+}
+
+
+
+

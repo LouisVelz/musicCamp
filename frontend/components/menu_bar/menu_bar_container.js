@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from './../../actions/session_actions'
 import MenuBar from './menu_bar'
+import { openModal } from './../../actions/modal_actions'
 
 
 const mSTP = (state) => {
@@ -12,7 +13,8 @@ const mSTP = (state) => {
 }
 const mDTP = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    openModal: () => dispatch(openModal())
   }
 }
 

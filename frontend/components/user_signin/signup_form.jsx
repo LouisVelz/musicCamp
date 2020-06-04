@@ -16,12 +16,26 @@ class SignUpForm extends React.Component{
     e.preventDefault()
     this.props.signup(this.state)
   }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render(){
     let times = <FontAwesomeIcon icon={faTimes} />
 
     return (
       <div>
         <h4>Sign up for a Musiccamp account <Link to='/root'>{times}</Link></h4>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label>Email Address
             <input 

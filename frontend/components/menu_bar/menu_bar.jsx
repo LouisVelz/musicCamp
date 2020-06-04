@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart} from '@fortawesome/free-regular-svg-icons'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { faBolt} from '@fortawesome/free-solid-svg-icons'
+import { openModal } from '../../actions/modal_actions';
 
 class MenuBar extends React.Component{
   constructor(props){
@@ -20,16 +21,17 @@ class MenuBar extends React.Component{
     let list
     if (currentUser){
       list = <ul>
-        <li>{heart}</li>
         <li>{bolt}</li>
+        <li>{heart}</li>
         <li><div className='circle'></div></li>
         <li><button onClick={() => this.props.logout()}>Log Out</button></li>
       </ul>
 
     }else {
       list = <ul>
-        <Link to='/signup'>sign up</Link>
-        <Link to= '/login'>log in</Link>
+        {/* <Link to='/signup' onClick={()=> openModal()}>sign up</Link> */}
+        <button onClick={() => this.props.openModal()}>sing up</button>
+        <Link to='/login'><button>log in</button></Link>
       </ul>
     }
 
@@ -37,7 +39,7 @@ class MenuBar extends React.Component{
       <div className='menu-bar'>
         <ul>
           <li className='rhomboid'></li>
-          <li>bandcamp</li>
+          <li>musiccamp</li>
           <li>
             <input type="text" placeholder='Search and discover music'/>
             {search}
