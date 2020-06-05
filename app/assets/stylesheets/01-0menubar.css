@@ -7,14 +7,16 @@
   top: 0;
   width: 100%;
   height: 110px;
+  background-color: white;
+  /* z-index: 5; */
 }
 
 .menu-bar-top{
-  
   display: flex;
   justify-content: space-around;
   padding: 15px;
 }
+
 .menu-bar-top input{
   width: 260px;
   height: 40px;

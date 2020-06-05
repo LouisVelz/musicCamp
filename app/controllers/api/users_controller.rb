@@ -4,11 +4,9 @@ class Api::UsersController < ApplicationController
 
     if @user.save
         sign_in!(@user)
-        # redirect_to root_url
+
         render :show
     else
-      # debugger
-        # render json: ['Invalid creadentials'], status: 422
         render json: @user.errors.full_messages, status: 422
     end
   end
