@@ -26,7 +26,7 @@ class MenuBar extends React.Component{
         <ul className="menu-bar-bottom">
           <li>Discover amazing new music and <Link to='/'>directly support</Link> the artists who make it.</li>
           <li>
-            <button onClick={() => this.props.openModal()}>sing up</button>
+            <button onClick={() => this.props.openModal()}>sign up</button>
             <Link to='/login'><button>log in</button></Link>
           </li>
         </ul>
