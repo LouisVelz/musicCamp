@@ -10,7 +10,7 @@ const sessionErrorsReducer = (errors = _defaultErrors, action) => {
     case RECEIVE_CURRENT_USER:
       return _defaultErrors
     default:
-      return errors
+      return _defaultErrors
   }
 }
 

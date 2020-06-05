@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
             # render '/'
             render :show
         else
-          render json: ["Invalid credentials!"], status: 404
+          render json: ["Enter a valid Email/Password"], status: 404
           # redirect_to root_url
         end
     end

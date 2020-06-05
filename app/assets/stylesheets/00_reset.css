@@ -1,0 +1,77 @@
+
+html, body, header, nav, h1,
+ul, li, button, a, img, div, h2, h6, p, form,
+label, input, textarea,
+span, footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: normal;
+  font-stretch: normal;
+
+  line-height: 1.23077;
+  font-family:' Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* font-weight: 300; */
+  color: #333333;
+  /* box-sizing: content-box; */
+}
+/* body{
+  min-height: 400px;
+  margin-bottom: 400px;
+  clear: both;
+} */
+
+a:hover{
+  text-decoration: underline;
+}
+button:hover{
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+.rhomboid {
+  width: 20px;
+  height: 17px;
+  background-color: rgb(29, 160, 195);
+  -webkit-transform: skew(20deg); 
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+  margin-left: 25px;
+  margin-right: 3px;
+  margin-top: 5px;
+}
+
+.circle {
+width: 30px;
+height: 30px;
+background: #408ea3;
+background-image: linear-gradient(to right, #1DA0C3 , #6046FE);
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-o-border-radius: 50%;
+border-radius: 50%;
+}
+
+.errors {
+  font-size: 16px;
+  color: red;
+  margin: 0;
+}

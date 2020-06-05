@@ -27,7 +27,7 @@ export const signup = formUser => dispatch => {
   
   return postUser(formUser).then(
     user => dispatch(receiveCurrentUser(user)),
-    errors => dispatch(receiveErrors(errors))
+    errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }
 
