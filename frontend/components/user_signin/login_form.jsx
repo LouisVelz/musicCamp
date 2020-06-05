@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './../footer'
+
 
 class LogInForm extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class LogInForm extends React.Component {
 
   render() {
 
-
+    debugger
     return (
       <div className='login-main'>
         <div className='login-header'>
@@ -62,7 +62,6 @@ class LogInForm extends React.Component {
           <br/>
           <h6>Don't have an account? <Link to='/signup'>Sign up</Link>.</h6>
         </div>
-        <Footer/>
       </div>
     )
   }

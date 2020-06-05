@@ -11,8 +11,40 @@
 .modal-child {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; 
   transform: translate(-50%, -50%);
-  background-color: aliceblue;
-  height: 350px;
+  background-color:white;
+  height: 490px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-main{
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-main h4{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 18px;
+  background-color: #F5F5F5;
+  width: 500px;
+  height: 45px;
+  margin: 0;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.signup-main h4 button{
+  margin-right: 20px;
+  margin-left: 82px;
+}
+
+.signup-main label input{
+  border: 1px solid lightgray;
+  width: 340px;
+  height: 35px;
 }

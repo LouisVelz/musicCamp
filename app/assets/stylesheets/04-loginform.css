@@ -2,7 +2,8 @@
   background: #f3f3f3;
   height: 620px;
   font-size: 13px;
-
+  /* margin-bottom: 145px; */
+  z-index: 5;
 }
 .login-main a:hover {
   text-decoration: none;
@@ -35,20 +36,15 @@
 
 .login-form h4 {
   display: flex;
-  /* box-sizing: border-box; */
   font-size: 18px;
-  /* font-weight: bold; */
   align-items: center;
   justify-content: center;
-  /* vertical-align: center; */
   height: 115px;
   border-bottom: 2px dotted lightgray;
   width: 50%;
   margin: 0;
-
-  
-  
 }
+
 .inside-form{
 
     display: flex;

@@ -1,5 +1,7 @@
 .footer-main{
-
+  position: relative;
+  left: 0;
+  bottom: 0;
   background-color: #477986;
   color: white;
   height: 400px;
@@ -7,6 +9,7 @@
   width: 100vw;
   box-sizing: content-box;
   font-size: 13px;
+
 }
 
 .footer-main ul li {

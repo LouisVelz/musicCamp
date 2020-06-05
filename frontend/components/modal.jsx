@@ -16,7 +16,9 @@ class Modal extends React.Component{
     return null;
   }
     return (
-      <div className="modal-background" onClick={closeModal}>
+      // onClick = { closeModal } put insie className modal-background to close modal
+      //on background click
+      <div className="modal-background" >
         <div className="modal-child" onClick={e => e.stopPropagation()}>
           <SignupFormContainer />
         </div>

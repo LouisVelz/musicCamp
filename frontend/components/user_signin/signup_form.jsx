@@ -31,25 +31,29 @@ class SignUpForm extends React.Component{
 
   render(){
     let times = <FontAwesomeIcon icon={faTimes} />
-
     return (
-      <div>
-        <h4>Sign up for a Musiccamp account <Link to='/root'>{times}</Link></h4>
+      <div className='signup-main'>
+        <h4>Sign up for a Musiccamp account <button onClick={() => this.props.closeModal()}>{times}</button></h4>
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label>Email Address
+            <br/>
             <input 
               type="text"
               onChange={this.update('email')}
               value={this.state.email}/>
           </label>
+          <br/>
           <label>Password
+            <br/>
             <input 
               type="password"
               onChange={this.update('password')}
               value={this.state.password}/>
           </label>
+          <br/>
           <label>Username
+            <br/>
             <input 
               type="text"
               onChange={this.update('username')}
