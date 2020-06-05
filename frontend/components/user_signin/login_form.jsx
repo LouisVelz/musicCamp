@@ -35,7 +35,7 @@ class LogInForm extends React.Component {
     if (this.props.errors.length > 0){
       errors = this.props.errors[0]
     }
-    // debugger
+  
     return (
       <div className='login-main'>
         <div className='login-header'>
@@ -43,7 +43,7 @@ class LogInForm extends React.Component {
         </div>
         <div className='login-form'>
           <h4>Log in</h4>
-          {/* {this.renderErrors()} */}
+
           <form onSubmit={this.handleSubmit} className='inside-form'>
             <label>Username / email
               <input
