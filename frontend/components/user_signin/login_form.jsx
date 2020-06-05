@@ -17,22 +17,25 @@ class LogInForm extends React.Component {
     this.props.login(this.state)
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
 
   render() {
-
-    debugger
+    let errors = null
+    if (this.props.errors.length > 0){
+      errors = this.props.errors[0]
+    }
+    // debugger
     return (
       <div className='login-main'>
         <div className='login-header'>
@@ -40,7 +43,7 @@ class LogInForm extends React.Component {
         </div>
         <div className='login-form'>
           <h4>Log in</h4>
-          {this.renderErrors()}
+          {/* {this.renderErrors()} */}
           <form onSubmit={this.handleSubmit} className='inside-form'>
             <label>Username / email
               <input
@@ -48,6 +51,7 @@ class LogInForm extends React.Component {
                 onChange={this.update('email')}
                 value={this.state.email} />
             </label>
+            <p className='errors'>{errors}</p>
             <br/>
             <label>Password
               <input

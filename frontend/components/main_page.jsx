@@ -11,7 +11,9 @@ class MainPage extends React.Component{
     return(
       <div className="main">
  
-          <div className="first-element"></div>
+          <div className="first-element">
+            {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt nisi numquam impedit, doloremque recusandae ipsum illum, quis ab sequi cumque, aliquam soluta itaque eligendi fugiat doloribus provident ipsam possimus.</p> */}
+          </div>
           <div className="last-element"></div>
 
       </div>

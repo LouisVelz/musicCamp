@@ -17,31 +17,34 @@ class SignUpForm extends React.Component{
     this.props.signup(this.state)
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   render(){
     let times = <FontAwesomeIcon icon={faTimes} />
+    let passwordError = null
+    let userError = null
+    let emailError = null
+    this.props.errors.forEach(error => {
+      if (error[0] === "U"){
+        userError = <p className='errors'>{error}</p>
+      }else if (error[0] === "P"){
+        passwordError = <p className='errors'>{error}</p>
+      }else {
+        emailError = <p className='errors'>{error}</p> 
+      }
+    });
+    let checkboxError = null
     return (
       <div className='signup-main'>
         <h4>Sign up for a Musiccamp account <button onClick={() => this.props.closeModal()}>{times}</button></h4>
-        {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
+
+        <form onSubmit={this.handleSubmit} className='signup-form'>
           <label>Email Address
             <br/>
             <input 
               type="text"
               onChange={this.update('email')}
               value={this.state.email}/>
+              <br/>
+              {emailError}
           </label>
           <br/>
           <label>Password
@@ -50,6 +53,8 @@ class SignUpForm extends React.Component{
               type="password"
               onChange={this.update('password')}
               value={this.state.password}/>
+              <br/>
+              {passwordError}
           </label>
           <br/>
           <label>Username
@@ -58,12 +63,14 @@ class SignUpForm extends React.Component{
               type="text"
               onChange={this.update('username')}
               value={this.state.username}/>
+              <br/>
+              {userError}
           </label>
-          <p><input type="checkbox"/>I have read and agreed to <Link to='terms'>Terms of User</Link>.</p>
+          <p><input type="checkbox"/>I have read and agreed to <Link to='terms'>Terms of Use</Link>.</p>
           <button type='submit'>Sign up</button>
         </form>
 
-          <h6>Already have an account?<Link to='/login'>Log in</Link>.</h6>
+          <h6>Already have an account? <Link to='/login'>Log in</Link>.</h6>
       </div>
     )
   }

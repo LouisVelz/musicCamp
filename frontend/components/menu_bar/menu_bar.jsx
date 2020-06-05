@@ -14,19 +14,19 @@ class MenuBar extends React.Component{
 
     return(
       <div className='menu-bar'>
-        <ul>
-          <li className='rhomboid'></li>
-          <li>musiccamp</li>
+        <ul className='menu-bar-top'>
+          <li><div className='rhomboid'></div>musiccamp</li>
+
           <li>
-            <input type="text" placeholder='Search and discover music'/>
-            {search}
+            <input type="text" placeholder='    Search and discover music'/>
+            <button>{search}</button>
           </li>
         </ul>
-        <ul>
+
+        <ul className="menu-bar-bottom">
+          <li>Discover amazing new music and <Link to='/'>directly support</Link> the artists who make it.</li>
           <li>
             <button onClick={() => this.props.openModal()}>sing up</button>
-          </li>
-          <li>
             <Link to='/login'><button>log in</button></Link>
           </li>
         </ul>

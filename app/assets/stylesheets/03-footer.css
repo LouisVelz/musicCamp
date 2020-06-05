@@ -1,5 +1,5 @@
 .footer-main{
-  position: relative;
+  /* position: absolute; */
   left: 0;
   bottom: 0;
   background-color: #477986;
@@ -36,7 +36,6 @@
 .upper ul:first-child { 
 
   flex: 1 1 0;
-
 
 }
 .upper ul:nth-child(2) {
