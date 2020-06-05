@@ -39,7 +39,7 @@ class LogInForm extends React.Component {
     return (
       <div className='login-main'>
         <div className='login-header'>
-          <div className="rhomboid"></div><Link to='root'>musiccamp</Link>
+          <div className="rhomboid"></div><Link to='/'>musiccamp</Link>
         </div>
         <div className='login-form'>
           <h4>Log in</h4>
