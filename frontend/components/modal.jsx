@@ -11,7 +11,7 @@ class Modal extends React.Component{
 
   render(){
   const { modal, closeModal } = this.props
-
+    
   if (!modal) {
     return null;
   }

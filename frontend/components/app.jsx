@@ -9,16 +9,21 @@ import LogInFormContainer from './user_signin/login_form_container'
 import {AuthRoute, ProtectedRoute } from './../util/route_util'
 import Footer from './footer'
 
+
 const App = () => (
   <div>
     <Modal/>
-    <ProtectedRoute path='/' component={LoggedMenuBarContainer}/>
+
     <Switch>
-      <AuthRoute path='/login' component={LogInFormContainer} />
-      <AuthRoute path='/' component={MenuBarContainer}/>
+      <ProtectedRoute exact path='/home' component={LoggedMenuBarContainer}/>
+      <AuthRoute exact path='/' component={MenuBarContainer}/>
     </Switch>
 
-    <MainPage/>
+    <Switch>
+      <AuthRoute path='/login' component={LogInFormContainer} />
+      <Route path='/' component={MainPage}/>
+    </Switch>
+
     <Footer/>
   </div>
 );
