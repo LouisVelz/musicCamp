@@ -1,7 +1,7 @@
 class Song < ApplicationRecord
-  validates :title, prescence: true
+  validates :title, presence: true
 
-  belons_to :artist,
+  belongs_to :artist,
   class_name: :User,
   foreign_key: :artist_id
 

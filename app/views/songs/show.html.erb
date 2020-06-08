@@ -1,0 +1,5 @@
+<h1><%= @song.title %></h1>
+<%# debugger %>
+<audio controls>
+<source src=<%= url_for(@song.song) %> type='audio/mpeg'>
+</audio>
