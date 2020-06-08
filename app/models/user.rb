@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :songs,
+    foreign_key: :artist_id,
+    class_name: :Song,
+    dependent: :destroy
+
     attr_reader :password
 
     def self.generate_session_token
