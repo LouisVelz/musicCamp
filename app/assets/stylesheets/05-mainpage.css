@@ -1,6 +1,15 @@
 .main{
+  /* margin-top: auto; */
+  margin-bottom: 400px;
+  z-index: -1;
+}
+
+.logged-in{
+  margin-top: 55px;
+}
+
+.not-logged-in{
   margin-top: 110px; 
-  margin-bottom: 200px;
 }
 
 .main h1 {

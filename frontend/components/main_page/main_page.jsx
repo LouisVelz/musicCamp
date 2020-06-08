@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from './footer'
-import MenuBarContainer from './menu_bar/menu_bar_container'
+
+import MenuBarContainer from '../menu_bar/menu_bar_container'
 
 class MainPage extends React.Component{
   constructor(props){
@@ -8,9 +8,16 @@ class MainPage extends React.Component{
   }
 
   render(){
+
+    let menuBars 
+    if (this.props.currentUser) {
+      menuBars = <div className="logged-in"></div>
+    } else {
+      menuBars = <div className="not-logged-in"></div>
+    }
     return(
       <div className="main">
- 
+          {menuBars}
           <div className="first-element">
             <h1>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt nisi numquam impedit, doloremque recusandae ipsum illum, quis ab sequi cumque, aliquam soluta itaque eligendi fugiat doloribus provident ipsam possimus.

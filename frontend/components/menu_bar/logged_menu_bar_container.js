@@ -4,7 +4,7 @@ import LoggedMenuBar from './logged_menu_bar'
 
 
 
-const mSTP = (state, ) => {
+const mSTP = (state) => {
   const { entities, session } = state
   return {
     errors: state.errors.session,

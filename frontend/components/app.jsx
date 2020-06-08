@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
-import MainPage from './main_page'
+import MainPageContainer from './main_page/main_page_container'
 import MenuBarContainer from './menu_bar/menu_bar_container'
 import LoggedMenuBarContainer from './menu_bar/logged_menu_bar_container'
 // import SignUpFormContainer from './user_signin/signup_form_container'
@@ -21,7 +21,7 @@ const App = () => (
 
     <Switch>
       <AuthRoute path='/login' component={LogInFormContainer} />
-      <Route path='/' component={MainPage}/>
+      <Route path='/' component={MainPageContainer}/>
     </Switch>
 
     <Footer/>
