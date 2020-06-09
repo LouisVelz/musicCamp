@@ -3,11 +3,11 @@ import { createSong } from './../../actions/song_actions';
 import SongForm from './song_form'
 
 const mSTP = () => ({
-  song: {title:"", track_num: "", description:"", album_id: "", artist_id:"" }
+  song: { title: "", track_num: "", description: "", album_id: "", songUrl: "" }
 })
 
 const mDTP = dispatch => ({
-  createSong: (song) => dispatch(createSong(song))
+  createSong: (formData) => dispatch(createSong(formData))
 })
 
 export default connect(mSTP, mDTP)(SongForm);

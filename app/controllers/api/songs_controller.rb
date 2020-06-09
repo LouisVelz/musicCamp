@@ -2,7 +2,8 @@ class Api::SongsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
 
   def index
-        @songs = Song.where(artist_id: params[:user_id])
+        @songs = Song.all
+        # .where(artist_id: params[:user_id])
         render :index
   end
 

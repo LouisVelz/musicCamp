@@ -49,10 +49,10 @@ export const requestSong = (songId) => dispatch => {
   )
 }
 
-export const createSong = (song) => dispatch => {
+export const createSong = (formData) => dispatch => {
 
-  return SongApiUtil.postSong(song).then(
-    (song) => dispatch(receiveSong(song)),
+  return SongApiUtil.postSong(formData).then(
+    (song) => dispatch(receiveSong(formData)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }

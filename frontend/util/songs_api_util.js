@@ -11,13 +11,16 @@ export const fetchSong = (songId) => {
   })
 }
 
-export const postSong = (song) => {
+export const postSong = (formData) => {
   return $.ajax({
     method: "post",
     url: '/api/songs',
-    data: { song }
+    data: formData,
+    contentType: false,
+    processData: false
   })
-}
+}   
+
 
 export const deleteSong = (songId) => {
   return $.ajax({
