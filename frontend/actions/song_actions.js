@@ -1,8 +1,9 @@
-import { fetchSongs, fetchSong, postSong, deleteSong } from './../util/songs_api_util'
+import * as SongApiUtil from './../util/songs_api_util'
 
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const DELETE_SONG = 'DELETE_SONG';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'
 
 const receiveSongs = (songs) => {
   return {
@@ -17,7 +18,7 @@ const receiveSong = (song) => {
   }
 }
 
-const deleteSong = (songId) => {
+const removeSong = (songId) => {
   return {
     type: DELETE_SONG,
     songId
@@ -32,25 +33,25 @@ const receiveErrors = (errors) => {
 }
 
 
-export const fetchSongs = () => dispatch => {
+export const requestSongs = () => dispatch => {
 
-  return fetchSongs().then(
+  return SongApiUtil.fetchSongs().then(
     songs => dispatch(receiveSongs(songs)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }
 
-export const fetchSong = (songId) => dispatch => {
+export const requestSong = (songId) => dispatch => {
 
-  return fetchSong(songId).then(
+  return SongApiUtil.fetchSong(songId).then(
     song => dispatch(receiveSong(song)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }
 
-export const postSong = (song) => dispatch => {
+export const createSong = (song) => dispatch => {
 
-  return deleteSession().then(
+  return SongApiUtil.postSong(song).then(
     (song) => dispatch(receiveSong(song)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
@@ -58,8 +59,8 @@ export const postSong = (song) => dispatch => {
 
 export const deleteSong = (songId) => dispatch => {
 
-  return deleteSong(songId).then(
-    () => dispatch(deleteSong(songId)),
+  return SongApiUtil.deleteSong(songId).then(
+    () => dispatch(removeSong(songId)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }
