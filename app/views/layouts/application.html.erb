@@ -5,6 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script type="text/javascript">
+      window.musicianURL = "<%= image_url('musician') %>";
+      window.monkeyURL = "<%= image_url('monkey') %>";
+      window.cartoonURL = "<%= image_url('music3') %>";
+      window.girl2URL = "<%= image_url('girl2') %>";
+      window.bandURL = "<%= image_url('band') %>";
+      window.microphoneURL = "<%= image_url('microphone') %>";
+      window.guitarURL = "<%= image_url('guitar') %>";
+      window.guitar2URL = "<%= image_url('guitar2') %>";
+    </script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

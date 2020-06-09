@@ -20,6 +20,7 @@ class MainPage extends React.Component{
           {menuBars}
           <div className="first-element">
             <h1>
+            <img src={window.musicianURL }/>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt nisi numquam impedit, doloremque recusandae ipsum illum, quis ab sequi cumque, aliquam soluta itaque eligendi fugiat doloribus provident ipsam possimus.
             </h1> 
           </div>
@@ -31,3 +32,12 @@ class MainPage extends React.Component{
 }
 
 export default MainPage;
+
+// window.monkeyURL
+// window.musicianURL 
+// window.cartoonURL
+// window.girl2URL
+// window.bandURL 
+// window.microphoneURL 
+// window.guitarURL 
+// window.guitar2URL 

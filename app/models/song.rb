@@ -1,7 +1,7 @@
 class Song < ApplicationRecord
   validates :title, presence: true
 
-  validates :ensure_song
+  # validates :ensure_song
 
   belongs_to :artist,
   class_name: :User,
@@ -9,9 +9,9 @@ class Song < ApplicationRecord
 
   has_one_attached :song
 
-  def ensure_song
-    unless self.song.attached?
-        errors[:song] << "A song must be attached"
-    end
-  end
+  # def ensure_song
+  #   unless self.song.attached?
+  #       errors[:song] << "A song must be attached"
+  #   end
+  # end
 end

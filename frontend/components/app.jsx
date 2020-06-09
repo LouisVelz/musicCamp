@@ -25,7 +25,7 @@ const App = () => (
 
     <Switch>
       <AuthRoute path='/login' component={LogInFormContainer} />
-      <Route exact path='/songs/index' component={SongIndexContainer} />
+      <Route path='/home/songs/index' component={SongIndexContainer} />
       <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
       <Route exact path='/songs/:songId' component={SongShowContainer} />
       <Route path='/' component={MainPageContainer}/>
