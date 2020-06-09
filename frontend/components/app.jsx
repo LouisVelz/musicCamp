@@ -8,6 +8,10 @@ import Modal from './modal'
 import LogInFormContainer from './user_signin/login_form_container'
 import {AuthRoute, ProtectedRoute } from './../util/route_util'
 import Footer from './footer'
+import SongFormContainer from './songs/song_form_container'
+import SongIndexContainer from './songs/song_index_container'
+import SongShowContainer from './songs/song_show_container'
+
 
 
 const App = () => (
@@ -20,8 +24,11 @@ const App = () => (
     </Switch>
 
     <Switch>
+      <Route exact path='/' component={MainPageContainer}/>
       <AuthRoute path='/login' component={LogInFormContainer} />
-      <Route path='/' component={MainPageContainer}/>
+      <Route exact path='/songs/new' component={SongFormContainer} />
+      <Route path='/songs/index' component={SongIndexContainer} />
+      <Route path='/songs/:songId' component={SongShowContainer} />
     </Switch>
 
     <Footer/>

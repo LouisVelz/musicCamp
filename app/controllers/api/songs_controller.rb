@@ -4,6 +4,7 @@ class Api::SongsController < ApplicationController
   def index
         @songs = Song.all
         # .where(artist_id: params[:user_id])
+        debugger
         render :index
   end
 

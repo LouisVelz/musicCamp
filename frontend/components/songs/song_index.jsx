@@ -12,10 +12,11 @@ class SongIndex extends React.Component{
   }
 
   render(){
-    let allSongs = this.songs.map(song =>{
+    let allSongs = this.props.songs.map(song =>{
       return <SongIndexItem key={song.id} song={song} />
     })
 
+    debugger
     return(
       <ul>
         {allSongs}

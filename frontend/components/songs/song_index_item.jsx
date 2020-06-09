@@ -9,8 +9,10 @@ class SongIndexItem extends React.Component{
 
   render(){
     const { song } = this.props
+    debugger
     return(
       <li>
+
         <audio controls>
           <source src={`${song.songUrl}`} type="audio.mpeg"/>
         </audio>
