@@ -12,7 +12,7 @@ const receiveSongs = (songs) => {
   }
 }
 const receiveSong = (song) => {
-  debugger
+
   return {
     type: RECEIVE_SONG,
     song
@@ -35,7 +35,7 @@ const receiveErrors = (errors) => {
 
 
 export const requestSongs = () => dispatch => {
-  debugger
+
   return SongApiUtil.fetchSongs().then(
     songs => dispatch(receiveSongs(songs)),
     errors => dispatch(receiveErrors(errors.responseJSON))

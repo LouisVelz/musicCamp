@@ -12,10 +12,11 @@ class SongIndexItem extends React.Component{
 
     return(
       <li>
-
+        {/* <button onClick={() => this.setState({ selectedTrack: song.songUrl })}>Play</button> */}
         <audio src={`${song.songUrl}`} controls height="200" width="300"/>
           {/* <source src={`${song.songUrl}`} type="audio.mpeg"/> */}
-        <br/>
+        {/* <br/>
+        {/* <button>Play</button> */}
         <Link to={`/songs/${song.id}`}>{song.title}</Link>
       </li>
     )
