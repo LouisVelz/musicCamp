@@ -1,10 +1,10 @@
 class Api::SongsController < ApplicationController
-  before_action :require_logged_in, only: [:create, :destroy]
+  # before_action :require_logged_in, only: [:create, :destroy]
 
   def index
         @songs = Song.all
         # .where(artist_id: params[:user_id])
-        debugger
+
         render :index
   end
 
@@ -14,9 +14,11 @@ class Api::SongsController < ApplicationController
 
     if @song.save
       render :show
+
     else
       render json: @song.errors.full_messages, status: 422
     end
+
   end
 
   def destroy
@@ -37,7 +39,8 @@ class Api::SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:title, :track_num, :description, :album_id, :artist_id)
+
+    params.require(:song).permit(:title, :track_num, :description, :album_id, :song)
   end
 end
 

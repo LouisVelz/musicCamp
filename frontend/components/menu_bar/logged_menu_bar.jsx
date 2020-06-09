@@ -13,7 +13,7 @@ class LoggedMenuBar extends React.Component{
   }
 
   handleClick(){
-    // debugger
+
     // this.setState({open: !this.state.open})
     this.setState({open: !this.state.open})
 

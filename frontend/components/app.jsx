@@ -19,16 +19,16 @@ const App = () => (
     <Modal/>
 
     <Switch>
-      <ProtectedRoute exact path='/home' component={LoggedMenuBarContainer}/>
-      <AuthRoute exact path='/' component={MenuBarContainer}/>
+      <ProtectedRoute path='/' component={LoggedMenuBarContainer}/>
+      <AuthRoute path='/' component={MenuBarContainer}/>
     </Switch>
 
     <Switch>
-      <Route exact path='/' component={MainPageContainer}/>
+      <Route exact path='/home' component={MainPageContainer}/>
       <AuthRoute path='/login' component={LogInFormContainer} />
-      <Route exact path='/songs/new' component={SongFormContainer} />
+      <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
       <Route path='/songs/index' component={SongIndexContainer} />
-      <Route path='/songs/:songId' component={SongShowContainer} />
+      <Route exact path='/songs/:songId' component={SongShowContainer} />
     </Switch>
 
     <Footer/>

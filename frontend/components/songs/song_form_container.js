@@ -3,7 +3,12 @@ import { createSong } from './../../actions/song_actions';
 import SongForm from './song_form'
 
 const mSTP = () => ({
-  song: { title: "", track_num: "", description: "", album_id: "", songUrl: "" }
+  song: {
+  title: "",
+  track_num: "",
+  description: "",
+  album_id: "",
+  songFile: null }
 })
 
 const mDTP = dispatch => ({

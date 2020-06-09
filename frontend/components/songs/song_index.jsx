@@ -16,7 +16,7 @@ class SongIndex extends React.Component{
       return <SongIndexItem key={song.id} song={song} />
     })
 
-    debugger
+  
     return(
       <ul>
         {allSongs}

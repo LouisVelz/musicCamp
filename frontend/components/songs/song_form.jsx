@@ -5,7 +5,7 @@ class SongForm extends React.Component{
     super(props)
     this.state = this.props.song
     this.handleSubmit.bind(this)
-    this.fileReader.bind(this)
+    // this.fileReader.bind(this)
   }
   update(type) {
     return e => this.setState({ [type]: e.currentTarget.value })
@@ -14,22 +14,32 @@ class SongForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append(this.state);
+    formData.append('song[title]', this.state.title);
+    formData.append('song[track_num]', this.state.track_num);
+    formData.append('song[description]', this.state.description);
+    formData.append('song[album_id]', this.state.album_id);
+    formData.append('song[song]', this.state.songFile);
+
     this.props.createSong(formData)
   }
 
-  fileReader(e){
-    const reader = new FileReader();
-    const file = e.currentTarget.files[0];
-    reader.onloadend = () => this.setState({ songUrl: reader.result, songFile: file });
-    reader.readAsDataURL(file);
+  handleFile(e){
+
+    this.setState({songFile: e.currentTarget.files[0]})
   }
+
+  // fileReader(e){
+  //   const reader = new FileReader();
+  //   const file = e.currentTarget.files[0];
+  //   reader.onloadend = () => this.setState({ songUrl: reader.result, songFile: file });
+  //   reader.readAsDataURL(file);
+  // }
 
   render(){
     return(
       <div className="song-form">
         <h4>Upload a song</h4>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <label>Title:
             <input
               type="text"
@@ -65,9 +75,8 @@ class SongForm extends React.Component{
           <label>Song File:
             <input
               type="file"
-              accept='audio/mpeg'
-              onChange={this.fileReader}
-              value={this.state.songUrl} />
+              onChange={this.handleFile.bind(this)}
+               />
             <br />
           </label>
           <br />
