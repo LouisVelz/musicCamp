@@ -1,7 +1,7 @@
 .main{
   /* margin-top: auto; */
-  margin-bottom: 400px;
-  z-index: -1;
+  margin-bottom: 100px;
+
 }
 
 .logged-in{
@@ -15,4 +15,68 @@
 .main h1 {
   color: red;
   font-size: 36px;
+}
+
+.main-images-list{
+  width: 100%;
+  height: 420px;
+}
+img {max-width:100%;}
+
+.main-images-list .larger-image img{
+  height: 420px;
+  width: 100%;
+}
+.main-images-list .smaller-image li img{
+  height: 137px;
+  width: 100%;
+}
+
+.main-images-list .larger-image{
+  width: 74.20%;
+  float: left;
+  margin-right: 1px;
+}
+.main-images-list .smaller-image{
+  width: 25.6%;
+  margin-left: 1px;
+  float: left;
+}
+
+.main-text{
+  font-size: 18px;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.selling-now p{
+  color: #408ea3;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 20 11.8%
+}
+.selling-now{
+  margin: 20 11.8%
+
+}
+.selling-now-list ul{
+  margin: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.selling-now-list ul li img{
+  height: 115px;
+  width: 115px;
+}
+
+.selling-now-list ul li{
+  width: 127px;
+  height: 225px;
+  font-size: 11px;
+  margin:2px;
+  padding: 2px;
 }
