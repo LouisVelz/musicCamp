@@ -41,6 +41,22 @@ class MainPage extends React.Component{
       )
     })
 
+    let otherList = otherItems.map((list, index) => {
+      return <li key={index}>
+      <br />
+      <img src={list.src} />
+      <br />
+      <p><strong>{list.album}</strong></p>
+      <br />
+      <p>{list.artist}</p>
+      <br />
+      <p>{list.sold}</p>
+      <br />
+      <p>{list.country}</p>
+    </li>
+    })
+      
+
 
     let menuBars 
     if (this.props.currentUser) {
@@ -68,7 +84,7 @@ class MainPage extends React.Component{
           </div>
 
           <div className="selling-now">
-            <p>SELLING RIGHT NOW</p>
+            <Link to='/home'>SELLING RIGHT NOW</Link>
           </div>
 
           <div className="selling-now-list">
@@ -76,6 +92,29 @@ class MainPage extends React.Component{
               {songList}
             </ul>
           </div>
+
+          <div className="musiccamp-daily">
+
+            <div className="musiccamp-daily-link">
+              <Link to='/home'>MUSICCAMP DAILY </Link>
+            </div>
+
+            <div className="daily-list">
+              <ul >
+              {otherList[0]}
+              {otherList[1]}
+              {otherList[2]}
+              </ul>
+            </div>
+              <div className="bottom-list">
+                <ul >
+                  {otherList.slice(3,8)}
+                </ul>
+              </div>
+              
+          </div>
+
+
 
       </div>
     )
@@ -89,6 +128,66 @@ let arrayOfitems = [
     artist: 'By a Music Artist',
     sold: 'sold for $5',
     country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list2,
+    album: 'Some Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $10',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list3,
+    album: 'Other Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $18',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list4,
+    album: 'Another Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $25',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list5,
+    album: 'Yet Another Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $9',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list6,
+    album: 'Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $16',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list7,
+    album: 'Simply ALmbum',
+    artist: 'By a Music Artist',
+    sold: 'sold for $15',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list8,
+    album: 'Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $13',
+    country: 'In 🇺🇸 United states'
+  },
+
+
+]
+let otherItems = [
+  {
+    src: window.list1,
+    album: 'Music album this is just some text on the side',
+    artist: null,
+    sold: null,
+    country: null
   },
   {
     src: window.list2,

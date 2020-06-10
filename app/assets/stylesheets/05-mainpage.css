@@ -50,16 +50,18 @@ img {max-width:100%;}
   padding: 20px;
 }
 
-.selling-now p{
+.selling-now a{
   color: #408ea3;
   font-size: 14px;
   font-weight: 500;
-  margin-left: 11%;
-  margin-bottom: 20px;
 }
 
 .selling-now{
-  margin: 20 11.8%
+  margin: 20px 11%;
+
+}
+.selling-now-list{
+  margin-bottom: 30px;
 }
 
 .selling-now-list ul{
@@ -68,6 +70,7 @@ img {max-width:100%;}
   flex-direction: row;
   justify-content: center;
   transition: 1.5s ease-in-out
+  
 
 }
 
@@ -81,18 +84,97 @@ img {max-width:100%;}
   width: 9.5%;
   height: 225px;
   font-size: 11px;
-  /* text-align: center; */
   padding: 2px;
   display: flex;
   flex-wrap: wrap;
-
- 
 }
-/* .selling-now ul li p{
-  text-align: left;
-  align-self: flex-start;
-} */
 
 .selling-now-list ul li:hover{
   background-color: #eef2f3;
 }
+.musiccamp-daily {
+  background-color: #eef2f3;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  /* margin: 0 11%; */
+}
+
+.musiccamp-daily-link {
+  margin: 0 11%;
+  margin-bottom: 20px;
+}
+.musiccamp-daily-link a{
+  color: #408ea3;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+.daily-list{
+  margin: 0 11%;
+  height: 280px;
+}
+
+.daily-list ul {
+  display: flex;
+}
+.daily-list ul li{
+  background-color: white;
+  margin-left: 10px;
+  margin-top: 0px;
+  height: 280px;
+  display: flex;
+  /* flex-flow: row wrap; */
+  /* word-wrap: break-word; */
+}
+.daily-list ul li:first-child{
+  flex: 3.1 1 0;
+  margin-left: 0px;
+}
+.daily-list ul li:nth-child(2n){
+  flex-flow: row wrap;
+  flex: 1 1 0;
+}
+.daily-list ul li:last-child{
+  flex-flow: row wrap;
+  flex: 1 1 0;
+}
+
+
+
+/* .daily-list ul li:first-child{
+  width: 100%;
+} */
+.daily-list ul li img{
+  height: 140px;
+}
+
+.daily-list ul li:first-child img{
+  height: 280px;
+
+}
+.bottom-list ul{
+  display: flex;
+  height: 280px;
+  margin: 0 11%;
+  margin-top: 20px;
+}
+
+.bottom-list ul li{
+  flex: 1 1 0;
+  margin-left: 10px;
+  background-color: white;
+  margin-top: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  word-wrap: break-word;
+}
+.bottom-list ul li:first-child{
+  margin-left: 0px;
+}
+
+
+
+
+
