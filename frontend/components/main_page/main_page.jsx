@@ -43,7 +43,9 @@ class MainPage extends React.Component{
             <ul>
             <li><img src={window.list1} />
             <br/>
-                <strong>Super Music</strong>
+              <p><strong>Music Album</strong></p>
+                <br/>
+                <p>By a Music Artist</p>
                 <br/>
                 <p>sold for $5</p>
                 <br/>
@@ -51,57 +53,57 @@ class MainPage extends React.Component{
             </li>
             <li><img src={window.list2} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>Some Music Album</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $6</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
             <li><img src={window.list3} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>Another Music Album</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $7</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
             <li><img src={window.list4} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>Yet Another One</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $12</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
             <li><img src={window.list5} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>More Albums</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $14</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
             <li><img src={window.list6} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>Album 22</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $17</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
             <li><img src={window.list7} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>Album</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $13</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
             <li><img src={window.list8} />
             <br/>
-                <strong>Super Music</strong>
+                <strong>Music</strong>
                 <br/>
-                <p>sold for $5</p>
+                <p>sold for $18</p>
                 <br/>
                 <p>In 🇺🇸 United states</p>
             </li>
