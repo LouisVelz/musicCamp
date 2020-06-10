@@ -6,9 +6,41 @@ import {Link} from 'react-router-dom'
 class MainPage extends React.Component{
   constructor(props){
     super(props)
+    this.state = {list: arrayOfitems}
+    this.intervalId
+  }
+
+  componentDidMount(){
+    this.intervalId = setInterval(()=>{
+      arrayOfitems = arrayOfitems.slice(1).concat(arrayOfitems.slice(0,1))
+      this.setState({list: arrayOfitems})
+    }, 3000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
   }
 
   render(){
+    const { list } = this.state
+
+    let songList = list.map((list, index) => {
+      return(
+      <li key = {index}>
+        <br/>
+        <img src={list.src} />
+        <br />
+        <p><strong>{list.album}</strong></p>
+        <br />
+        <p>{list.artist}</p>
+        <br />
+        <p>{list.sold}</p>
+        <br />
+        <p>{list.country}</p>
+    </li>
+      )
+    })
+
 
     let menuBars 
     if (this.props.currentUser) {
@@ -41,73 +73,7 @@ class MainPage extends React.Component{
 
           <div className="selling-now-list">
             <ul>
-            <li><img src={window.list1} />
-            <br/>
-              <p><strong>Music Album</strong></p>
-                <br/>
-                <p>By a Music Artist</p>
-                <br/>
-                <p>sold for $5</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list2} />
-            <br/>
-                <strong>Some Music Album</strong>
-                <br/>
-                <p>sold for $6</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list3} />
-            <br/>
-                <strong>Another Music Album</strong>
-                <br/>
-                <p>sold for $7</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list4} />
-            <br/>
-                <strong>Yet Another One</strong>
-                <br/>
-                <p>sold for $12</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list5} />
-            <br/>
-                <strong>More Albums</strong>
-                <br/>
-                <p>sold for $14</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list6} />
-            <br/>
-                <strong>Album 22</strong>
-                <br/>
-                <p>sold for $17</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list7} />
-            <br/>
-                <strong>Album</strong>
-                <br/>
-                <p>sold for $13</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-            <li><img src={window.list8} />
-            <br/>
-                <strong>Music</strong>
-                <br/>
-                <p>sold for $18</p>
-                <br/>
-                <p>In 🇺🇸 United states</p>
-            </li>
-
+              {songList}
             </ul>
           </div>
 
@@ -115,6 +81,67 @@ class MainPage extends React.Component{
     )
   }
 }
+
+let arrayOfitems = [
+  {
+    src: window.list1,
+    album: 'Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $5',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list2,
+    album: 'Some Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $10',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list3,
+    album: 'Other Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $18',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list4,
+    album: 'Another Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $25',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list5,
+    album: 'Yet Another Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $9',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list6,
+    album: 'Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $16',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list7,
+    album: 'Simply ALmbum',
+    artist: 'By a Music Artist',
+    sold: 'sold for $15',
+    country: 'In 🇺🇸 United states'
+  },
+  {
+    src: window.list8,
+    album: 'Music album',
+    artist: 'By a Music Artist',
+    sold: 'sold for $13',
+    country: 'In 🇺🇸 United states'
+  },
+
+
+]
 
 export default MainPage;
 

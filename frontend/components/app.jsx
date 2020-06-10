@@ -37,17 +37,3 @@ const App = () => (
 
 export default App;
 
-{/* <div className="main-images-list">
-  <div className='larger-image'>
-    <img src={window.musicianURL} />
-  </div>
-  <div className='smaller-image'>
-    <img src={window.cartoonURL} />
-  </div>
-  <div className='smaller-image'>
-    <img src={window.monkeyURL} />
-  </div>
-  <div className='smaller-image'>
-    <img src={window.girl2URL} />
-  </div>
-</div> */}
