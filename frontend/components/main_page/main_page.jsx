@@ -144,22 +144,3 @@ let arrayOfitems = [
 ]
 
 export default MainPage;
-
-// window.monkeyURL
-// window.musicianURL 
-// window.cartoonURL
-// window.girl2URL
-// window.bandURL 
-// window.microphoneURL 
-// window.guitarURL 
-// window.guitar2URL 
-
-// window.list1 
-// window.list2 
-// window.list3 
-// window.list4 
-// window.list5 
-// window.list6 
-// window.list7 
-// window.list8 
-// window.avocado 
