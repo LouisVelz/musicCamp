@@ -1,5 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -22,7 +26,11 @@ class MainPage extends React.Component{
   }
 
   render(){
+
+    let plusSing = <FontAwesomeIcon icon={faPlus} size='sm'/>
     const { list } = this.state
+    let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size='sm' />
+    let chevronRight = <FontAwesomeIcon icon={faChevronRight} size='sm' />
 
     let songList = list.map((list, index) => {
       return(
@@ -45,9 +53,9 @@ class MainPage extends React.Component{
       return <li key={index}>
       <br />
       <img src={list.src} />
-      <br />
+ 
       <p><strong>{list.album}</strong></p>
-      <br />
+  
       <p>{list.artist}</p>
       <br />
       <p>{list.sold}</p>
@@ -59,10 +67,13 @@ class MainPage extends React.Component{
 
 
     let menuBars 
+    let userEmail
     if (this.props.currentUser) {
       menuBars = <div className="logged-in"></div>
+      userEmail = this.props.currentUser.email
     } else {
       menuBars = <div className="not-logged-in"></div>
+      userEmail = "Enter Email"
     }
     return(
       <div className="main">
@@ -101,7 +112,14 @@ class MainPage extends React.Component{
 
             <div className="daily-list">
               <ul >
-              {otherList[0]}
+              <li>
+                <img src={window.list1} />
+                <br/>
+                <p><strong>Music album this is just some text on the side</strong>
+                <br/>
+                If you want to know more about this artists just click
+                </p>
+              </li>
               {otherList[1]}
               {otherList[2]}
               </ul>
@@ -111,10 +129,59 @@ class MainPage extends React.Component{
                   {otherList.slice(3,8)}
                 </ul>
               </div>
-              
+
+              <div className="more-button">
+                <button>more   {plusSing}</button>
+              </div>
+
+          <div className="get-the-best-text">
+            <p>Get the best of Musiccamp Daily, delivered every Friday</p>
+          </div>
+            
+          <div className="user-input-email">
+            <input type="text" placeholder={userEmail}/>
+            <button>SIGN UP</button>
+          </div>
+          <div className="new-and-notable">
+            <p>NEW AND NOTABLE</p>
+            <p><button>{chevronLeft}</button><button>{chevronRight}</button></p>
           </div>
 
+          <div className="new-and-notable-list">
+            <ul>
+              {otherList.slice(8)}
+            </ul>
+          </div>
+          </div>
 
+          <div className="discover-bar">
+            <ul className='discover-bar-top'>
+              <li>all</li>
+              <li>electronic</li>
+              <li>rock</li>
+              <li>metal</li>
+              <li>experimental</li>
+              <li>punk</li>
+              <li>folk</li>
+              <li>pop</li>
+              <li>ambient</li>
+              <li>soundtrack</li>
+              <li>jazz</li>
+              <li>{chevronRight}</li>
+            </ul>
+            <ul className='discover-bar-medium'>
+              <li>best-selling</li>
+              <li>new arrivals</li>
+              <li>artist-recommended</li>
+            </ul>
+            <ul className='discover-bar-bottom'>
+              <li>any formay</li>
+              <li>digital</li>
+              <li>vinyl</li>
+              <li>acompact disc</li>
+              <li>cassette</li>
+            </ul>
+          </div>
 
       </div>
     )
@@ -185,61 +252,104 @@ let otherItems = [
   {
     src: window.list1,
     album: 'Music album this is just some text on the side',
-    artist: null,
+    artist: 'If you want to know more about this artists just click',
     sold: null,
     country: null
   },
   {
     src: window.list2,
-    album: 'Some Music album',
-    artist: 'By a Music Artist',
-    sold: 'sold for $10',
-    country: 'In 🇺🇸 United states'
+    album: 'Some new music is coming your way ',
+    artist: 'Listen to music all day',
+    sold: null,
+    country: null
   },
   {
     src: window.list3,
-    album: 'Other Music album',
-    artist: 'By a Music Artist',
-    sold: 'sold for $18',
-    country: 'In 🇺🇸 United states'
+    album: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, quidem voluptas totam ',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, magnam?',
+    sold: null,
+    country: null
   },
   {
     src: window.list4,
-    album: 'Another Music album',
-    artist: 'By a Music Artist',
-    sold: 'sold for $25',
-    country: 'In 🇺🇸 United states'
+    album: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima.',
+    artist: 'Lorem, ipsum dolor sit amet consectetur adipisicing.',
+    sold: null,
+    country: null
   },
   {
     src: window.list5,
     album: 'Yet Another Music album',
     artist: 'By a Music Artist',
-    sold: 'sold for $9',
-    country: 'In 🇺🇸 United states'
+    sold: null,
+    country: null
   },
   {
     src: window.list6,
-    album: 'Music album',
-    artist: 'By a Music Artist',
-    sold: 'sold for $16',
-    country: 'In 🇺🇸 United states'
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    artist: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, beatae?',
+    sold: null,
+    country: null
   },
   {
     src: window.list7,
-    album: 'Simply ALmbum',
-    artist: 'By a Music Artist',
-    sold: 'sold for $15',
-    country: 'In 🇺🇸 United states'
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit!',
+    artist: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod alias saepe reprehenderit nemo.',
+    sold: null,
+    country: null
   },
   {
     src: window.list8,
-    album: 'Music album',
-    artist: 'By a Music Artist',
-    sold: 'sold for $13',
-    country: 'In 🇺🇸 United states'
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+    sold: null,
+    country: null
+  },
+  {
+    src: window.cartoonURL,
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+    sold: null,
+    country: null
+  },
+  {
+    src: window.bandURL,
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+    sold: null,
+    country: null
+  },
+  {
+    src: window.microphoneURL,
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+    sold: null,
+    country: null
+  },
+  {
+    src: window.avocado,
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+    sold: null,
+    country: null
+  },
+  {
+    src: window.death,
+    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+    sold: null,
+    country: null
   },
 
 
 ]
 
 export default MainPage;
+
+
+
+// window.cartoonURL 
+// window.bandURL 
+// window.microphoneURL 
+// window.avocado 
+// window.death 
