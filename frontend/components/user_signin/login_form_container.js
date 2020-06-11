@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
   return{
   
   errors: state.errors.session,
-  user: { email: '', password: '' }
+  user: { email: '', password: '' },
+  demoUser: {email: 'demo_user@gmail.com', password: 'hunter12'}
   }
 };
 

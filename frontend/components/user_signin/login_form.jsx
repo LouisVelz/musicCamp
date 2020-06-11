@@ -7,27 +7,18 @@ class LogInForm extends React.Component {
     super(props)
     this.state = this.props.user
     this.handleSubmit = this.handleSubmit.bind(this)
+
   }
 
   update(type) {
     return e => this.setState({ [type]: e.currentTarget.value })
   }
+
   handleSubmit(e) {
     e.preventDefault()
     this.props.login(this.state)
   }
 
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
 
   render() {
@@ -65,6 +56,7 @@ class LogInForm extends React.Component {
           <h6><Link to='/root'>Forgot your password?</Link></h6>
           <br/>
           <h6>Don't have an account? <Link to='/signup'>Sign up</Link>.</h6>
+          <button onClick={() => this.props.login(this.props.demoUser)}>DEMO USER</button>
         </div>
       </div>
     )

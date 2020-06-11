@@ -49,7 +49,6 @@ class LoggedMenuBar extends React.Component{
             </div>
           )}
           </li>
-          {/* <li><button onClick={() => this.props.logout()}>Log Out</button></li> */}
         </ul>
       </div>
     )

@@ -1,0 +1,6 @@
+.audio-player {
+  background-color: #b7b7b7;
+  padding: 0.5rem;
+  border-radius: 10px;
+  filter: invert(100%);
+}

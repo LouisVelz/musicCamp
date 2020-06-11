@@ -4,14 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-
+import AudioPlayer from './../audio_player/audio_player'
+// import Player from './../audio_player/audio_player'
 
 
 class MainPage extends React.Component{
   constructor(props){
     super(props)
-    this.state = {list: arrayOfitems}
+    this.state = {list: arrayOfitems, audioFiles: []}
     this.intervalId
+    // this.loadSongs = this.loadSongs.bind(this)
   }
 
   componentDidMount(){
@@ -19,13 +21,52 @@ class MainPage extends React.Component{
       arrayOfitems = arrayOfitems.slice(1).concat(arrayOfitems.slice(0,1))
       this.setState({list: arrayOfitems})
     }, 3000)
+    // this.props.fetchSongs()
+    // this.loadSongs()
+
   }
+
+  // loadSongs(){
+
+  //   this.props.fetchSongs()
+
+  //   this.setState({ songs: this.props.songs })
+  // }
+
+  // componentDidMount(){
+  //   this.props.fetchSongs()
+  // }
+  // componentDidUpdate(provProps){
+  //   if (prevProps.query !== this.props.query) {
+  //     this.fetch();
+  //   }
+  // }
 
   componentWillUnmount() {
     clearInterval(this.intervalId)
   }
 
   render(){
+
+    // let audioPlayer
+    // if (!this.props.songs || this.props.songs.length === 0) {
+
+    //   audioPlayer = <div>Fetching songs....</div>;
+    // }else{
+    //   let audioFiles = this.props.songs.map(song => {
+
+    //     return {
+    //       src: song.songUrl,
+    //       title: song.title,
+    //       artist: song.artist
+    //     }
+    //   })
+    //   audioPlayer = <AudioPlayer audioFiles={audioFiles} />
+    // }
+    
+
+
+
 
     let plusSing = <FontAwesomeIcon icon={faPlus} size='sm'/>
     const { list } = this.state
@@ -182,7 +223,9 @@ class MainPage extends React.Component{
               <li>cassette</li>
             </ul>
           </div>
-
+          <div className="audio-player-main">
+            {/* {audioPlayer} */}
+          </div>
       </div>
     )
   }

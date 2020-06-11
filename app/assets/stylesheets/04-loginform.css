@@ -3,7 +3,7 @@
   height: 620px;
   font-size: 13px;
   /* margin-bottom: 145px; */
-  z-index: 5;
+  z-index: 9999;
 }
 .login-main a:hover {
   text-decoration: none;
@@ -19,6 +19,7 @@
   font-size: 24px;
   padding-left: 12%;
   font-weight: 700;
+  z-index: 9999;
 
 }
 

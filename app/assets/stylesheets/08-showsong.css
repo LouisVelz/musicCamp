@@ -1,0 +1,10 @@
+.artwork{
+  background-image: url('avocado.png');
+}
+audio{
+  background-image: url('avocado.png');
+  background-size: contain;
+  width: 500px;
+  height: 500px;
+}
+

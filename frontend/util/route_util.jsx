@@ -17,7 +17,7 @@ const Auth = ({ loggedin, path, component: Component }) => (
   <Route
     path={path}
     render={props => (
-      loggedin ? <Redirect to="/home" /> : <Component {...props} />
+      loggedin ? <Redirect to="/" /> : <Component {...props} />
     )}
   />
 );
