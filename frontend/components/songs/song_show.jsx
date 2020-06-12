@@ -32,7 +32,9 @@ class SongShow extends React.Component{
             <p>Song Description: {song.description}</p>
 
           </div>
+
           <img src={window.avocado} width="350" height="350" alt=""/>
+          
         </div>
       )
     }

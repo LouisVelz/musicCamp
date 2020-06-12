@@ -1,20 +1,27 @@
+
 .show-song-main{
+margin: 0 11%;
 
 display: flex;
-justify-content: center;
-align-content: space-around;
+justify-content: space-evenly;
+
 margin-bottom: 40px;
+}
+.show-song-main div{
+
+width: 350px;
 }
 
 audio{
 
   width: 350px;
-  height: 75px;
-  /* float: right; */
+  height: 65px;
+
 }
 .show-song-main div p:nth-child(2){
   font-weight: bold;
   font-size: 24px;
 }
+
 
 
