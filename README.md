@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Musiccamp
 
-Things you may want to cover:
+Musiccamp is a music app for independent artists who want their music seen by the world, but do not have the means to do it because they are not part of a big label or haven't yet achieved fame. Musiccamp allows users to listen to the music and support the artist, this way the artist can continue to make music. 
 
-* Ruby version
 
-* System dependencies
+Link to site:
 
-* Configuration
+* https://musiccamp.herokuapp.com/
 
-* Database creation
+Technologies used:
 
-* Database initialization
+* Rails:
+  * Rails is used as the backend for this project responsible for handling the models and the controllers for the artists, albums and songs created by a user. Rails also handles the creation of sessions which allows user to sign in and out of the site safely.
+* PostgreSQL:
+  * PostgreSQL is responsible for handling the queries made by a user. A user can browse for an specific album, song or user and the information will be returned so that it can be displayed in the frontend.
+* React:
+  * React is used as the frontend for this project and is responsible for the views part. React components load based on the information received from the backend so it can be displayed to the user.
+* CSS:
+  * CSS is used for the styling part of the views pages.
+  
+* AWS:
+  * Aws contains all the music files, and photos of the app, so they don't have to be stored locally.
+  
+-------
 
-* How to run the test suite
+## Challenges and solutions
 
-* Services (job queues, cache servers, search engines, etc.)
+* The most challenging part of the project was the use of asynchronous functions to fetch data. I avoided this, by displaying a message that the data was being loaded and once there data was fetched, it would appear on the page. Asynchronous functions are also used to manipulate data on the main page and make it re-render so that the page has a dynamic look. 
 
-* Deployment instructions
 
-* ...
