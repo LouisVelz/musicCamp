@@ -10,34 +10,33 @@ import { faBolt } from '@fortawesome/free-solid-svg-icons'
 class MenuBar extends React.Component{
   constructor(props){
     super(props)
-    // this.container = React.createRef();
+
     this.state = { open: false }
     this.handleClick.bind(this)
-    // this.handleClickOutside.bind(this)
-    // debugger
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
+
+    // this.setWrapperRef = this.setWrapperRef.bind(this);
+    // this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   handleClick() {
     this.setState({ open: !this.state.open })
   }
 
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
-  }
+  // componentDidMount() {
+  //   document.addEventListener('mousedown', this.handleClickOutside);
+  // }
 
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
-  }
-  setWrapperRef(node) {
-    this.wrapperRef = node;
-  }
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({open: false});
-    }
-  }
+  // componentWillUnmount() {
+  //   document.removeEventListener('mousedown', this.handleClickOutside);
+  // }
+  // setWrapperRef(node) {
+  //   this.wrapperRef = node;
+  // }
+  // handleClickOutside(event) {
+  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+  //     this.setState({open: false});
+  //   }
+  // }
 
 
 
@@ -65,9 +64,12 @@ class MenuBar extends React.Component{
             {this.state.open && (<div className="dropdown">
               <ul>
                 <li><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link></li>
-                <li><Link to ={`/songs/new`}>Upload a song</Link></li>
-                <li><Link to ={`/album/index`}>Albums</Link></li>
-                <li>Help</li>
+                <li><Link to ={`/songs/new`}>Edit profile</Link></li>
+                <li><Link to ={`/songs/new`}>tools</Link></li>
+                <li><Link to ={`/album/index`}>subscription</Link></li>
+                <li><Link to ={`/album/index`}>settings</Link></li>
+                <li><Link to ={`/album/index`}>help</Link></li>
+
                 <li><button onClick={() => this.props.logout()}>Log Out</button></li>
               </ul>
             </div>
