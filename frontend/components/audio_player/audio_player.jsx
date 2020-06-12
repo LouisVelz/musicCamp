@@ -1,7 +1,7 @@
 import AudioPlayer from "react-modular-audio-player";
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle, faWindowMaximize } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle} from '@fortawesome/free-solid-svg-icons'
 import { faPauseCircle } from '@fortawesome/free-solid-svg-icons'
 import { faForward} from '@fortawesome/free-solid-svg-icons'
 import { faBackward} from '@fortawesome/free-solid-svg-icons'

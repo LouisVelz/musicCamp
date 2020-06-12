@@ -1,5 +1,5 @@
 import React from 'react'
-import Player from './../audio_player/audio_player'
+
 
 
 class SongShow extends React.Component{
@@ -18,15 +18,21 @@ class SongShow extends React.Component{
     }else{
       return(
         <div className='show-song-main'>
-          <audio controls>
-            <source src={`${song.songUrl}`} type="audio/mpeg"/>
-          </audio>
-          {/* <p>{song.title}</p>
-          <p>{song.track_num}</p>
-          <p>{song.artist_id}</p>
-          <p>{song.album_id}</p>
-          <p>{song.description}</p> */}
-          <Player song={song}/>
+          <div>
+
+            <p>Now Playing:</p>
+            
+            <p>Title: {song.title}</p>
+            <audio controls>
+              <source src={`${song.songUrl}`} type="audio/mpeg"/>
+            </audio>
+            <p>Track Number: {song.track_num}</p>
+            <p>Artist: {song.artist_id}</p>
+            <p>Album: {song.album_id}</p>
+            <p>Song Description: {song.description}</p>
+
+          </div>
+          <img src={window.avocado} width="350" height="350" alt=""/>
         </div>
       )
     }

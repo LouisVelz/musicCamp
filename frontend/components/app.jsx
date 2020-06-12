@@ -26,7 +26,7 @@ const App = () => (
     </Switch>
     <Route path='/' component={DummyContainer} />
     <Switch>
-      <Route exact path='/songs/index' component={SongIndexContainer} />
+      <Route exact path='/album/index' component={SongIndexContainer} />
       <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
       <Route exact path='/songs/:songId' component={SongShowContainer} />
       <Route exact path='/' component={MainPageContainer}/>

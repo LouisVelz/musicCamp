@@ -1,3 +1,4 @@
 .song-index{
-  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
 }

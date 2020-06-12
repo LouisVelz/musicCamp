@@ -26,15 +26,15 @@ class SongIndex extends React.Component{
         />
     })
 
-  // onClick = {() => this.setState({ selectedTrack: song.songUrl })
+
     return(
       <div className="song-index" >
-
-        {/* <audio src={`${this.state.selectedTrack}`} controls height="200" width="300" /> */}
-
-        <ul>
+        <ol>
           {allSongs}
-        </ul>
+        </ol>
+
+        <img src={window.list5} width="350" height='350'/>
+
 
       </div>
     )

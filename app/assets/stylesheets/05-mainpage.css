@@ -134,7 +134,7 @@ img {max-width:100%;}
 .daily-list ul li:first-child p{
   flex-wrap: wrap;
 }
-.daily-list ul li:nth-child(2n){
+.daily-list ul li:nth-child(2){
   flex-flow: row wrap;
   flex: 1 1 0;
 }
@@ -159,7 +159,7 @@ img {max-width:100%;}
   font-size: 13px;
 }
 
-.bottom-list ul li{
+.bottom-list ul li {
   flex: 1 1 0;
   margin-left: 10px;
   background-color: white;
@@ -168,6 +168,7 @@ img {max-width:100%;}
   flex-flow: row wrap;
   word-wrap: break-word;
 }
+
 .bottom-list ul li:first-child{
   margin-left: 0px;
 }
@@ -323,7 +324,7 @@ img {max-width:100%;}
   background-color: #41a0bd;
 
 }
-.discover-bar ul:nth-child(2n){
+.discover-bar ul:nth-child(2){
   background-color: #4290a7;
 }
 .discover-bar ul:last-child{

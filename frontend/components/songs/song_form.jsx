@@ -21,6 +21,15 @@ class SongForm extends React.Component{
     formData.append('song[song]', this.state.songFile);
 
     this.props.createSong(formData)
+    this.setState({
+      song: {
+        title: "",
+        track_num: "",
+        description: "",
+        album_id: "",
+        songFile: null
+      }
+    })
   }
 
   handleFile(e){
