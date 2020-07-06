@@ -4,7 +4,7 @@
     <title>MusicCamp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script type="text/javascript">
       window.musicianURL = "<%= image_url('musician.jpg') %>";
       window.monkeyURL = "<%= image_url('monkey.jpg') %>";
@@ -25,6 +25,10 @@
       window.avocado = "<%= image_url('avocado.png') %>"
       window.death = "<%= image_url('death.jpg') %>"
     </script>
+    <meta property= "og:title" content= "MusicCamp">
+    <meta property= "og:type" content= "website">
+    <meta property= "og:url" content= "https://musiccamp.herokuapp.com/#/">
+    <meta property= "og:image" content= "<%= image_url('mainpage.gif') %>">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>

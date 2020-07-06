@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { closeModal } from '../../actions/modal_actions';
 
 
 class LogInForm extends React.Component {
@@ -22,44 +23,61 @@ class LogInForm extends React.Component {
 
 
   render() {
+    debugger
+    if (this.props.modal){
+      this.props.closeModal()
+    }
+
     let errors = null
     if (this.props.errors.length > 0){
       errors = this.props.errors[0]
     }
   
     return (
-      <div className='login-main'>
-        <div className='login-header'>
-          <div className="rhomboid"></div><Link to='/'>musiccamp</Link>
+      <div className="login-main">
+        <div className="login-header">
+          <div className="rhomboid"></div>
+          <Link to="/">musiccamp</Link>
         </div>
-        <div className='login-form'>
+        <div className="login-form">
           <h4>Log in</h4>
 
-          <form onSubmit={this.handleSubmit} className='inside-form'>
-            <label>Username / email
+          <form onSubmit={this.handleSubmit} className="inside-form">
+            <label>
+              Username / email
               <input
                 type="text"
-                onChange={this.update('email')}
-                value={this.state.email} />
+                onChange={this.update("email")}
+                value={this.state.email}
+              />
             </label>
-            <p className='errors'>{errors}</p>
-            <br/>
-            <label>Password
+            <p className="errors">{errors}</p>
+            <br />
+            <label>
+              Password
               <input
                 type="password"
-                onChange={this.update('password')}
-                value={this.state.password} />
+                onChange={this.update("password")}
+                value={this.state.password}
+              />
             </label>
-            <br/>
-            <button type='submit'>Log in</button>
+            <br />
+            <button type="submit">Log in</button>
           </form>
-          <h6><Link to='/root'>Forgot your password?</Link></h6>
-          <br/>
-          <h6>Don't have an account? <Link to='/signup'>Sign up</Link>.</h6>
-          <button onClick={() => this.props.login(this.props.demoUser)}>DEMO USER</button>
+          <h6>
+            <Link to="/root">Forgot your password?</Link>
+          </h6>
+          <br />
+          {/* <button onClick={() => this.props.openModal()}>sign up</button> */}
+          <h6>
+            Don't have an account? <Link to="/signup">Sign up</Link>.
+          </h6>
+          <button onClick={() => this.props.login(this.props.demoUser)}>
+            DEMO USER
+          </button>
         </div>
       </div>
-    )
+    );
   }
 }
 
