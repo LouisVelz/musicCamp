@@ -3,7 +3,7 @@ class Api::SongsController < ApplicationController
 
   def index
         @songs = Song.all
-        # .where(artist_id: params[:user_id])
+        # .where(artist_id: params[:artist_id])
 
         render :index
   end

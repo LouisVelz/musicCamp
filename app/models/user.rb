@@ -11,6 +11,13 @@ class User < ApplicationRecord
     class_name: :Song,
     dependent: :destroy
 
+    has_many :albums,
+    foreign_key: :artist_id,
+    class_name: :Album,
+    dependent: :destroy
+
+    has_one_attached :photo
+
     attr_reader :password
 
     def self.generate_session_token
