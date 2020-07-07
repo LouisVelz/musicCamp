@@ -19,7 +19,7 @@ const receiveAlbum = (album) => {
   }
 }
 
-const deleteAlbum = (albumId) => {
+const removeAlbum = (albumId) => {
   return {
     type: DELETE_ALBUM,
     albumId
@@ -55,8 +55,8 @@ export const createAlbum = (formData) => (dispatch) => {
 };
 
 export const deleteAlbum = (albumId) => (dispatch) => {
-  return AlbumApiUtil.postAlbum(albumId).then(
-    () => dispatch(deleteAlbum(albumId)),
+  return AlbumApiUtil.deleteAlbum(albumId).then(
+    () => dispatch(removeAlbum(albumId)),
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
 };
