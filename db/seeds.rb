@@ -215,7 +215,7 @@ song01 = Song.create(
     track_num: 6,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
+    album_id: album01.id,
     artist_id: album01.artist_id
 )
 song01_song = open('https://musiccamp-seeds.s3.amazonaws.com/Monplaisir_-_06_-_Je_voudrais_tre_un_pigeon.mp3')
@@ -226,7 +226,7 @@ song02 = Song.create(
     track_num: 8,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
+    album_id: album01.id,
     artist_id: album01.artist_id
 )
 song02_song = open('https://musiccamp-seeds.s3.amazonaws.com/Monplaisir_-_08_-_On_est_bien_l.mp3')
@@ -237,7 +237,7 @@ song03 = Song.create(
     track_num: 9,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
+    album_id: album01.id,
     artist_id: album01.artist_id
 )
 song03_song = open('https://musiccamp-seeds.s3.amazonaws.com/Monplaisir_-_09_-_Pourquoi_est-ce_que_jen_ai_quelque_chose__faire_.mp3')
@@ -248,7 +248,7 @@ song04 = Song.create(
     track_num: 11,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
+    album_id: album01.id,
     artist_id: album01.artist_id
 )
 song04_song = open('https://musiccamp-seeds.s3.amazonaws.com/Monplaisir_-_11_-_6.mp3')
@@ -259,7 +259,7 @@ song05 = Song.create(
     track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
+    album_id: album01.id,
     artist_id: album01.artist_id
 )
 song05_song = open('https://musiccamp-seeds.s3.amazonaws.com/Monplaisir_-_01_-_Theme_Song.mp3')
@@ -270,8 +270,8 @@ song06 = Song.create(
     track_num: 5,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album02.id,
+    artist_id: album02.artist_id
 )
 song06_song = open('https://musiccamp-seeds.s3.amazonaws.com/Loyalty_Freak_Music_-_05_-_Traveling_in_your_mind.mp3')
 song06.song.attach(io: song06_song, filename: "Loyalty_Freak_Music_-_05_-_Traveling_in_your_mind.mp3")
@@ -281,8 +281,8 @@ song07 = Song.create(
     track_num: 7,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album02.id,
+    artist_id: album02.artist_id
 )
 song07_song = open('https://musiccamp-seeds.s3.amazonaws.com/Loyalty_Freak_Music_-_07_-_Monarch_of_the_street.mp3')
 song07.song.attach(io: song07_song, filename: "Loyalty_Freak_Music_-_07_-_Monarch_of_the_street.mp3")
@@ -292,8 +292,8 @@ song08 = Song.create(
     track_num: 6,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album02.id,
+    artist_id: album02.artist_id
 )
 song08_song = open('https://musiccamp-seeds.s3.amazonaws.com/Loyalty_Freak_Music_-_06_-_People_are_spinning.mp3')
 song08.song.attach(io: song08_song, filename: "Loyalty_Freak_Music_-_06_-_People_are_spinning.mp3")
@@ -303,8 +303,8 @@ song09 = Song.create(
     track_num: 6,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album02.id,
+    artist_id: album02.artist_id
 )
 song09_song = open('https://musiccamp-seeds.s3.amazonaws.com/Frederic_Lardon_feat_Laura_Palme_-_06_-_Dans_le_dnide_la_saturation_absolue.mp3')
 song09.song.attach(io: song09_song, filename: "Frederic_Lardon_feat_Laura_Palme_-_06_-_Dans_le_dnide_la_saturation_absolue.mp3")
@@ -314,8 +314,8 @@ song10 = Song.create(
     track_num: 9,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album02.id,
+    artist_id: album02.artist_id
 )
 song10_song = open('https://musiccamp-seeds.s3.amazonaws.com/Frederic_Lardon_feat_Laura_Palme_-_07_-_Dans_le_nid_de_la_gupe_massone.mp3')
 song10.song.attach(io: song10_song, filename: "Frederic_Lardon_feat_Laura_Palme_-_07_-_Dans_le_nid_de_la_gupe_massone.mp3")
@@ -325,8 +325,8 @@ song11= Song.create(
     track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album03.id,
+    artist_id: album03.artist_id
 )
 song11_song = open('https://musiccamp-seeds.s3.amazonaws.com/Yung_Kartz_-_03_-_Intranet.mp3')
 song11.song.attach(io: song11_song, filename: "Yung_Kartz_-_03_-_Intranet.mp3")
@@ -336,8 +336,8 @@ song12 = Song.create(
     track_num: 4,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album03.id,
+    artist_id: album03.artist_id
 )
 song12_song = open('https://musiccamp-seeds.s3.amazonaws.com/Yung_Kartz_-_04_-_One_Way.mp3')
 song12.song.attach(io: song12_song, filename: "Yung_Kartz_-_04_-_One_Way.mp3")
@@ -347,8 +347,8 @@ song13 = Song.create(
     track_num: 5,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album03.id,
+    artist_id: album03.artist_id
 )
 song13_song = open('https://musiccamp-seeds.s3.amazonaws.com/MYung_Kartz_-_05_-_Picture_Perfect.mp3')
 song13.song.attach(io: song13_song, filename: "MYung_Kartz_-_05_-_Picture_Perfect.mp3")
@@ -358,8 +358,8 @@ song14 = Song.create(
     track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album03.id,
+    artist_id: album03.artist_id
 )
 song14_song = open('https://musiccamp-seeds.s3.amazonaws.com/Yung_Kartz_-_02_-_Stranger.mp3')
 song14.song.attach(io: song14_song, filename: "Yung_Kartz_-_02_-_Stranger.mp3")
@@ -369,8 +369,8 @@ song15 = Song.create(
     track_num: 8,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album04.id,
+    artist_id: album04.artist_id
 )
 song15_song = open('https://musiccamp-seeds.s3.amazonaws.com/Yung_Kartz_-_08_-_Landline.mp3')
 song15.song.attach(io: song15_song, filename: "Yung_Kartz_-_08_-_Landline.mp3")
@@ -380,8 +380,8 @@ song16 = Song.create(
     track_num: 9,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album04.id,
+    artist_id: album04.artist_id
 )
 song16_song = open('https://musiccamp-seeds.s3.amazonaws.com/Soft_and_Furious_-_09_-_Horizon_Ending.mp3')
 song16.song.attach(io: song16_song, filename: "Soft_and_Furious_-_09_-_Horizon_Ending.mp3")
@@ -391,8 +391,8 @@ song17 = Song.create(
     track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album04.id,
+    artist_id: album04.artist_id
 )
 song17_song = open('https://musiccamp-seeds.s3.amazonaws.com/Tequila_Moonrise_-_09_-_Tequila_Moonrise.mp3')
 song17.song.attach(io: song17_song, filename: "Tequila_Moonrise_-_09_-_Tequila_Moonrise.mp3")
@@ -402,8 +402,8 @@ song18 = Song.create(
     track_num: 4,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album05.id,
+    artist_id: album05.artist_id
 )
 song18_song = open('https://musiccamp-seeds.s3.amazonaws.com/The+Beginning+(Of+the+End)+-+Lost+European.mp3')
 song18.song.attach(io: song18_song, filename: "The Beginning (Of the End) - Lost European.mp3")
@@ -413,8 +413,8 @@ song19 = Song.create(
     track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album05.id,
+    artist_id: album05.artist_id
 )
 song19_song = open('https://musiccamp-seeds.s3.amazonaws.com/Urban+Sunrise+.mp3')
 song19.song.attach(io: song19_song, filename: "Urban Sunrise .mp3")
@@ -424,8 +424,8 @@ song20 = Song.create(
     track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album05.id,
+    artist_id: album05.artist_id
 )
 song20_song = open('https://musiccamp-seeds.s3.amazonaws.com/Bach.mp3')
 song20.song.attach(io: song20_song, filename: "Bach.mp3")
@@ -435,8 +435,8 @@ song21 = Song.create(
     track_num: 4,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album06.id,
+    artist_id: album06.artist_id
 )
 song21_song = open('https://musiccamp-seeds.s3.amazonaws.com/Chad_Crouch_-_The_Chorus_Ceases_Instrumental.mp3')
 song21.song.attach(io: song21_song, filename: "Chad_Crouch_-_The_Chorus_Ceases_Instrumental.mp3")
@@ -446,8 +446,8 @@ song22 = Song.create(
     track_num: 5,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album06.id,
+    artist_id: album06.artist_id
 )
 song22_song = open('https://musiccamp-seeds.s3.amazonaws.com/Chad_Crouch_-_The_Light-filtering_Canopy_Instrumental.mp3')
 song22.song.attach(io: song22_song, filename: "Chad_Crouch_-_The_Light-filtering_Canopy_Instrumental.mp3")
@@ -457,8 +457,8 @@ song23 = Song.create(
     track_num: 10,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album06.id,
+    artist_id: album06.artist_id
 )
 song23_song = open('https://musiccamp-seeds.s3.amazonaws.com/Chad_Crouch_-_10_-_Feeding_Flock_Instrumental.mp3')
 song23.song.attach(io: song23_song, filename: "Chad_Crouch_-_10_-_Feeding_Flock_Instrumental.mp3")
@@ -468,8 +468,8 @@ song24 = Song.create(
     track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album07.id,
+    artist_id: album07.artist_id
 )
 song24_song = open('https://musiccamp-seeds.s3.amazonaws.com/Kai_Engel_-_04_-_Sentinel.mp3')
 song24.song.attach(io: song24_song, filename: "Kai_Engel_-_04_-_Sentinel.mp3")
@@ -479,8 +479,8 @@ song25 = Song.create(
     track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album07.id,
+    artist_id: album07.artist_id
 )
 song25_song = open('https://musiccamp-seeds.s3.amazonaws.com/Kai_Engel_-_09_-_Homeroad.mp3')
 song25.song.attach(io: song25_song, filename: "Kai_Engel_-_09_-_Homeroad.mp3")
@@ -490,8 +490,8 @@ song26 = Song.create(
     track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-    album_id: album01.id
-    artist_id: album01.artist_id
+    album_id: album07.id,
+    artist_id: album07.artist_id
 )
 song26_song = open('https://musiccamp-seeds.s3.amazonaws.com/Kai_Engel_-_07_-_Interception.mp3')
 song26.song.attach(io: song26_song, filename: "Kai_Engel_-_07_-_Interception.mp3")
