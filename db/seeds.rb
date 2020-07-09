@@ -11,3 +11,11 @@ User.destroy_all
 Song.destroy_all
 Album.destroy_all
 
+new_artist = User.create(
+email: "new_artist@gmail.com",
+ password: "hunter12",
+ username: "Guitar Player"
+ description: "Lorem ipsum dolor sit amet,
+ consectetur adipisicing elit. Delectus quod, placeat accusamus.")
+
+ new_artist_photo = open('')
