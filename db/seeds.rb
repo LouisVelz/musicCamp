@@ -104,7 +104,7 @@ new_artist_4 = User.create(
    title: "Lorem Ipsum"
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit."
-  artist_id: new_artist.id
+  artist_id: new_artist_1.id
  )
 
  album05_photo = open('https://musiccamp-seeds.s3.amazonaws.com/headphones.jpg')
@@ -114,11 +114,103 @@ new_artist_4 = User.create(
    title: "Lorem Ipsum"
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit."
-  artist_id: new_artist.id
+  artist_id: new_artist_1.id
  )
 
  album06_photo = open('https://musiccamp-seeds.s3.amazonaws.com/headphones.jpg')
  album06.photo.attach(io: album06_photo, filename: "headphones.jpg")
 
+ album07 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_1.id
+ )
 
+ album07_photo = open('https://musiccamp-seeds.s3.amazonaws.com/nice_guitar.jpg')
+ album07.photo.attach(io: album07_photo, filename: "nice_guitar.jpg")
+
+ album08 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_2.id
+ )
+
+ album08_photo = open('https://musiccamp-seeds.s3.amazonaws.com/vinyl.jpg')
+ album08.photo.attach(io: album08_photo, filename: "vinyl.jpg")
+
+ album09 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_2.id
+ )
+
+ album09_photo = open('https://musiccamp-seeds.s3.amazonaws.com/drumset.jpg')
+ album09.photo.attach(io: album09_photo, filename: "drumset.jpg")
+
+ album10 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_3.id
+ )
+
+ album10_photo = open('https://musiccamp-seeds.s3.amazonaws.com/black_and_white.jpg')
+ album10.photo.attach(io: album10_photo, filename: "black_and_white.jpg")
+
+ album11 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_3.id
+ )
+
+ album11_photo = open('https://musiccamp-seeds.s3.amazonaws.com/playing_guitar.jpg')
+ album11.photo.attach(io: album11_photo, filename: "playing_guitar.jpg")
+
+ album12 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_3.id
+ )
+
+ album12_photo = open('https://musiccamp-seeds.s3.amazonaws.com/guitars3.jpg')
+ album12.photo.attach(io: album12_photo, filename: "guitars3.jpg")
+
+ album13 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_4.id
+ )
+
+ album13_photo = open('https://musiccamp-seeds.s3.amazonaws.com/pink_headphones.jpg')
+ album13.photo.attach(io: album13_photo, filename: "pink_headphones.jpg")
+
+ album14 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_4.id
+ )
+
+ album14_photo = open('https://musiccamp-seeds.s3.amazonaws.com/fire_guitar.jpg')
+ album14.photo.attach(io: album14_photo, filename: "fire_guitar.jpg")
+
+ album15 = Album.create(
+   title: "Lorem Ipsum"
+   description: "Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit."
+  artist_id: new_artist_4.id
+ )
+
+ album15_photo = open('https://musiccamp-seeds.s3.amazonaws.com/other_cassette.jpg')
+ album15.photo.attach(io: album15_photo, filename: "other_cassette.jpg")
+
+song01 = Song.create(
+  
+)
 
