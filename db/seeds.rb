@@ -350,8 +350,8 @@ song13 = Song.create(
     album_id: album03.id,
     artist_id: album03.artist_id
 )
-song13_song = open('https://musiccamp-seeds.s3.amazonaws.com/MYung_Kartz_-_05_-_Picture_Perfect.mp3')
-song13.song.attach(io: song13_song, filename: "MYung_Kartz_-_05_-_Picture_Perfect.mp3")
+song13_song = open('https://musiccamp-seeds.s3.amazonaws.com/Yung_Kartz_-_05_-_Picture_Perfect.mp3')
+song13.song.attach(io: song13_song, filename: "Yung_Kartz_-_05_-_Picture_Perfect.mp3")
 
 song14 = Song.create(
     title: "Stranger",
@@ -385,7 +385,7 @@ song16 = Song.create(
 )
 song16_song = open('https://musiccamp-seeds.s3.amazonaws.com/Soft_and_Furious_-_09_-_Horizon_Ending.mp3')
 song16.song.attach(io: song16_song, filename: "Soft_and_Furious_-_09_-_Horizon_Ending.mp3")
-
+# good
 song17 = Song.create(
     title: "Tequila Moonrise",
     track_num: 3,
@@ -396,7 +396,7 @@ song17 = Song.create(
 )
 song17_song = open('https://musiccamp-seeds.s3.amazonaws.com/Tequila_Moonrise_-_09_-_Tequila_Moonrise.mp3')
 song17.song.attach(io: song17_song, filename: "Tequila_Moonrise_-_09_-_Tequila_Moonrise.mp3")
-
+# good
 song18 = Song.create(
     title: "Lost European",
     track_num: 1,
