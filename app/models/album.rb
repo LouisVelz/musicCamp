@@ -6,7 +6,7 @@ class Album < ApplicationRecord
   class_name: :User,
   foreign_key: :artist_id
 
-  has_may :songs,
+  has_many :songs,
   class_name: :Song,
   foreign_key: :album_id
 

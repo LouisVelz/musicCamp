@@ -8,8 +8,8 @@
 require 'open-uri'
 
 User.destroy_all
-Song.destroy_all
 Album.destroy_all
+Song.destroy_all
 
 new_artist = User.create(
 email: "new_artist@gmail.com",
@@ -212,7 +212,7 @@ new_artist_4 = User.create(
 
 song01 = Song.create(
     title: "Je voudrais tre un pigeon",
-    track_num: 6,
+    track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
@@ -223,7 +223,7 @@ song01.song.attach(io: song01_song, filename: "Monplaisir_-_06_-_Je_voudrais_tre
 
 song02 = Song.create(
     title: "JOn est bien",
-    track_num: 8,
+    track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
@@ -234,7 +234,7 @@ song02.song.attach(io: song02_song, filename: "Monplaisir_-_08_-_On_est_bien_l.m
 
 song03 = Song.create(
     title: "Pourquoi est ce que jen ai quelque chose faire",
-    track_num: 9,
+    track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
@@ -245,7 +245,7 @@ song03.song.attach(io: song03_song, filename: "Monplaisir_-_09_-_Pourquoi_est-ce
 
 song04 = Song.create(
     title: "Monplaisir #6",
-    track_num: 11,
+    track_num: 4,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
@@ -256,7 +256,7 @@ song04.song.attach(io: song04_song, filename: "Monplaisir_-_11_-_6.mp3")
 
 song05 = Song.create(
     title: "Theme Song",
-    track_num: 1,
+    track_num: 5,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
@@ -267,7 +267,7 @@ song05.song.attach(io: song05_song, filename: "Monplaisir_-_01_-_Theme_Song.mp3"
 
 song06 = Song.create(
     title: "Traveling in your mind",
-    track_num: 5,
+    track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
@@ -278,7 +278,7 @@ song06.song.attach(io: song06_song, filename: "Loyalty_Freak_Music_-_05_-_Travel
 
 song07 = Song.create(
     title: "Monarch of the street",
-    track_num: 7,
+    track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
@@ -289,7 +289,7 @@ song07.song.attach(io: song07_song, filename: "Loyalty_Freak_Music_-_07_-_Monarc
 
 song08 = Song.create(
     title: "People are spinning",
-    track_num: 6,
+    track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
@@ -300,7 +300,7 @@ song08.song.attach(io: song08_song, filename: "Loyalty_Freak_Music_-_06_-_People
 
 song09 = Song.create(
     title: "Dans le dnide la saturation absolue",
-    track_num: 6,
+    track_num: 4,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
@@ -311,7 +311,7 @@ song09.song.attach(io: song09_song, filename: "Frederic_Lardon_feat_Laura_Palme_
 
 song10 = Song.create(
     title: "Dans le nid de la gupe massone",
-    track_num: 9,
+    track_num: 5,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
@@ -322,7 +322,7 @@ song10.song.attach(io: song10_song, filename: "Frederic_Lardon_feat_Laura_Palme_
 
 song11= Song.create(
     title: "Intranet",
-    track_num: 3,
+    track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
@@ -333,7 +333,7 @@ song11.song.attach(io: song11_song, filename: "Yung_Kartz_-_03_-_Intranet.mp3")
 
 song12 = Song.create(
     title: "One Way",
-    track_num: 4,
+    track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
@@ -344,7 +344,7 @@ song12.song.attach(io: song12_song, filename: "Yung_Kartz_-_04_-_One_Way.mp3")
 
 song13 = Song.create(
     title: "Picture Perfect",
-    track_num: 5,
+    track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
@@ -355,7 +355,7 @@ song13.song.attach(io: song13_song, filename: "MYung_Kartz_-_05_-_Picture_Perfec
 
 song14 = Song.create(
     title: "Stranger",
-    track_num: 2,
+    track_num: 4,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
@@ -366,7 +366,7 @@ song14.song.attach(io: song14_song, filename: "Yung_Kartz_-_02_-_Stranger.mp3")
 
 song15 = Song.create(
     title: "Landline",
-    track_num: 8,
+    track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album04.id,
@@ -377,7 +377,7 @@ song15.song.attach(io: song15_song, filename: "Yung_Kartz_-_08_-_Landline.mp3")
 
 song16 = Song.create(
     title: "Horizon Ending",
-    track_num: 9,
+    track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album04.id,
@@ -388,7 +388,7 @@ song16.song.attach(io: song16_song, filename: "Soft_and_Furious_-_09_-_Horizon_E
 
 song17 = Song.create(
     title: "Tequila Moonrise",
-    track_num: 1,
+    track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album04.id,
@@ -399,7 +399,7 @@ song17.song.attach(io: song17_song, filename: "Tequila_Moonrise_-_09_-_Tequila_M
 
 song18 = Song.create(
     title: "Lost European",
-    track_num: 4,
+    track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album05.id,
@@ -410,7 +410,7 @@ song18.song.attach(io: song18_song, filename: "The Beginning (Of the End) - Lost
 
 song19 = Song.create(
     title: "Urban Sunrise ",
-    track_num: 3,
+    track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album05.id,
@@ -421,7 +421,7 @@ song19.song.attach(io: song19_song, filename: "Urban Sunrise .mp3")
 
 song20 = Song.create(
     title: "Violin Bach",
-    track_num: 2,
+    track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album05.id,
@@ -432,7 +432,7 @@ song20.song.attach(io: song20_song, filename: "Bach.mp3")
 
 song21 = Song.create(
     title: "The Chorus Ceases Instrumental",
-    track_num: 4,
+    track_num: 1,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album06.id,
@@ -443,7 +443,7 @@ song21.song.attach(io: song21_song, filename: "Chad_Crouch_-_The_Chorus_Ceases_I
 
 song22 = Song.create(
     title: "The Light filtering Canopy Instrumental",
-    track_num: 5,
+    track_num: 2,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album06.id,
@@ -454,7 +454,7 @@ song22.song.attach(io: song22_song, filename: "Chad_Crouch_-_The_Light-filtering
 
 song23 = Song.create(
     title: "Feeding Flock Instrumental",
-    track_num: 10,
+    track_num: 3,
     description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album06.id,
