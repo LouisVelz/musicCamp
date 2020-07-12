@@ -21,7 +21,7 @@ class MainPage extends React.Component{
       this.setState({list: arrayOfitems})
     }, 3000)
 
-
+    this.props.fetchAlbums()
   }
 
 
