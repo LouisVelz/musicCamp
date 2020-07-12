@@ -21,7 +21,7 @@ class SongIndexItem extends React.Component {
       <li>
         {/* <AudioPlayer audioFiles={audioFiles} /> */}
         <img src={`${album.photoUrl}`} alt=""/>
-        <Link to={`/songs/${song.id}`}>{song.title}</Link>
+        <Link to={`/albums/${album.id}`}>{album.title}</Link>
       </li>
     )
   }
