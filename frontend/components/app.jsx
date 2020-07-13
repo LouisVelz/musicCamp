@@ -12,6 +12,8 @@ import SongShowContainer from './songs/song_show_container'
 import DummyContainer from './dummy/dummy_container'
 import UserContainer from './users_component/user_container'
 import AlbumIndexContainer from './albums/album_index_container'
+import AlbumShowContainer from "./albums/album_show_container";
+
 
 
 
@@ -29,7 +31,8 @@ const App = () => (
     <Route path='/' component={DummyContainer} />
     <Switch>
       <ProtectedRoute exact path='/users/:currentUserId' component={UserContainer} />
-      <Route exact path='/album/index' component={AlbumIndexContainer} />
+      <Route exact path='/albums/index' component={AlbumIndexContainer} />
+      <Route exact path='/albums/:albumId' component={AlbumShowContainer} />
       <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
       <Route exact path='/songs/:songId' component={SongShowContainer} />
       <Route exact path='/' component={MainPageContainer}/>

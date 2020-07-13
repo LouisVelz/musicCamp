@@ -7,13 +7,14 @@ import { requestSongs } from '../../actions/song_actions';
 const mSTP = (state, ownProps) => {
 
   return {
-    album: state.entities.albums[ownProps.match.params.albumId]
+    album: state.entities.albums[ownProps.match.params.albumId],
+    songs: state.entities.songs
   }
 }
 
 const mDTP = dispatch => ({
   fetchAlbum: (albumId) => dispatch(requestAlbum(albumId)),
-  fetchAlbumSongs: () => dispatch(requestSongs(albumId))
+  fetchAlbumSongs: (albumId) => dispatch(requestSongs(albumId))
 })
 
 export default connect(mSTP, mDTP)(AlbumShow);

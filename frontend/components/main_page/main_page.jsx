@@ -65,7 +65,7 @@ class MainPage extends React.Component{
       <br />
       <p>{list.sold}</p>
       <br />
-      <p><Link to='/album/index'>Go to Album</Link></p>
+      <p><Link to='/albums/index'>Go to Album</Link></p>
     </li>
     })
       
