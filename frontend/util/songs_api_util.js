@@ -1,8 +1,8 @@
 
-export const fetchSongs = () => {
-
+export const fetchSongs = (albumId) => {
+  debugger
   return $.ajax({
-    url: '/api/songs'
+    url: `/api/albums/${albumId}/songs`
   })
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import SongIndexItem from './../songs/song_index_item'
-
+import AlbumSongList from './album_songs_list'
 
 class AlbumShow extends React.Component {
   constructor(props) {
@@ -8,21 +7,21 @@ class AlbumShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAlbum(this.props.match.params.albumId).then(this.setState({album: this.props.album}))
-    this.props.fetchAlbumSongs(this.props.match.params.albumId)
+    this.props.fetchAlbum(this.props.match.params.albumId)
+    // .then(this.setState({album: this.props.album}))
+    // this.props.fetchAlbumSongs(this.props.match.params.albumId)
   }
 
   render() {
+    const { album } = this.props
     debugger
-    const { songs, album } = this.props
-
     // let allSongs = songs.map(song => {
     //   return <SongIndexItem
     //     key={song.id} song={song}
     //   />
     // })
 
-    if (!this.state.album) {
+    if (!album) {
       return <div>fetching data...</div>
     } else {
       return (
@@ -31,6 +30,7 @@ class AlbumShow extends React.Component {
           {/* <ol>
             {allSongs}
           </ol> */}
+          <AlbumSongList album={album} fetchAlbumSongs={this.props.fetchAlbumSongs} />
           <p>{album.title}</p>
           <img src={`${album.photoUrl}`} width="350" height='350' />
 

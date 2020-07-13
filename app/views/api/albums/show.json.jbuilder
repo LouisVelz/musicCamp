@@ -1,4 +1,4 @@
   
   
-  json.partial! 'api/albums/album', album: album
-  json.photoUrl url_for(album.photo)
+  json.partial! 'api/albums/album', album: @album
+  json.photoUrl url_for(@album.photo)

@@ -34,9 +34,9 @@ const receiveErrors = (errors) => {
 }
 
 
-export const requestSongs = () => dispatch => {
+export const requestSongs = (albumId) => dispatch => {
 
-  return SongApiUtil.fetchSongs().then(
+  return SongApiUtil.fetchSongs(albumId).then(
     songs => dispatch(receiveSongs(songs)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
