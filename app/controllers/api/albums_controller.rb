@@ -1,7 +1,7 @@
 class Api::AlbumsController < ApplicationController
 
   def index
-    @albums = Album.all
+    @albums = Album.find(70)
     # find(artist_id: params[:artist_id])
 
     render :index

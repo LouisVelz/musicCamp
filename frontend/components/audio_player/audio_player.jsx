@@ -13,57 +13,86 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
   class Player extends React.Component{
     constructor(props){
       super(props)
-      this.state = {playStatus: 'play', currentTime: 0}
-      this.togglePlay.bind(this)
+      this.state = {
+        playStatus: 'play',
+         currentTime: 0
+        }
+
+      this.togglePlay = this.togglePlay.bind(this)
     
     }
 
   togglePlay() {
-  let status = this.state.playStatus;
-  let audio = document.getElementById('audio');
-  if (status === 'play') {
-    status = 'pause'; audio.play();
-  } else {
-    status = 'play'; audio.pause();
+    // debugger
+    // e.preventDefault()
+    let status = this.state.playStatus;
+    let musicPlayer = document.getElementById('audioPlayer');
+    if (status === 'play') {
+      status = 'pause';
+      musicPlayer.play();
+    } else {
+      status = 'play';
+      musicPlayer.pause();
+    }
+    this.setState({ playStatus: status });
   }
-  this.setState({ playStatus: status });
-}
+
+  componentDidMount(){
+    let musicPlayer = document.getElementById('audioPlayer')
+    // if (this.props.song){
+    //   // musicPlayer.play()
+    // }
+  }
 
 
     render(){
+      let playPause = this.state.playStatus === 'play' ?
+        <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
+
+      let musicPlayer = 
+        <div className='player'>
+          <button onClick={this.togglePlay}>{playPause}</button>
+        </div>
+
       debugger
-      return(
-     <div className="Player">
-          <div className="background" style={{ 'backgroundImage': 'url(' + window.avocado + ')'}}></div>
-            <div className="Header"><div className="Title">Now playing</div></div>
-          <div className="artwork" style={{ 'backgroundImage': 'url(' + window.avocado + ')' }}></div>
-            <TrackInformation song={this.props.song} />
-            <Controls isPlaying={this.state.playStatus} onClick={this.togglePlay.bind(this)}/>
-            {/* <Timestamps duration={this.props.song.duration} currentTime={this.state.currentTime} /> */}
-            <audio><source src={this.props.song.songUrl} /></audio>
-          </div>
-          )
-    }
+        return(
+          <>
+            <audio
+             id='audioPlayer'
+             src={this.props.song.songUrl}
+             autoPlay>
+            </audio> 
+            {/* <div className="background" style={{ 'backgroundImage': 'url(' + window.avocado + ')'}}></div>
+              <div className="Header"><div className="Title">Now playing</div></div>
+            <div className="artwork" style={{ 'backgroundImage': 'url(' + window.avocado + ')' }}></div> */}
+              {/* <TrackInformation song={this.props.song} /> */}
+              {/* <Controls isPlaying={this.state.playStatus} togglePlay = {this.togglePlay.bind(this)}/> */}
+              {/* <Timestamps duration={this.props.song.duration} currentTime={this.state.currentTime} /> */}
+            {musicPlayer}
+          </>
+        )
+      }
+    
   }
   
-  class TrackInformation extends React.Component{
-    constructor(props){
-      super(props)
-    }
+  // class TrackInformation extends React.Component{
+  //   constructor(props){
+  //     super(props)
+  //   }
 
-    render () {
-      return (
-        <div className="track-information">
-          <div className="track-name">{this.props.song.title}</div>
-          <div className="track-artist">{this.props.song.artist}</div>
-          <div className="track-album">{this.props.song.album} </div>
-          <div className="track-description">{this.props.song.description}</div>
-          <div className="track-num">{this.props.song.track_num}</div>
-        </div>
-      )
-  }
+  //   render () {
+  //     return (
+  //       <div className="track-information">
+  //         <div className="track-name">{this.props.song.title}</div>
+  //         <div className="track-artist">{this.props.song.artist}</div>
+  //         <div className="track-album">{this.props.song.album} </div>
+  //         <div className="track-description">{this.props.song.description}</div>
+  //         <div className="track-num">{this.props.song.track_num}</div>
+  //       </div>
+  //     )
+  // ``}
 
-  }
+  // }
 
   class Controls extends React.Component{
 
@@ -73,11 +102,21 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
 
     render(){
       let controls
+      debugger
       if (this.props.isPlaying === 'play'){
-        controls = <div><FontAwesomeIcon icon={faBackward} size='sm' /><FontAwesomeIcon icon={faForward} size='sm' /><FontAwesomeIcon icon={faPlayCircle} size='sm' /></div>
+        controls = <div>
+          {/* <FontAwesomeIcon icon={faBackward} size='lg' />
+          <FontAwesomeIcon icon={faForward} size='lg' /> */}
+          <button onClick={this.props.togglePlay()}><FontAwesomeIcon icon={faPlayCircle} size='3x' /></button>
+          </div>
       } else {
-        controls = <div><FontAwesomeIcon icon={faBackward} size='sm' /><FontAwesomeIcon icon={faForward} size='sm' /><FontAwesomeIcon icon={faPauseCircle} size='sm' /></div>
+        controls = <div>
+          <FontAwesomeIcon icon={faBackward} size='lg' />
+          <FontAwesomeIcon icon={faForward} size='lg' />
+          <FontAwesomeIcon icon={faPauseCircle} size='3x' />
+          </div>
       }
+      debugger
       return controls
     }
   }

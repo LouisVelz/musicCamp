@@ -14,7 +14,7 @@ class AlbumShow extends React.Component {
 
   render() {
     const { album } = this.props
-    debugger
+
     // let allSongs = songs.map(song => {
     //   return <SongIndexItem
     //     key={song.id} song={song}

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import Player from './../audio_player/audio_player'
 
 
 
@@ -22,6 +23,7 @@ class MainPage extends React.Component{
     }, 3000)
 
     this.props.fetchAlbums()
+    
   }
 
 
@@ -188,7 +190,7 @@ class MainPage extends React.Component{
             </ul>
           </div>
           <div className="audio-player-main">
-            {/* {audioPlayer} */}
+            {/* <Player /> */}
           </div>
       </div>
     )
