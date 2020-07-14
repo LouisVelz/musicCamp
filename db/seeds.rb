@@ -62,7 +62,7 @@ new_artist_4 = User.create(
  new_artist_4.photo.attach(io: new_artist_photo_4, filename: "guitar2.jpg")
 
  album01 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 1",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
@@ -71,7 +71,7 @@ new_artist_4 = User.create(
  album01.photo.attach(io: album01_photo, filename: "girl_radio.jpg")
 
  album02 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 2",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
@@ -81,7 +81,7 @@ new_artist_4 = User.create(
  album02.photo.attach(io: album02_photo, filename: "red_lights.jpg")
 
  album03 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 3",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
@@ -91,7 +91,7 @@ new_artist_4 = User.create(
  album03.photo.attach(io: album03_photo, filename: "you_are_what.jpg")
 
  album04 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 4",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
@@ -101,7 +101,7 @@ new_artist_4 = User.create(
  album04.photo.attach(io: album04_photo, filename: "cassette2.jpg")
 
  album05 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 5",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_1.id
@@ -111,7 +111,7 @@ new_artist_4 = User.create(
  album05.photo.attach(io: album05_photo, filename: "headphones.jpg")
 
  album06 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 6",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_1.id
@@ -121,7 +121,7 @@ new_artist_4 = User.create(
  album06.photo.attach(io: album06_photo, filename: "headphones.jpg")
 
  album07 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 7",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_1.id
@@ -131,7 +131,7 @@ new_artist_4 = User.create(
  album07.photo.attach(io: album07_photo, filename: "nice_guitar.jpg")
 
  album08 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 8",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_2.id
@@ -141,7 +141,7 @@ new_artist_4 = User.create(
  album08.photo.attach(io: album08_photo, filename: "vinyl.jpg")
 
  album09 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 9",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_2.id
@@ -151,7 +151,7 @@ new_artist_4 = User.create(
  album09.photo.attach(io: album09_photo, filename: "drumset.jpg")
 
  album10 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 10",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_3.id
@@ -161,7 +161,7 @@ new_artist_4 = User.create(
  album10.photo.attach(io: album10_photo, filename: "black_and_white.jpg")
 
  album11 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 11",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_3.id
@@ -171,7 +171,7 @@ new_artist_4 = User.create(
  album11.photo.attach(io: album11_photo, filename: "playing_guitar.jpg")
 
  album12 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 12",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_3.id
@@ -181,7 +181,7 @@ new_artist_4 = User.create(
  album12.photo.attach(io: album12_photo, filename: "guitars3.jpg")
 
  album13 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 13",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_4.id
@@ -191,7 +191,7 @@ new_artist_4 = User.create(
  album13.photo.attach(io: album13_photo, filename: "pink_headphones.jpg")
 
  album14 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 14",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_4.id
@@ -201,7 +201,7 @@ new_artist_4 = User.create(
  album14.photo.attach(io: album14_photo, filename: "fire_guitar.jpg")
 
  album15 = Album.create(
-   title: "Lorem Ipsum",
+   title: "Album 15",
    description: "Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_4.id

@@ -9,7 +9,7 @@ class AlbumShowList extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+
     // this.props.fetchAlbum(this.props.match.params.albumId).then(this.setState({ album: this.props.album }))
     this.props.fetchAlbumSongs(this.props.album.id).then(songs => this.setState(songs))
   }
@@ -19,9 +19,9 @@ class AlbumShowList extends React.Component {
     debugger
     if(!this.state.songs) return <div>Fetching data...</div>
     else {
-        debugger
+
         let songList = this.state.songs.map(song => {
-          return <li>
+          return <li key={song.id}>
             <p>{song.title}</p>
             <p>{song.description}</p>
           </li>
