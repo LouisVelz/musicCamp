@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from './../../actions/session_actions'
 import { closeModal, openModal } from "./../../actions/modal_actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -30,55 +32,47 @@ class LogInModal extends React.Component {
     // if (this.props.modal){
     //   this.props.closeModal()
     // }
-
+    let times = <FontAwesomeIcon icon={faTimes} />
     let errors = null
     if (this.props.errors.length > 0) {
       errors = this.props.errors[0]
     }
 
     return (
-      <div className="login-main">
-        <div className="login-header">
-          <div className="rhomboid"></div>
-          <Link to="/">musiccamp</Link>
-        </div>
-        <div className="login-form">
-          <h4>Log in</h4>
+      <div className='signup-main'>
 
-          <form onSubmit={this.handleSubmit} className="inside-form">
+        <h4>Log in<button onClick={() => this.props.closeModal()}>{times}</button></h4>
+
+          <form onSubmit={this.handleSubmit} className="signup-form">
             <label>
-              Username / email
               <input
                 type="text"
                 onChange={this.update("email")}
                 value={this.state.email}
+                placeholder='Username / Email'
               />
             </label>
             <p className="errors">{errors}</p>
             <br />
             <label>
-              Password
               <input
                 type="password"
                 onChange={this.update("password")}
                 value={this.state.password}
+                placeholder='Password'
               />
             </label>
             <br />
             <button type="submit">Log in</button>
           </form>
           <h6>
-            <Link to="/root">Forgot your password?</Link>
+            <p><Link to="/root">Forgot your password?</Link></p>
           </h6>
           <br />
-          {/* <button onClick={() => this.props.openModal()}>sign up</button> */}
+          
           <h6>
-            Don't have an account? <Link to="/signup">Sign up</Link>.
+          Don't have an account? <button onClick={() => this.props.openModal('signup')}>sign up</button>.
           </h6>
-          <button onClick={() => this.props.login(this.props.demoUser)}>
-            DEMO USER
-          </button>
-        </div>
       </div>
     );
   }
