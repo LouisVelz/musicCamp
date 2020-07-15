@@ -39,11 +39,11 @@ class LogInModal extends React.Component {
     }
 
     return (
-      <div className='signup-main'>
+      <div className='login-modal-main'>
 
         <h4>Log in<button onClick={() => this.props.closeModal()}>{times}</button></h4>
 
-          <form onSubmit={this.handleSubmit} className="signup-form">
+          <form onSubmit={this.handleSubmit} className="login-modal-form">
             <label>
               <input
                 type="text"
@@ -66,7 +66,7 @@ class LogInModal extends React.Component {
             <button type="submit">Log in</button>
           </form>
           <h6>
-            <p><Link to="/root">Forgot your password?</Link></p>
+            <p><Link to="/">Forgot your password?</Link></p>
           </h6>
           <br />
           
