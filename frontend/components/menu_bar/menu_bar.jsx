@@ -10,33 +10,34 @@ import { faBolt } from '@fortawesome/free-solid-svg-icons'
 class MenuBar extends React.Component{
   constructor(props){
     super(props)
-
-    this.state = { open: false }
-    this.handleClick = this.handleClick.bind(this)
-
-    // this.setWrapperRef = this.setWrapperRef.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.container = React.createRef();
+    this.state = { open: false };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this)
+    debugger
   }
 
   handleClick() {
-    this.setState({ open: !this.state.open })
+    this.setState({ open: !this.state.open });
   }
 
-  // componentDidMount() {
-  //   document.addEventListener('mousedown', this.handleClickOutside);
-  // }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
 
-  // componentWillUnmount() {
-  //   document.removeEventListener('mousedown', this.handleClickOutside);
-  // }
-  // setWrapperRef(node) {
-  //   this.wrapperRef = node;
-  // }
-  // handleClickOutside(event) {
-  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-  //     this.setState({open: false});
-  //   }
-  // }
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+
+  handleClickOutside(e) {
+    debugger
+    if (this.container.current && !this.container.current.contains(e.target)) {
+      this.setState({
+        open: false,
+      });
+    }
+  }
 
 
 
@@ -60,7 +61,7 @@ class MenuBar extends React.Component{
         <ul className='logged-menu-bar-right'>
   
           <li><button>{heart}</button></li>
-          <li><button onClick={this.handleClick.bind(this)}><div className='circle'></div></button>
+          <li ref={this.container}><button onClick={this.handleClick}><div className='circle'></div></button>
             {this.state.open && (<div className="dropdown">
               <ul>
                 <li><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link></li>
