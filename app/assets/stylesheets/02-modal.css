@@ -39,10 +39,17 @@
   border-radius: 5px;
   font-weight: 500;
 }
-.signup-main h6, .login-modal-main h6{
+.signup-main h6{
   font-size: 12px;
   color: #818285;
   margin-bottom: 50px;
+  
+}
+
+.login-modal-main h6{
+  font-size: 12px;
+  color: #818285;
+  margin-bottom: 25px;
   
 }
 .signup-main h6 button, .login-modal-main h6 button{
@@ -61,14 +68,23 @@ color: rgb(0,161,198);
 
 }
 
-.signup-form, .login-modal-form{
+.signup-form{
   margin-top: 40px;
+}
+.login-modal-form{
+  margin-top: 25px;
 }
 
 .signup-main label input{
   border: 1px solid lightgray;
   width: 340px;
   height: 35px;
+}
+.login-modal-main label input{
+  border: 1px solid lightgray;
+  width: 340px;
+  height: 35px;
+  margin-top: 10px;
 }
 
 .signup-form button{
@@ -79,6 +95,17 @@ color: rgb(0,161,198);
   color: white;
   border-radius: 5px;
   margin-bottom: 45px;
+}
+
+.login-modal-form button{
+  width: 340px;
+  height: 35px;
+  background-color: #00a1c6;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .signup-form button:hover{

@@ -22,7 +22,7 @@ class LogInModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.login(this.state)
+    this.props.login(this.state).then(this.props.closeModal)
   }
 
 
@@ -35,7 +35,7 @@ class LogInModal extends React.Component {
     let times = <FontAwesomeIcon icon={faTimes} />
     let errors = null
     if (this.props.errors.length > 0) {
-      errors = this.props.errors[0]
+      errors = <p className='errors'>{this.props.errors[0]}</p> 
     }
 
     return (
@@ -49,26 +49,24 @@ class LogInModal extends React.Component {
                 type="text"
                 onChange={this.update("email")}
                 value={this.state.email}
-                placeholder='Username / Email'
+                placeholder='   Username / Email'
               />
             </label>
-            <p className="errors">{errors}</p>
+
             <br />
             <label>
               <input
                 type="password"
                 onChange={this.update("password")}
                 value={this.state.password}
-                placeholder='Password'
+                placeholder='   Password'
               />
             </label>
+          {errors}
             <br />
             <button type="submit">Log in</button>
           </form>
-          <h6>
-            <p><Link to="/">Forgot your password?</Link></p>
-          </h6>
-          <br />
+
           
           <h6>
           Don't have an account? <button onClick={() => this.props.openModal('signup')}>sign up</button>.
