@@ -12,7 +12,7 @@ class MenuBar extends React.Component{
     super(props)
 
     this.state = { open: false }
-    this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
 
     // this.setWrapperRef = this.setWrapperRef.bind(this);
     // this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -93,7 +93,7 @@ class MenuBar extends React.Component{
         <ul className="menu-bar-bottom">
           <li>Discover amazing new music and <Link to='/'>directly support</Link> the artists who make it.</li>
           <li>
-            <button onClick={() => this.props.openModal()}>sign up</button>
+            <button onClick={() => this.props.openModal('signup')}>sign up</button>
             <Link to='/login'><button>log in</button></Link>
           </li>
         </ul>

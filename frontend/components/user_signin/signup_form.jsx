@@ -70,7 +70,7 @@ class SignUpForm extends React.Component{
           <button type='submit'>Sign up</button>
         </form>
 
-          <h6>Already have an account? <Link to='/login'>Log in</Link>.</h6>
+        <h6>Already have an account? <button onClick={() => this.props.openModal('login')}>Log in</button> .</h6>
       </div>
     )
   }

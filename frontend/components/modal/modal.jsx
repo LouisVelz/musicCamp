@@ -1,7 +1,8 @@
 import React from 'react';
-import { closeModal } from './../actions/modal_actions'
+import { closeModal } from '../../actions/modal_actions'
 import { connect } from 'react-redux';
-import SignupFormContainer from './user_signin/signup_form_container'
+import SignupFormContainer from '../user_signin/signup_form_container'
+import LoginFormContainer from '../user_signin/login_form_container'
 
 
 
@@ -12,27 +13,29 @@ class Modal extends React.Component{
 
   render(){
   const { modal, closeModal } = this.props
-    
+
   if (!modal) {
     return null;
   }
-  // let component;
-  //     switch (modal) {
-  //       case "login":
-  //         component = <LoginFormContainer />;
-  //         break;
-  //       case "signup":
-  //         component = <SignupFormContainer />;
-  //         break;
-  //       default:
-  //         return null;
-  //     }
+
+ 
+  let component;
+      switch (modal) {
+        case "login":
+          component = <LoginFormContainer />;
+          break;
+        case "signup":
+          component = <SignupFormContainer />;
+          break;
+        default:
+          return null;
+      }
     return (
       // onClick = { closeModal } put insie className modal-background to close modal
       //on background click
       <div className="modal-background" onClick={closeModal}>
         <div className="modal-child" onClick={e => e.stopPropagation()}>
-          <SignupFormContainer />
+          {component}
         </div>
       </div>
     )

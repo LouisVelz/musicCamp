@@ -15,33 +15,81 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
       super(props)
       this.state = {
         playStatus: 'play',
-         currentTime: 0
+         currentTime: 0,
+         duration: 0
         }
 
       this.togglePlay = this.togglePlay.bind(this)
-    
+      this.songDuration = this.songDuration.bind(this)
+      this.timeStamp = this.timeStamp.bind(this)
+      this.handleToggleBar = this.handleToggleBar.bind(this)
+      this.handleCurrentTime = this.handleCurrentTime.bind(this)
+      
     }
 
   togglePlay() {
     // debugger
     // e.preventDefault()
     let status = this.state.playStatus;
-    let musicPlayer = document.getElementById('audioPlayer');
+    let audioPlayer = document.getElementById('audioPlayer');
     if (status === 'play') {
+      clearInterval(this.playerInterval)
       status = 'pause';
-      musicPlayer.play();
+      audioPlayer.play();
     } else {
       status = 'play';
-      musicPlayer.pause();
+      audioPlayer.pause();
     }
     this.setState({ playStatus: status });
   }
 
   componentDidMount(){
-    let musicPlayer = document.getElementById('audioPlayer')
+    let audioPlayer = document.getElementById('audioPlayer')
+    this.songDuration()
     // if (this.props.song){
-    //   // musicPlayer.play()
+    //   // audioPlayer.play()
     // }
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.playerInterval)
+  }
+
+  songDuration (){
+    let audioPlayer = document.getElementById('audioPlayer')
+    this.setState({
+      duration: audioPlayer.duration
+    })
+  }
+
+  timeStamp(time){
+    let minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time - (minutes * 60));
+    if (seconds < 10) {
+      seconds = `0 ${seconds}`;
+    }
+     
+    return `${minutes} : ${seconds}`
+  }
+
+  handleToggleBar(e){
+    let audioPlayer = document.getElementById("audioPlayer");
+
+    audioPlayer.currentTime = e.target.value;
+    this.setState({ currentTime: e.target.value });
+  }
+
+  handleCurrentTime(){
+    const audioPlayer = document.getElementById("audioPlayer");
+    const scrollBar = document.getElementById("scrollbar")
+
+    if (!audioPlayer.paused) {
+      this.playerInterval = setInterval(() => {
+        scrollBar.value = audioPlayer.currentTime;
+
+        this.setState({ currentTime: audioPlayer.currentTime  })
+      }, 1000);
+    }
   }
 
 
@@ -49,18 +97,38 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
       let playPause = this.state.playStatus === 'play' ?
         <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
 
-      let musicPlayer = 
+      let audioPlayer = 
         <div className='player'>
           <button onClick={this.togglePlay}>{playPause}</button>
+          <div className="song-timestamp">
+            <p className="current-time">
+              {this.timeStamp(this.state.currentTime)}
+            </p>
+
+            <input className="scrollbar"
+              id="scrollbar"
+              type="range"
+              min="0"
+              defaultValue="0"
+              max={`${this.state.duration}`}
+              onInput={this.handleToggleBar} />
+
+            <p className="song-duration">
+              {this.timeStamp(this.state.duration)}
+            </p>
+          </div>
         </div>
 
-      debugger
+      // debugger
         return(
           <>
             <audio
              id='audioPlayer'
              src={this.props.song.songUrl}
-             autoPlay>
+             onPlay={this.handleCurrentTime}
+             
+             onLoadedMetadata={this.songDuration}
+             >
             </audio> 
             {/* <div className="background" style={{ 'backgroundImage': 'url(' + window.avocado + ')'}}></div>
               <div className="Header"><div className="Title">Now playing</div></div>
@@ -68,7 +136,7 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
               {/* <TrackInformation song={this.props.song} /> */}
               {/* <Controls isPlaying={this.state.playStatus} togglePlay = {this.togglePlay.bind(this)}/> */}
               {/* <Timestamps duration={this.props.song.duration} currentTime={this.state.currentTime} /> */}
-            {musicPlayer}
+            {audioPlayer}
           </>
         )
       }
@@ -94,32 +162,32 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
 
   // }
 
-  class Controls extends React.Component{
+  // class Controls extends React.Component{
 
-    constructor(props){
-      super(props)
-    }
+  //   constructor(props){
+  //     super(props)
+  //   }
 
-    render(){
-      let controls
-      debugger
-      if (this.props.isPlaying === 'play'){
-        controls = <div>
-          {/* <FontAwesomeIcon icon={faBackward} size='lg' />
-          <FontAwesomeIcon icon={faForward} size='lg' /> */}
-          <button onClick={this.props.togglePlay()}><FontAwesomeIcon icon={faPlayCircle} size='3x' /></button>
-          </div>
-      } else {
-        controls = <div>
-          <FontAwesomeIcon icon={faBackward} size='lg' />
-          <FontAwesomeIcon icon={faForward} size='lg' />
-          <FontAwesomeIcon icon={faPauseCircle} size='3x' />
-          </div>
-      }
-      debugger
-      return controls
-    }
-  }
+  //   render(){
+  //     let controls
+  //     debugger
+  //     if (this.props.isPlaying === 'play'){
+  //       controls = <div>
+  //         {/* <FontAwesomeIcon icon={faBackward} size='lg' />
+  //         <FontAwesomeIcon icon={faForward} size='lg' /> */}
+  //         <button onClick={this.props.togglePlay()}><FontAwesomeIcon icon={faPlayCircle} size='3x' /></button>
+  //         </div>
+  //     } else {
+  //       controls = <div>
+  //         <FontAwesomeIcon icon={faBackward} size='lg' />
+  //         <FontAwesomeIcon icon={faForward} size='lg' />
+  //         <FontAwesomeIcon icon={faPauseCircle} size='3x' />
+  //         </div>
+  //     }
+  //     debugger
+  //     return controls
+  //   }
+  // }
 
 
 

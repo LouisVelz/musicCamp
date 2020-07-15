@@ -15,8 +15,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
   login: (formUser) => dispatch(login(formUser)),
-  closeModal: () => dispatch(closeModal()),
-  openModal: () => dispatch(openModal())
 });
 
 export default connect(mSTP, mDTP)(LogInForm)

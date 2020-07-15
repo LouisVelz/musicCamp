@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import MainPageContainer from './main_page/main_page_container'
 import MenuBarContainer from './menu_bar/menu_bar_container'
-import Modal from './modal'
+import Modal from './modal/modal'
 import LogInFormContainer from './user_signin/login_form_container'
 import {AuthRoute, ProtectedRoute } from './../util/route_util'
 import Footer from './footer'

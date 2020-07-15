@@ -10,7 +10,8 @@ const mSTP = (state) => ({
 
 const mDTP = dispatch => ({
   signup: (formUser) => dispatch(signup(formUser)),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  openModal: (modal) => dispatch(openModal(modal))
 })
 
 export default connect(mSTP, mDTP)(SignUpForm)
