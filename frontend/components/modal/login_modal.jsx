@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from './../../actions/session_actions'
+import { closeModal, openModal } from "./../../actions/modal_actions";
 
 
 
-class LogInForm extends React.Component {
+class LogInModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = this.props.user
@@ -29,10 +32,10 @@ class LogInForm extends React.Component {
     // }
 
     let errors = null
-    if (this.props.errors.length > 0){
+    if (this.props.errors.length > 0) {
       errors = this.props.errors[0]
     }
-  
+
     return (
       <div className="login-main">
         <div className="login-header">
@@ -68,9 +71,9 @@ class LogInForm extends React.Component {
             <Link to="/root">Forgot your password?</Link>
           </h6>
           <br />
-          
+          {/* <button onClick={() => this.props.openModal()}>sign up</button> */}
           <h6>
-            Don't have an account? <button onClick={() => this.props.openModal('signup')}>sign up</button>
+            Don't have an account? <Link to="/signup">Sign up</Link>.
           </h6>
           <button onClick={() => this.props.login(this.props.demoUser)}>
             DEMO USER
@@ -81,4 +84,19 @@ class LogInForm extends React.Component {
   }
 }
 
-export default LogInForm;
+const mSTP = (state) => {
+
+  return {
+    errors: state.errors.session,
+    user: { email: "", password: "" },
+    modal: state.modal,
+  };
+};
+
+const mDTP = (dispatch) => ({
+  login: (formUser) => dispatch(login(formUser)),
+  openModal: (modal) => dispatch(openModal(modal)),
+  closeModal: () => dispatch(closeModal())
+});
+
+export default connect(mSTP, mDTP)(LogInModal)
