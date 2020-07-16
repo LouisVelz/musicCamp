@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from './../../actions/session_actions'
 import { closeModal, openModal } from "./../../actions/modal_actions";
@@ -28,10 +27,7 @@ class LogInModal extends React.Component {
 
 
   render() {
-    // debugger
-    // if (this.props.modal){
-    //   this.props.closeModal()
-    // }
+
     let times = <FontAwesomeIcon icon={faTimes} />
     let errors = null
     if (this.props.errors.length > 0) {

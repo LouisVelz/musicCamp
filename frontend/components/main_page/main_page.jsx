@@ -375,16 +375,28 @@ class ArtistsMain extends React.Component {
       <div className="main-images-list">
         <div className="larger-image">
           <div className='larger-caption'>
-            <p>{first.username}</p>
+            <h2><Link to={`/users/${first.id}`}>{first.username}</Link></h2>
             {first.description ? <p>{first.description}</p> : null}
           </div>
           <img src={first.photoUrl} />
         </div>
         <div className="smaller-image">
           <ul >
-            <li><img src={second.photoUrl} /></li>
-            <li><img src={third.photoUrl} /></li>
-            <li><img src={forth.photoUrl} /></li>
+            <li>
+              <h4><Link to= {`/users/${second.id}`}>{second.username}</Link></h4>
+              {second.description ? <p>{second.description}</p> : null}
+              <img src={second.photoUrl} />
+            </li>
+            <li>
+              <h4><Link to={`/users/${third.id}`}>{third.username}</Link></h4>
+              {third.description ? <p>{third.description}</p> : null}
+              <img src={third.photoUrl} />
+            </li>
+            <li>
+              <h4><Link to={`/users/${forth.id}`}>{forth.username}</Link></h4>
+              {forth.description ? <p>{forth.description}</p> : null}
+              <img src={forth.photoUrl} />
+            </li>
           </ul>
         </div>
       </div>

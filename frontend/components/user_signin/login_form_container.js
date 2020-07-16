@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => {
   return {
     errors: state.errors.session,
     user: { email: "", password: "" },
-    demoUser: { email: "demo_user@gmail.com", password: "hunter12" },
+    demoUser: { email: "new_artist@gmail.com", password: "hunter12" },
     modal: state.modal,
   };
 };

@@ -30,7 +30,7 @@ const App = () => (
     </Switch>
     <Route path='/' component={DummyContainer} />
     <Switch>
-      <ProtectedRoute exact path='/users/:currentUserId' component={UserContainer} />
+      <Route exact path='/users/:userId' component={UserContainer} />
       <Route exact path='/albums/index' component={AlbumIndexContainer} />
       <Route exact path='/albums/:albumId' component={AlbumShowContainer} />
       <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />

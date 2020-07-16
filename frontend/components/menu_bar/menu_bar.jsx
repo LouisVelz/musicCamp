@@ -14,7 +14,7 @@ class MenuBar extends React.Component{
     this.state = { open: false };
     this.handleClick = this.handleClick.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this)
-    debugger
+
   }
 
   handleClick() {
@@ -31,7 +31,7 @@ class MenuBar extends React.Component{
 
 
   handleClickOutside(e) {
-    debugger
+
     if (this.container.current && !this.container.current.contains(e.target)) {
       this.setState({
         open: false,

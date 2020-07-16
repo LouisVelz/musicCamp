@@ -23,10 +23,7 @@ class LogInForm extends React.Component {
 
 
   render() {
-    // debugger
-    // if (this.props.modal){
-    //   this.props.closeModal()
-    // }
+
 
     let errors = null
     if (this.props.errors.length > 0){

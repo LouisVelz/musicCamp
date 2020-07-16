@@ -2,7 +2,7 @@ class Api::SongsController < ApplicationController
   # before_action :require_logged_in, only: [:create, :destroy]
 
   def index
-    # debugger
+
     if params.has_key?(:album_id)
       @songs = Song.where(album_id: params[:album_id]).limit(1)
     else

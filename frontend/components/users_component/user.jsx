@@ -5,11 +5,17 @@ class UserPage extends React.Component{
     super(props)
   }
 
+  componentDidMount(){
+    this.props.fetchUser(this.props.match.params.userId)
+  }
+
   render(){
-    // debugger
+    const {currentUser} = this.props
+    if(!currentUser) return <div>Fetching data...</div>
+
     return(
       <div className="user-page">
-        <h1>{this.props.currentUser.username}</h1>
+        <h1>{currentUser.username}</h1>
 
 
       </div>
