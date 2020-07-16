@@ -84,7 +84,7 @@ class MainPage extends React.Component{
     }
     return(
       <div className="main">
-          {menuBars}
+          {/* {menuBars} */}
           <div className="main-images-list">
             <div className="larger-image">
               <img src={window.musicianURL} />
@@ -352,6 +352,15 @@ let otherItems = [
 
 
 ]
+
+class ArtistsMain extends React.Component {
+  constructor(props){
+    super(props)
+
+  }
+
+  
+}
 
 export default MainPage;
 
