@@ -34,6 +34,15 @@ img {max-width:100%;}
   width: 74.20%;
   float: left;
   margin-right: 1px;
+  position: relative;
+}
+
+.main-images-list .larger-image .larger-caption{
+
+  position: absolute;
+  p {
+    color: white;
+  }
 }
 
 .main-images-list .smaller-image{

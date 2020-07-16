@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import MainPage from './main_page'
 import { requestSongs } from './../../actions/song_actions';
 import { requestAlbums } from '../../actions/album_actions';
+import { requestUsers } from '../../actions/users_actions'
 
 const mSTP = (state) => {
   const { entities, session } = state
@@ -17,7 +18,8 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
   return {
     fetchSongs: () => dispatch(requestSongs()),
-    fetchAlbums: () => dispatch(requestAlbums())
+    fetchAlbums: () => dispatch(requestAlbums()),
+    fetchUsers: () => dispatch(requestUsers())
   }
 }
 

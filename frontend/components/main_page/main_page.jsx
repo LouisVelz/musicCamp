@@ -97,6 +97,9 @@ class MainPage extends React.Component{
               </ul>
             </div>
           </div>
+
+          <ArtistsMain fetchUsers= {this.props.fetchUsers} />
+
           <div className="main-text">
             <p>Fans have paid artists <strong>$525 million</strong> using Musiccamp, and <strong>$18.7 million</strong> in the last 30 days alone.</p>
           </div>
@@ -356,10 +359,37 @@ let otherItems = [
 class ArtistsMain extends React.Component {
   constructor(props){
     super(props)
-
+    this.state = {users: []}
+  }
+  componentDidMount(){
+    this.props.fetchUsers().then(users => this.setState({users: users.users}))
   }
 
-  
+  render(){
+    if (this.state.users.length === 0 ) return <div>Loading...</div>
+    let first = this.state.users[0]
+    let second = this.state.users[1]
+    let third = this.state.users[2]
+    let forth = this.state.users[3]
+    return(
+      <div className="main-images-list">
+        <div className="larger-image">
+          <div className='larger-caption'>
+            <p>{first.username}</p>
+            {first.description ? <p>{first.description}</p> : null}
+          </div>
+          <img src={first.photoUrl} />
+        </div>
+        <div className="smaller-image">
+          <ul >
+            <li><img src={second.photoUrl} /></li>
+            <li><img src={third.photoUrl} /></li>
+            <li><img src={forth.photoUrl} /></li>
+          </ul>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default MainPage;
