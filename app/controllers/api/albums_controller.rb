@@ -1,8 +1,8 @@
 class Api::AlbumsController < ApplicationController
 
   def index
-    @albums = Album.find(70, 71)
-    # find(artist_id: params[:artist_id])
+    @albums = Album.joins(:artist)
+
 
     render :index
   end

@@ -55,21 +55,44 @@ class MainPage extends React.Component{
     </li>
       )
     })
-
-    let otherList = otherItems.map((list, index) => {
-      return <li key={index}>
-      <br />
-        <img src={list.src} />
- 
-      <p><strong>{list.album}</strong></p>
-  
-      <p>{list.artist}</p>
-      <br />
-      <p>{list.sold}</p>
-      <br />
-      <p><Link to='/albums/index'>Go to Album</Link></p>
-    </li>
-    })
+    // let otherList
+    // if(!this.props.albums){
+    //   otherList = <div>Loading...</div>
+    // }else {
+    //   otherList = otherItems.map((list, index) => {
+    //     return <li key={index}>
+    //     <br />
+    //       <img src={list.src} />
+   
+    //     <p><strong>{list.album}</strong></p>
+    
+    //     <p>{list.artist}</p>
+    //     <br />
+    //     <p>{list.sold}</p>
+    //     <br />
+    //     <p><Link to='/albums/index'>Go to Album</Link></p>
+    //   </li>
+    //   })
+    // }
+    let otherList
+    if(!this.props.albums){
+      otherList = <div>Loading...</div>
+    }else {
+      otherList = this.props.albums.map((album, index) => {
+        return <li key={album.id}>
+        <br />
+          <img src={album.photoUrl} />
+   
+        <p><strong>{album.title}</strong></p>
+    
+        <p>{this.props.users.artist}</p>
+        <br />
+        <p>{list.sold}</p>
+        <br />
+        <p><Link to='/albums/index'>Go to Album</Link></p>
+      </li>
+      })
+    }
       
 
 
@@ -84,19 +107,7 @@ class MainPage extends React.Component{
     }
     return(
       <div className="main">
-          {/* {menuBars} */}
-          <div className="main-images-list">
-            <div className="larger-image">
-              <img src={window.musicianURL} />
-            </div>
-            <div className="smaller-image">
-              <ul >
-                <li><img src={window.guitarURL} /></li>
-                <li><img src={window.monkeyURL} /></li>
-                <li><img src={window.girl2URL} /></li>
-              </ul>
-            </div>
-          </div>
+
 
           <ArtistsMain fetchUsers= {this.props.fetchUsers} />
 
@@ -382,19 +393,25 @@ class ArtistsMain extends React.Component {
         </div>
         <div className="smaller-image">
           <ul >
-            <li>
-              <h4><Link to= {`/users/${second.id}`}>{second.username}</Link></h4>
-              {second.description ? <p>{second.description}</p> : null}
+            <li className='list'>
+              <div className='smaller-caption'>
+                <h4><Link to= {`/users/${second.id}`}>{second.username}</Link></h4>
+                {second.description ? <p>{second.description}</p> : null}
+              </div>
               <img src={second.photoUrl} />
             </li>
-            <li>
-              <h4><Link to={`/users/${third.id}`}>{third.username}</Link></h4>
-              {third.description ? <p>{third.description}</p> : null}
+            <li className='list'>
+              <div className='smaller-caption'>
+                <h4><Link to={`/users/${third.id}`}>{third.username}</Link></h4>
+                {third.description ? <p>{third.description}</p> : null}
+              </div>
               <img src={third.photoUrl} />
             </li>
-            <li>
+            <li className='list'>
+              <div className='smaller-caption'>
               <h4><Link to={`/users/${forth.id}`}>{forth.username}</Link></h4>
               {forth.description ? <p>{forth.description}</p> : null}
+              </div>
               <img src={forth.photoUrl} />
             </li>
           </ul>

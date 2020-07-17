@@ -40,17 +40,46 @@ img {max-width:100%;}
 .main-images-list .larger-image .larger-caption{
 
   position: absolute;
-  p {
+  left: 130px;
+  bottom: 100px;
+  p, h2 a{
     color: white;
+    text-shadow: 2px 2px black;
+  }
+  h2{
+    font-size: 32px;
+  }
+  p {
+    font-size: 14px;
   }
 }
 
-.main-images-list .smaller-image{
+.main-images-list .smaller-image .list{
   width: 25.6%;
   margin-left: 1px;
   float: left;
   position: relative;
-  
+
+  // li{
+  //   position: absolute;
+  // }
+  .smaller-caption{
+    left: 12px;
+    bottom: 20px;
+    position: absolute;
+    p, h4 a{
+      color: white;
+      text-shadow: 2px 2px black;
+    }
+    h4 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+  }
+
 }
 
 .main-text{
