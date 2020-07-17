@@ -26,7 +26,7 @@ class MenuBar extends React.Component{
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
+    // document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
 

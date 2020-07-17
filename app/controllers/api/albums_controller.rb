@@ -1,8 +1,9 @@
 class Api::AlbumsController < ApplicationController
 
   def index
-    
+
     @albums = Album.joins(:artist)
+    # @albums = Album.limit(3)
 
 
     render :index

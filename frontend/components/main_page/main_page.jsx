@@ -39,7 +39,7 @@ class MainPage extends React.Component{
     let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size='sm' />
     let chevronRight = <FontAwesomeIcon icon={faChevronRight} size='sm' />
 
-    let songList = list.map((list, index) => {
+    let sellingNow = list.map((list, index) => {
       return(
       <li key = {index}>
         <br/>
@@ -74,37 +74,37 @@ class MainPage extends React.Component{
     //   </li>
     //   })
     // }
-    let otherList
-    if(!this.props.albums){
-      otherList = <div>Loading...</div>
+    let albumsList
+    if(this.props.albums.length === 0){
+      return <div>Loading...</div>
     }else {
-      otherList = this.props.albums.map((album, index) => {
-        return <li key={album.id}>
-        <br />
-          <img src={album.photoUrl} />
-   
-        <p><strong>{album.title}</strong></p>
-    
-        <p>{this.props.users.artist}</p>
-        <br />
-        <p>{list.sold}</p>
-        <br />
-        <p><Link to='/albums/index'>Go to Album</Link></p>
-      </li>
+      albumsList= this.props.albums.map((album, index) => {
+        return(
+          <li key={album.id}>
+            <br />
+              <img src={album.photoUrl} />
+            <p><strong>{album.title}</strong></p>
+            <p>{album.artist.artistName}</p>
+            <br />
+            <p>{list.sold}</p>
+            <br />
+            <p><Link to={`/albums/${album.id}`}>Go to Album</Link></p>
+          </li>)
       })
     }
       
 
 
-    let menuBars 
+    // let menuBars
     let userEmail
     if (this.props.currentUser) {
-      menuBars = <div className="logged-in"></div>
+      // menuBars = <div className="logged-in"></div>
       userEmail = this.props.currentUser.email
     } else {
-      menuBars = <div className="not-logged-in"></div>
+      // menuBars = <div className="not-logged-in"></div>
       userEmail = "Enter Email"
     }
+
     return(
       <div className="main">
 
@@ -114,14 +114,12 @@ class MainPage extends React.Component{
           <div className="main-text">
             <p>Fans have paid artists <strong>$525 million</strong> using Musiccamp, and <strong>$18.7 million</strong> in the last 30 days alone.</p>
           </div>
-
           <div className="selling-now">
             <Link to='/home'>SELLING RIGHT NOW</Link>
           </div>
-
           <div className="selling-now-list">
             <ul>
-              {songList}
+              {sellingNow}
             </ul>
           </div>
 
@@ -141,13 +139,13 @@ class MainPage extends React.Component{
                 If you want to know more about this artists just click
                 </p>
               </li>
-              {otherList[1]}
-              {otherList[2]}
+              {albumsList[1]}
+              {albumsList[2]}
               </ul>
             </div>
               <div className="bottom-list">
                 <ul >
-                  {otherList.slice(3,8)}
+                  {albumsList.slice(3,8)}
                 </ul>
               </div>
 
@@ -170,7 +168,7 @@ class MainPage extends React.Component{
 
           <div className="new-and-notable-list">
             <ul>
-              {otherList.slice(8)}
+              {albumsList.slice(8,13)}
             </ul>
           </div>
           </div>
