@@ -3,7 +3,8 @@ class Api::AlbumsController < ApplicationController
   def index
 
     if params[:user_id] != 'undefined'
-      @albums = Album.where(artist_id: params[:artist_id])
+      debugger
+      @albums = Album.where(artist_id: params[:user_id])
     else
         @albums = Album.joins(:artist)
         # .where(artist_id: params[:artist_id])

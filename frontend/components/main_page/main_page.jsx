@@ -55,7 +55,7 @@ class MainPage extends React.Component{
     </li>
       )
     })
-
+    
     let albumsList
     if(this.props.albums.length === 0){
       return <div>Loading...</div>

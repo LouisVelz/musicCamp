@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => {
   return {
     errors: state.errors.session,
     currentUser: state.entities.users[ownProps.match.params.userId],
-    albums: entities.albums
+    albums: Object.values(entities.albums)
   }
 }
 

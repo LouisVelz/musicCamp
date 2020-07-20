@@ -7,6 +7,7 @@ class UserPage extends React.Component{
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId)
+    this.props.fetchAlbums(this.props.match.params.userId)
   }
 
   render(){
