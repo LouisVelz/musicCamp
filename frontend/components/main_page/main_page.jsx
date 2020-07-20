@@ -60,7 +60,7 @@ class MainPage extends React.Component{
     if(this.props.albums.length === 0){
       return <div>Loading...</div>
     }else {
-      albumsList= this.props.albums.map((album, index) => {
+      albumsList= this.props.albums.map( album => {
         return(
           <li key={album.id}>
             <br />
@@ -121,38 +121,39 @@ class MainPage extends React.Component{
                 If you want to know more about this artists just click
                 </p>
               </li>
-              {albumsList[1]}
-              {albumsList[2]}
+                {albumsList[1]}
+                {albumsList[2]}
               </ul>
             </div>
-              <div className="bottom-list">
-                <ul >
-                  {albumsList.slice(3,8)}
-                </ul>
-              </div>
 
-              <div className="more-button">
-                <button>more   {plusSing}</button>
-              </div>
+            <div className="bottom-list">
+              <ul >
+                {albumsList.slice(3,8)}
+              </ul>
+            </div>
 
-          <div className="get-the-best-text">
-            <p>Get the best of Musiccamp Daily, delivered every Friday</p>
-          </div>
-            
-          <div className="user-input-email">
-            <input type="text" placeholder={userEmail}/>
-            <button>SIGN UP</button>
-          </div>
-          <div className="new-and-notable">
-            <p>NEW AND NOTABLE</p>
-            <p><button>{chevronLeft}</button><button>{chevronRight}</button></p>
-          </div>
+            <div className="more-button">
+              <button>more   {plusSing}</button>
+            </div>
 
-          <div className="new-and-notable-list">
-            <ul>
-              {albumsList.slice(8,13)}
-            </ul>
-          </div>
+            <div className="get-the-best-text">
+              <p>Get the best of Musiccamp Daily, delivered every Friday</p>
+            </div>
+              
+            <div className="user-input-email">
+              <input type="text" placeholder={userEmail}/>
+              <button>SIGN UP</button>
+            </div>
+            <div className="new-and-notable">
+              <p>NEW AND NOTABLE</p>
+              <p><button>{chevronLeft}</button><button>{chevronRight}</button></p>
+            </div>
+
+            <div className="new-and-notable-list">
+              <ul>
+                {albumsList.slice(8,13)}
+              </ul>
+            </div>
           </div>
 
           <div className="discover-bar">
@@ -251,101 +252,101 @@ let arrayOfitems = [
 
 
 ]
-let otherItems = [
-  {
-    src: window.list1,
-    album: 'Music album this is just some text on the side',
-    artist: 'If you want to know more about this artists just click',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list2,
-    album: 'Some new music is coming your way ',
-    artist: 'Listen to music all day',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list3,
-    album: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, quidem voluptas totam ',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, magnam?',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list4,
-    album: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima.',
-    artist: 'Lorem, ipsum dolor sit amet consectetur adipisicing.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list5,
-    album: 'Yet Another Music album',
-    artist: 'By a Music Artist',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list6,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    artist: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, beatae?',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list7,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit!',
-    artist: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod alias saepe reprehenderit nemo.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.list8,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.cartoonURL,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.bandURL,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.microphoneURL,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.avocado,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
-    sold: null,
-    country: null
-  },
-  {
-    src: window.death,
-    album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
-    artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
-    sold: null,
-    country: null
-  },
+// let otherItems = [
+//   {
+//     src: window.list1,
+//     album: 'Music album this is just some text on the side',
+//     artist: 'If you want to know more about this artists just click',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list2,
+//     album: 'Some new music is coming your way ',
+//     artist: 'Listen to music all day',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list3,
+//     album: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, quidem voluptas totam ',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, magnam?',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list4,
+//     album: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima.',
+//     artist: 'Lorem, ipsum dolor sit amet consectetur adipisicing.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list5,
+//     album: 'Yet Another Music album',
+//     artist: 'By a Music Artist',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list6,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//     artist: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, beatae?',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list7,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit!',
+//     artist: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod alias saepe reprehenderit nemo.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.list8,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.cartoonURL,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.bandURL,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.microphoneURL,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.avocado,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+//     sold: null,
+//     country: null
+//   },
+//   {
+//     src: window.death,
+//     album: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta eaque consequatur vel voluptatum?',
+//     artist: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vitae iste perferendis molestiae quae.',
+//     sold: null,
+//     country: null
+//   },
 
 
-]
+// ]
 
 class ArtistsMain extends React.Component {
   constructor(props){
@@ -404,9 +405,3 @@ class ArtistsMain extends React.Component {
 export default MainPage;
 
 
-
-// window.cartoonURL 
-// window.bandURL 
-// window.microphoneURL 
-// window.avocado 
-// window.death 
