@@ -107,8 +107,8 @@ new_artist_4 = User.create(
   artist_id: new_artist_1.id
  )
 
- album05_photo = open('https://musiccamp-seeds.s3.amazonaws.com/headphones.jpg')
- album05.photo.attach(io: album05_photo, filename: "headphones.jpg")
+ album05_photo = open('https://musiccamp-seeds.s3.amazonaws.com/keyboard.jpg')
+ album05.photo.attach(io: album05_photo, filename: "keyboard.jpg")
 
  album06 = Album.create(
    title: "Album 6",

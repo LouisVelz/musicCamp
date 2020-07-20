@@ -12,6 +12,7 @@ class Song < ApplicationRecord
   foreign_key: :album_id
 
   has_one_attached :song
+  has_one_attached :photo
 
   # def ensure_song
   #   unless self.song.attached?

@@ -1,10 +1,15 @@
 class Api::AlbumsController < ApplicationController
 
   def index
-
-    @albums = Album.joins(:artist)
+    debugger
+    # @albums = Album.joins(:artist)
     # @albums = Album.limit(3)
-
+    if params.has_key?(:artist_id)
+      @albums = Album.where(artist_id: params[:artist_id])
+    else
+        @albums = Album.joins(:artist)
+        # .where(artist_id: params[:artist_id])
+    end
 
     render :index
   end
@@ -34,7 +39,8 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find(params[:id])
+    debugger
+    @album = Album.joins(:artist).where(id: params[:id])
     render :show
   end
 

@@ -33,8 +33,8 @@ const receiveErrors = errors => {
   }
 }
 
-export const requestAlbums = () => (dispatch) => {
-  return AlbumApiUtil.fetchAlbums().then(
+export const requestAlbums = (userId) => (dispatch) => {
+  return AlbumApiUtil.fetchAlbums(userId).then(
     (albums) => dispatch(receiveAlbums(albums)),
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
