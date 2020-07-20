@@ -55,25 +55,7 @@ class MainPage extends React.Component{
     </li>
       )
     })
-    // let otherList
-    // if(!this.props.albums){
-    //   otherList = <div>Loading...</div>
-    // }else {
-    //   otherList = otherItems.map((list, index) => {
-    //     return <li key={index}>
-    //     <br />
-    //       <img src={list.src} />
-   
-    //     <p><strong>{list.album}</strong></p>
-    
-    //     <p>{list.artist}</p>
-    //     <br />
-    //     <p>{list.sold}</p>
-    //     <br />
-    //     <p><Link to='/albums/index'>Go to Album</Link></p>
-    //   </li>
-    //   })
-    // }
+
     let albumsList
     if(this.props.albums.length === 0){
       return <div>Loading...</div>

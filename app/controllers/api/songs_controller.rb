@@ -4,7 +4,7 @@ class Api::SongsController < ApplicationController
   def index
 
     if params.has_key?(:album_id)
-      @songs = Song.where(album_id: params[:album_id]).limit(1)
+      @songs = Song.where(album_id: params[:album_id])
     else
         @songs = Song.first
         # .where(artist_id: params[:artist_id])
