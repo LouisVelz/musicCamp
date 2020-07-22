@@ -26,7 +26,9 @@ class MenuBar extends React.Component{
   }
 
   componentWillUnmount() {
-    // document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener('mousedown', () => {
+      this.setState({open: false})
+    });
   }
 
 
@@ -38,6 +40,7 @@ class MenuBar extends React.Component{
       });
     }
   }
+
 
 
 
