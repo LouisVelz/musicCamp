@@ -12,7 +12,7 @@ class Footer extends React.Component{
               <li>About Us</li>
               <li>Fair Trade Music Policy</li>
               <li>Jobs</li>
-              <li>Apps: Android | IOS</li>
+              <li><p>Apps:</p> Android | IOS</li>
               <li>Buttons / Logos</li>
             </ul>
 
