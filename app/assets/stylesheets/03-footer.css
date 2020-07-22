@@ -17,9 +17,13 @@
   padding: 7px;
 
 }
+.footer-main ul li{
+  color: white;
+}
 .footer-main ul li a{
   color: white;
 }
+
 .footer-main ul li p {
   color: #abc1c7;
 }
@@ -68,11 +72,6 @@
 }
 
 .english-link:hover{
-  /* opacity: 0.8; */
- 
-  /* margin: 0; */
-  /* padding-left: 100px; */
-  /* margin-right: 5px; */
   background-color: #244853;
 }
 
@@ -80,9 +79,7 @@
   margin-right: 10px;
   margin-bottom: 6px;
   background-color: #3b6a76;
-  /* background-size: 120px; */
   width: 110px;
-
 }
 
 

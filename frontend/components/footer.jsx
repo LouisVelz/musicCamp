@@ -9,47 +9,42 @@ class Footer extends React.Component{
         <div className="upper">
 
             <ul>
-              <li><Link to='/'>About Us</Link></li>
-              <li><Link to='/'>Fair Trade Music Policy</Link></li>
-              <li><Link to='/'>Jobs</Link></li>
-              <li><p>Apps: <Link to='/'>Android</Link> | <Link to='/'>IOS</Link></p></li>
-              <li><Link to='/'>Buttons / Logos</Link></li>
+              <li>About Us</li>
+              <li>Fair Trade Music Policy</li>
+              <li>Jobs</li>
+              <li>Apps: Android | IOS</li>
+              <li>Buttons / Logos</li>
             </ul>
 
             <ul>
-              <li><Link to='/'>Musiccamp Daily</Link></li>
-              <li><Link to='/'>Facebook</Link></li>
-              <li><p><Link to='/'>Twitter</Link> | <Link to='/'>Status</Link></p></li>
-              <li><Link to='/'>Instagram</Link></li>
-              <li><Link to='/'>Connect/Help</Link></li>
+              <li>Musiccamp Daily</li>
+              <li>Facebook</li>
+              <li>Twitter | Status</li>
+              <li>Instagram</li>
+              <li>Connect/Help</li>
             </ul>
 
             <ul>
               <li><Link to='/login'>Log in</Link></li>
-              <li><Link to='/'>Musiccamp for Artists</Link></li>
-              <li><Link to='/'>Musiccamp for Fans</Link></li>
-              <li><Link to='/'>Musiccamp for Labels</Link></li>
-              <li><Link to='/'>Mobile view</Link></li>
+              <li>Musiccamp for Artists</li>
+              <li>Musiccamp for Fans</li>
+              <li>Musiccamp for Labels</li>
+              <li>Mobile view</li>
             </ul>
 
         </div>
         <div className="lower">
-          {/* <div className='lower-left'> */}
             <ul>
-              <li><Link to='/'>Terms of use</Link></li>
-              <li><Link to='/'>Privacy</Link></li>
-              <li><Link to='/'>Copyrigth Policy</Link></li>
-           
+              <li>Terms of use</li>
+              <li>Privacy</li>
+              <li>Copyrigth Policy</li>
             </ul>
-
             <ul>
               <li></li>
             </ul>
-
             <ul>
-              <li className='english-link'><p>Language: <Link to='/'>English</Link></p></li>
+            <li className='english-link'><p>Language: </p>English</li>
             </ul>
-
         </div>
       </div>
     )
