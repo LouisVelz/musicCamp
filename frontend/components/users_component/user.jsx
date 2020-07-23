@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom'
 class UserPage extends React.Component{
   constructor(props){
     super(props)
+    this.randomDate.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId)
     this.props.fetchAlbums(this.props.match.params.userId)
   }
+
+randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
 
   render(){
     const {artist, albums} = this.props
@@ -23,20 +29,20 @@ class UserPage extends React.Component{
               <img src={album.photoUrl} />
             </Link>
             <p>
-              <strong>{album.title}</strong>
+              FEATURE {this.randomDate(new Date(2012, 0, 1), new Date()).toDateString()}
             </p>
-            <p>
-              <Link to={`/albums/${album.id}`}>{album.description}</Link>
-            </p>
+            <Link to={`/albums/${album.id}`}>{album.description}</Link>
           </li>);
       });
     }
     return(
       <div className="artist-page">
         <h1>{artist.username}</h1>
-        <ul className='artist-albums'>
-          {albumsList}
-        </ul>
+        <div className="artist-albums">
+          <ul>
+            {albumsList}
+          </ul>
+        </div>
 
       </div>
     )
