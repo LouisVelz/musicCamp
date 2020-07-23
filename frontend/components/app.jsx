@@ -1,23 +1,16 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
-import MainPageContainer from './main_page/main_page_container'
-import MenuBarContainer from './menu_bar/menu_bar_container'
+import {AuthRoute, ProtectedRoute } from './../util/route_util'
 import Modal from './modal/modal'
 import LogInFormContainer from './user_signin/login_form_container'
-import {AuthRoute, ProtectedRoute } from './../util/route_util'
-import Footer from './footer'
-import SongFormContainer from './songs/song_form_container'
-import SongIndexContainer from './songs/song_index_container'
-import SongShowContainer from './songs/song_show_container'
+import MenuBarContainer from './menu_bar/menu_bar_container'
 import DummyContainer from './dummy/dummy_container'
+import MainPageContainer from './main_page/main_page_container'
 import UserContainer from './users_component/user_container'
-import AlbumIndexContainer from './albums/album_index_container'
+import SongFormContainer from './songs/song_form_container'
 import AlbumShowContainer from "./albums/album_show_container";
-
-
-
-
-
+import SongShowContainer from './songs/song_show_container'
+import Footer from './footer'
 
 
 const App = () => (
@@ -31,13 +24,11 @@ const App = () => (
     <Route path='/' component={DummyContainer} />
     <Switch>
       <Route exact path='/users/:userId' component={UserContainer} />
-      <Route exact path='/albums/index' component={AlbumIndexContainer} />
       <Route exact path='/albums/:albumId' component={AlbumShowContainer} />
       <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
       <Route exact path='/songs/:songId' component={SongShowContainer} />
       <Route exact path='/' component={MainPageContainer}/>
     </Switch>
- 
     <Footer/>
   </div>
 );

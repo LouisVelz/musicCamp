@@ -6,16 +6,17 @@ const mSTP = (state) => {
 
   return {
 
-    albums: Object.values(state.entities.albums),
+    // albums: Object.values(state.entities.albums),
     errors: state.errors.albums
 
   }
 }
 
 const mDTP = dispatch => {
-  return {
-    fetchAlbums: () => dispatch(requestAlbums())
-  }
+  return null
+  //  {
+  //   fetchAlbums: () => dispatch(requestAlbums())
+  // }
 }
 
 export default connect(mSTP, mDTP)(AlbumIndex)

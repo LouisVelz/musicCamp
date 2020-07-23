@@ -19,9 +19,8 @@ class SongIndexItem extends React.Component{
     // }]
 
     return(
-    <li>
-        {/* <AudioPlayer audioFiles={audioFiles} /> */}
-        <Link to={`/songs/${song.id}`}>{song.title}</Link>
+      <li>
+          <Link to={`/songs/${song.id}`}>{song.title}</Link>
       </li>
     )
   }

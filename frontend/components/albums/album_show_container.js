@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => {
 
   return {
     album: state.entities.albums[ownProps.match.params.albumId],
-    // songs: state.entities.songs
+    songs: state.entities.songs
   }
 }
 
