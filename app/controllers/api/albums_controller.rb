@@ -6,7 +6,7 @@ class Api::AlbumsController < ApplicationController
 
       @albums = Album.where(artist_id: params[:user_id])
     else
-        @albums = Album.joins(:artist)
+        @albums = Album.order('RANDOM()').joins(:artist)
         # .where(artist_id: params[:artist_id])
     end
 

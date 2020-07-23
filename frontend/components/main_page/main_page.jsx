@@ -84,14 +84,6 @@ class MainPage extends React.Component{
 
             <div className="daily-list">
               <ul>
-                {/* <li>
-                  <img src={window.list1} />
-                  <br/>
-                  <p><strong>Music album this is just some text on the side</strong>
-                  <br/>
-                  If you want to know more about this artists just click
-                  </p>
-                </li> */}
                 {albumsList[0]}
                 {albumsList[1]}
                 {albumsList[2]}
@@ -152,8 +144,8 @@ class ArtistsMain extends React.Component {
     if (this.state.users.length === 0 ) return <div>Loading...</div>
     let first = this.state.users[0]
     let second = this.state.users[1]
-    let third = this.state.users[2]
-    let forth = this.state.users[3]
+    let third = this.state.users[3]
+    let forth = this.state.users[4]
     return(
       <div className="main-images-list">
         <div className="larger-image">

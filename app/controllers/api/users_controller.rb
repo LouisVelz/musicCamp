@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.order('RANDOM()')
 
     render :index
   end

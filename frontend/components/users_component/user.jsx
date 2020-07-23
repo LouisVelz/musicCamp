@@ -29,7 +29,7 @@ randomDate(start, end) {
               <img src={album.photoUrl} />
             </Link>
             <p>
-              FEATURE {this.randomDate(new Date(2012, 0, 1), new Date()).toDateString()}
+              FEATURES · <span>{this.randomDate(new Date(2012, 0, 1), new Date()).toDateString()}</span>
             </p>
             <Link to={`/albums/${album.id}`}>{album.description}</Link>
           </li>);
