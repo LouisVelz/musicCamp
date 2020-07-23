@@ -6,7 +6,7 @@ const mSTP = (state) => {
 
   return {
     
-    // songs: Object.values(state.entities.songs),
+    songs: Object.values(state.entities.songs),
     errors: state.errors.songs
     
   }

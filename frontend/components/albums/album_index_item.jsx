@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 class AlbumIndexItem extends React.Component {
   constructor(props) {
     super(props)
+    this.randomDate.bind(this)
   }
 
   randomDate(start, end) {

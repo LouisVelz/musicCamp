@@ -9,7 +9,6 @@ class AlbumShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId)
-    this.props.fetchAlbumSongs(this.props.match.params.albumId)
   }
 
   handleClick() {
@@ -19,16 +18,15 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    const { album, songs } = this.props
-
+    const { album } = this.props
+    debugger
     if (!album) {
       return <div>fetching data...</div>
     } else {
       return (
 
-        <div className="song-index" >
-          <SongIndex songs={songs} />
-          <AlbumSongList album={album} fetchAlbumSongs={this.props.fetchAlbumSongs} />
+        <div className="album-show" >
+          <SongIndex fetchSongs={this.props.fetchAlbumSongs} albumId={album.id}/>
           <p>{album.title}</p>
           <img src={`${album.photoUrl}`} width="350" height='350' />
 

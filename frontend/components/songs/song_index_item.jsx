@@ -9,14 +9,13 @@ class SongIndexItem extends React.Component{
     super(props)
   }
 
+  handleClick(){
+    e.preventDefault()
+    this.setState({selectedTrack: e.currentTarget.value})
+  }
+
   render(){
     const { song } = this.props
-
-    // let audioFiles=[{
-    //   src: song.songUrl,
-    //   title: song.title,
-    //   artist: song.artist
-    // }]
 
     return(
       <li>

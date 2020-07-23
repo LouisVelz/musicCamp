@@ -7,10 +7,10 @@ import { requestAlbums } from '../../actions/album_actions';
 
 
 const mSTP = (state, ownProps) => {
-  const { entities, session } = state
+  const { entities} = state
   return {
     errors: state.errors.session,
-    artist: state.entities.users[ownProps.match.params.userId],
+    artist: entities.users[ownProps.match.params.userId],
     albums: Object.values(entities.albums)
   }
 }
