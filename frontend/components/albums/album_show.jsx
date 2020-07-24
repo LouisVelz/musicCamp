@@ -1,5 +1,5 @@
 import React from 'react'
-import AlbumSongList from './album_songs_list'
+import Player from '../audio_player/audio_player'
 import SongIndex from '../songs/song_index'
 
 class AlbumShow extends React.Component {
@@ -14,18 +14,18 @@ class AlbumShow extends React.Component {
   handleClick() {
     e.preventDefault()
     this.setState({ selectedTrack: e.currentTarget.value })
-
   }
 
   render() {
-    const { album } = this.props
-    debugger
+    const { album} = this.props
+
     if (!album) {
       return <div>fetching data...</div>
     } else {
       return (
 
         <div className="album-show" >
+
           <SongIndex fetchSongs={this.props.fetchAlbumSongs} albumId={album.id}/>
           <p>{album.title}</p>
           <img src={`${album.photoUrl}`} width="350" height='350' />

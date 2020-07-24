@@ -46,13 +46,17 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
   componentDidMount(){
     let audioPlayer = document.getElementById('audioPlayer')
     this.songDuration()
-    // if (this.props.song){
-    //   // audioPlayer.play()
-    // }
+
   }
 
   componentWillUnmount(){
     clearInterval(this.playerInterval)
+
+  }
+  componentDidUpdate(prevProps){
+    if(this.props.song.id !== prevProps.song.id){
+          this.setState({ playStatus: "play" });
+    }
   }
 
   songDuration (){
@@ -97,45 +101,38 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
       let playPause = this.state.playStatus === 'play' ?
         <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
 
-      let audioPlayer = 
-        <div className='player'>
+      let audioPlayer = (
+        <div className="player">
           <button onClick={this.togglePlay}>{playPause}</button>
           <div className="song-timestamp">
-            <p className="current-time">
-              {this.timeStamp(this.state.currentTime)}
+            <p className="song-time">
+              {this.timeStamp(this.state.currentTime)} /{" "}
+              {this.timeStamp(this.state.duration)}
             </p>
 
-            <input className="scrollbar"
+            <input
+              className="scrollbar"
               id="scrollbar"
               type="range"
               min="0"
               defaultValue="0"
               max={`${this.state.duration}`}
-              onInput={this.handleToggleBar} />
-
-            <p className="song-duration">
-              {this.timeStamp(this.state.duration)}
-            </p>
+              onInput={this.handleToggleBar}
+            />
           </div>
         </div>
+      );
 
-      // debugger
+        debugger
         return(
           <>
             <audio
              id='audioPlayer'
              src={this.props.song.songUrl}
              onPlay={this.handleCurrentTime}
-             
              onLoadedMetadata={this.songDuration}
              >
             </audio> 
-            {/* <div className="background" style={{ 'backgroundImage': 'url(' + window.avocado + ')'}}></div>
-              <div className="Header"><div className="Title">Now playing</div></div>
-            <div className="artwork" style={{ 'backgroundImage': 'url(' + window.avocado + ')' }}></div> */}
-              {/* <TrackInformation song={this.props.song} /> */}
-              {/* <Controls isPlaying={this.state.playStatus} togglePlay = {this.togglePlay.bind(this)}/> */}
-              {/* <Timestamps duration={this.props.song.duration} currentTime={this.state.currentTime} /> */}
             {audioPlayer}
           </>
         )
