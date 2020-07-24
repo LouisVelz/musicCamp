@@ -9,18 +9,21 @@ class UserPage extends React.Component{
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId)
-    // this.props.fetchAlbums(this.props.match.params.userId)
+
   }
 
   render(){
     const {artist} = this.props
-
-    return(
-      <div className="artist-page">
-        <h1>{artist.username}</h1>
-        <AlbumIndex fetchAlbums={this.props.fetchAlbums} userId = {artist.id}/>
-      </div>
-    )
+    if(!artist){
+      return <div>Fetching data...</div>
+    } else {
+      return(
+        <div className="artist-page">
+          <h1>{artist.username}</h1>
+          <AlbumIndex fetchAlbums={this.props.fetchAlbums} userId = {artist.id}/>
+        </div>
+      )
+    }
   }
 }
 

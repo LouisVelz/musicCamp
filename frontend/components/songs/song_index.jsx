@@ -37,11 +37,11 @@ class SongIndex extends React.Component{
       return (
         <div className="song-index">
           <Player song={this.state.selectedTrack}/>
-          <ol>
+          <ul>
             {this.state.songs.map((song, index) => {
               return <SongIndexItem key={song.id} song={song} handleClick={this.handleClick} index={index}/>;
             })}
-          </ol>
+          </ul>
         </div>
       );
     }
