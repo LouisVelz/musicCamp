@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 
-// import filtersReducer from './filters_reducer';
+import playerReducer from './player_reducer'
 import modalReducer from './modal_reducer';
 
 const uiReducer = combineReducers({
-  // filters: filtersReducer,
-  modal: modalReducer
+
+  modal: modalReducer,
+  player: playerReducer
 })
 
 export default uiReducer;
