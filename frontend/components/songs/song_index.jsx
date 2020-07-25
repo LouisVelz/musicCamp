@@ -14,9 +14,7 @@ class SongIndex extends React.Component{
   
 
   handleClick(e){
-    debugger
     e.preventDefault()
-    debugger
     this.setState({selectedTrack: this.state.songs[e.currentTarget.dataset.id]})
   }
 
