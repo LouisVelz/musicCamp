@@ -6,7 +6,7 @@ class Api::SongsController < ApplicationController
     if params.has_key?(:album_id)
       @songs = Song.where(album_id: params[:album_id])
     else
-        @songs = Song.first
+        @songs = Song.order('RANDOM()').joins(:artist, :album)
         # .where(artist_id: params[:artist_id])
     end
         render :index

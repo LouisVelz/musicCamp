@@ -49,8 +49,8 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
 
   componentWillUnmount(){
     clearInterval(this.playerInterval)
-
   }
+  
   componentDidUpdate(prevProps){
     if(this.props.song.id !== prevProps.song.id){
           this.setState({ playStatus: "pause" });

@@ -138,6 +138,8 @@ class ArtistsMain extends React.Component {
   }
   componentDidMount(){
     this.props.fetchUsers().then(users => this.setState({users: users.users}))
+
+    // this.props.fetchSongs()
   }
 
   render(){
