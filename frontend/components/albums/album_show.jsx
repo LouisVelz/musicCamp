@@ -25,9 +25,9 @@ class AlbumShow extends React.Component {
           <div className="main-content">
             <div className="album-title">
               <h1>{album.title}</h1>
-              <p>by <Link>{album.artist.artistName}</Link></p>
+              <p>by <Link to={`users/${album.artist_id}`}>{album.artist.artistName}</Link></p>
             </div>
-            <Player/>
+            {/* <Player/> */}
             <SongIndex fetchSongs={this.props.fetchAlbumSongs} albumId={album.id}/>
             <img src={`${album.photoUrl}`} width="350" height='350' />
           </div>

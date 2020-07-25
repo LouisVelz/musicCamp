@@ -30,7 +30,7 @@ class Modal extends React.Component{
         default:
           return null;
       }
-      debugger
+
     return (
       // onClick = { closeModal } put insie className modal-background to close modal
       //on background click

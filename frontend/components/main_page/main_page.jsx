@@ -201,7 +201,7 @@ class SellingNow extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalId)
+    // clearInterval(this.intervalId)
   }
 
     render(){

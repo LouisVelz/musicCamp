@@ -15,7 +15,7 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
-    debugger
+
     if(this.state.albums.length === 0){
       return <div>Fetching data...</div>
     } else {

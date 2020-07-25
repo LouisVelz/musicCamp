@@ -45,7 +45,7 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
   }
 
   componentWillUnmount(){
-    clearInterval(this.playerInterval)
+    // clearInterval(this.playerInterval)
   }
 
   componentDidUpdate(prevProps){

@@ -30,7 +30,7 @@ class SongIndex extends React.Component{
   }
 
   render(){
-    debugger
+
     if (this.state.songs.length === 0){ 
       return <div>fetching data...</div>
     } else {
