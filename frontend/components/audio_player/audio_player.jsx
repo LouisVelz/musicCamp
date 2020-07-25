@@ -6,9 +6,6 @@ import { faPauseCircle } from '@fortawesome/free-regular-svg-icons'
 import { faForward} from '@fortawesome/free-solid-svg-icons'
 import { faBackward} from '@fortawesome/free-solid-svg-icons'
 
-//inside Component render()
-{/* <AudioPlayer
-  audioFiles={audioFiles} /> */}
 
   class Player extends React.Component{
     constructor(props){
@@ -50,7 +47,7 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
   componentWillUnmount(){
     clearInterval(this.playerInterval)
   }
-  
+
   componentDidUpdate(prevProps){
     if(this.props.song.id !== prevProps.song.id){
           this.setState({ playStatus: "pause" });
@@ -98,49 +95,53 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
 
 
     render(){
-      let playPause = this.state.playStatus === 'play' ?
-        <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
-
-      let audioPlayer = (
-        <div className="player">
-          <div className="player-button">
-            <button onClick={this.togglePlay}>{playPause}</button>
-          </div>
-          <div className="player-info">
-            <div className="player-song-title">
-              <p>{this.props.song.title}</p>
+      if(!this.props.song){
+        return <div>fetching data...</div>
+      }else {
+        let playPause = this.state.playStatus === 'play' ?
+          <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
+  
+        let audioPlayer = (
+          <div className="player">
+            <div className="player-button">
+              <button onClick={this.togglePlay}>{playPause}</button>
             </div>
-            <div className="song-timestamp">
-                {this.timeStamp(this.state.currentTime)} /{" "}
-                {this.timeStamp(this.state.duration)}
+            <div className="player-info">
+              <div className="player-song-title">
+                <p>{this.props.song.title}</p>
+              </div>
+              <div className="song-timestamp">
+                  {this.timeStamp(this.state.currentTime)} /{" "}
+                  {this.timeStamp(this.state.duration)}
+              </div>
+              <input
+                className="scrollbar"
+                id="scrollbar"
+                type="range"
+                min="0"
+                defaultValue="0"
+                max={`${this.state.duration}`}
+                onInput={this.handleToggleBar}
+              />
             </div>
-            <input
-              className="scrollbar"
-              id="scrollbar"
-              type="range"
-              min="0"
-              defaultValue="0"
-              max={`${this.state.duration}`}
-              onInput={this.handleToggleBar}
-            />
           </div>
-        </div>
-      );
-
- 
-        return(
-          <>
-            <audio
-             id='audioPlayer'
-             src={this.props.song.songUrl}
-             onPlay={this.handleCurrentTime}
-             onLoadedMetadata={this.songDuration}
-             >
-            </audio> 
-            {audioPlayer}
-          </>
-        )
+        );
+  
+   
+          return(
+            <>
+              <audio
+               id='audioPlayer'
+               src={this.props.song ? this.props.song.songUrl : null}
+               onPlay={this.handleCurrentTime}
+               onLoadedMetadata={this.songDuration}
+               >
+              </audio> 
+              {audioPlayer}
+            </>
+          )
       }
+    }
     
   }
   

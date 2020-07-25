@@ -12,8 +12,8 @@ class Modal extends React.Component{
   }
 
   render(){
-  const { modal, closeModal } = this.props
 
+  const { modal, closeModal } = this.props
   if (!modal) {
     return null;
   }
@@ -30,6 +30,7 @@ class Modal extends React.Component{
         default:
           return null;
       }
+      debugger
     return (
       // onClick = { closeModal } put insie className modal-background to close modal
       //on background click
@@ -45,7 +46,7 @@ class Modal extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    modal: state.modal
+    modal: state.ui.modal
   };
 };
 

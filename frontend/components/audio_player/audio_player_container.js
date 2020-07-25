@@ -6,11 +6,14 @@ import { connect } from 'react-redux';
 import { currentlyPlaying } from '../../actions/player_actions'
 import Player from './audio_player'
 
+
+
 const mSTP = (state) => {
-  const { entities} = state
+  const { entities } = state
 
   return {
     songs: Object.values(entities.songs),
+    currentlyPlaying: entities.songs[entities.songs[ui.player.song.id]]
   }
 }
 

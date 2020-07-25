@@ -8,7 +8,7 @@ const mSTP = (state) => {
   return {
     errors: state.errors.session,
     user: { email: "", password: "" },
-    modal: state.modal,
+    modal: state.ui.modal,
   };
 };
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import SongIndexItem from './song_index_item'
-import Player from '../audio_player/audio_player'
+
 
 
 class SongIndex extends React.Component{
@@ -36,7 +36,6 @@ class SongIndex extends React.Component{
     } else {
       return (
         <div className="song-index">
-          <Player song={this.state.selectedTrack}/>
           <ul>
             {this.state.songs.map((song, index) => {
               return <SongIndexItem key={song.id} song={song} handleClick={this.handleClick} index={index}/>;
