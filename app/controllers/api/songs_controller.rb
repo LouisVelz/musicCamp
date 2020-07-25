@@ -3,10 +3,10 @@ class Api::SongsController < ApplicationController
 
   def index
 
-    if params.has_key?(:album_id)
+    if params[:album_id] != 'undefined'
       @songs = Song.where(album_id: params[:album_id])
     else
-        @songs = Song.order('RANDOM()').joins(:artist, :album)
+        @songs = Song.order('RANDOM()').joins(:artist, :album).limit(9)
         # .where(artist_id: params[:artist_id])
     end
         render :index

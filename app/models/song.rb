@@ -14,9 +14,4 @@ class Song < ApplicationRecord
   has_one_attached :song
   has_one_attached :photo
 
-  # def ensure_song
-  #   unless self.song.attached?
-  #       errors[:song] << "A song must be attached"
-  #   end
-  # end
 end
