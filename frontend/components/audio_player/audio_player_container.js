@@ -10,10 +10,11 @@ import Player from './audio_player'
 
 const mSTP = (state) => {
   const { entities } = state
+  
 
   return {
     songs: Object.values(entities.songs),
-    currentlyPlaying: entities.songs[entities.songs[ui.player.song.id]]
+    currentlyPlaying: entities.songs[state.ui.player.song] ? entities.songs[state.ui.player.song] : null
   }
 }
 

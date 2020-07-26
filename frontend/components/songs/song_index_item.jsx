@@ -11,16 +11,16 @@ class SongIndexItem extends React.Component{
   }
 
   render(){
-    const { song } = this.props
+    const { song, index } = this.props
 
-    return (
-      <li>
-        <button onClick={this.props.handleClick} data-id={this.props.index}>
-          <FontAwesomeIcon icon={faPlayCircle} size="sm" />
-        </button>{" "}
-          {song.track_num}{". "}
-          <Link to={`/songs/${song.id}`}>{song.title}</Link>
-      </li>
+    return (null
+      // <li>
+      //   <button onClick={(index) => this.props.currentlyPlaying(index)} data-id={index}>
+      //     <FontAwesomeIcon icon={faPlayCircle} size="sm" />
+      //   </button>{" "}
+      //     {song.track_num}{". "}
+      //     <Link to={`/songs/${song.id}`}>{song.title}</Link>
+      // </li>
     );
   }
 }
