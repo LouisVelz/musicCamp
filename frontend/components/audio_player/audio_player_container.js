@@ -9,19 +9,26 @@ import Player from './audio_player'
 
 
 const mSTP = (state) => {
+
   const { entities } = state
-  
+    let currentSong = state.entities.songs[state.ui.player.id]
+      ? state.entities.songs[state.ui.player.id]
+      : null;
+    // if(!currentSong && entities.songs){
+    //    currentSong = entities.songs[0]
+    // }
 
   return {
     songs: Object.values(entities.songs),
-    currentlyPlaying: entities.songs[state.ui.player.song] ? entities.songs[state.ui.player.song] : null
+    currentlyPlaying:  currentSong 
   }
 }
 
 const mDTP = dispatch => {
-  return {
-    currentlyPlaying: (song) => dispatch(currentlyPlaying(song))
-  }
+  return null
+  // { 
+  //   currentlyPlaying: (song) => dispatch(currentlyPlaying(song))
+  // }
 }
 
 
