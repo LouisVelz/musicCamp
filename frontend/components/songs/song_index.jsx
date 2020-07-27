@@ -26,12 +26,12 @@ class SongIndex extends React.Component{
     .then(songs => {
 
       this.setState({ songs: songs.songs, selectedTrack: songs.songs[0] })
+      this.props.playing(this.state.selectedTrack)
 
     })
-    debugger
-    if(this.state.selectedTrack){
-      this.props.playing(this.state.selectedTrack)
-    }
+
+
+
 
   }
 

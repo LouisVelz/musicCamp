@@ -5,7 +5,6 @@ import { faPlayCircle} from '@fortawesome/free-regular-svg-icons'
 import { faPauseCircle } from '@fortawesome/free-regular-svg-icons'
 import { faForward} from '@fortawesome/free-solid-svg-icons'
 import { faBackward} from '@fortawesome/free-solid-svg-icons'
-import { currentlyPlaying } from "../../actions/player_actions";
 
 
   class Player extends React.Component{
@@ -22,7 +21,8 @@ import { currentlyPlaying } from "../../actions/player_actions";
       this.timeStamp = this.timeStamp.bind(this)
       this.handleToggleBar = this.handleToggleBar.bind(this)
       this.handleCurrentTime = this.handleCurrentTime.bind(this)
-      
+      this.handleBackward = this.handleBackward.bind(this)
+      this.handleFordward = this.handleFordward.bind(this)
     }
 
   togglePlay() {
@@ -95,8 +95,45 @@ import { currentlyPlaying } from "../../actions/player_actions";
     }
   }
 
+  handleBackward(){
+    const audioPlayer = document.getElementById('audioPlayer')
+    clearInterval(this.playerInterval)
+    let previousSongIndex;
+    this.props.songs.forEach((song, index) => {
+      if (this.props.currentlyPlaying.id === song.id) {
+        previousSongIndex = index - 1;
+      }
+    });
+    if(previousSongIndex < 0 ){
+      previousSongIndex = this.props.songs.length - 1
+    }
+    this.props.playing(
+      this.props.songs[previousSongIndex]
+    );
+    debugger
+      audioPlayer.play()
+      this.setState({playStatus: 'pause'})
+  }
+
+  handleFordward(){
+    const audioPlayer = document.getElementById("audioPlayer");
+    clearInterval(this.playerInterval);
+    let nextSongIndex
+    this.props.songs.forEach((song, index) => {
+      if (this.props.currentlyPlaying.id === song.id){
+        nextSongIndex = index + 1
+      }
+    })
+    
+    this.props.playing(this.props.songs[nextSongIndex % this.props.songs.length])
+    debugger
+    audioPlayer.play();
+    this.setState({ playStatus: "pause" });
+  }
+
 
     render(){
+
         const { currentlyPlaying } = this.props
         let playPause = this.state.playStatus === 'play' ?
           <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
@@ -111,21 +148,29 @@ import { currentlyPlaying } from "../../actions/player_actions";
                 <p>{currentlyPlaying.title}</p>
               </div>
               <div className="song-timestamp">
-                  {this.timeStamp(this.state.currentTime)} /{" "}
-                  {this.timeStamp(this.state.duration)}
+                {this.timeStamp(this.state.currentTime)} /{" "}
+                {this.timeStamp(this.state.duration)}
               </div>
-              <input
-                className="scrollbar"
-                id="scrollbar"
-                type="range"
-                min="0"
-                defaultValue="0"
-                max={`${this.state.duration}`}
-                onInput={this.handleToggleBar}
-              />
+              <div className="scroll-skip">
+                <input
+                  className="scrollbar"
+                  id="scrollbar"
+                  type="range"
+                  min="0"
+                  defaultValue="0"
+                  max={`${this.state.duration}`}
+                  onInput={this.handleToggleBar}
+                />
+                <button onClick={this.handleBackward}>
+                  <FontAwesomeIcon icon={faBackward} size="lg" />
+                </button>
+                <button onClick={this.handleFordward}>
+                  <FontAwesomeIcon icon={faForward} size="lg" />
+                </button>
+              </div>
             </div>
           </div>
-        ) : null
+        ) : null;
   
           // debugger
           return(
