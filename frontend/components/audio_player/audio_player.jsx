@@ -97,7 +97,6 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
 
   handleBackward(){
     const audioPlayer = document.getElementById('audioPlayer')
-    clearInterval(this.playerInterval)
     let previousSongIndex;
     this.props.songs.forEach((song, index) => {
       if (this.props.currentlyPlaying.id === song.id) {
@@ -110,14 +109,14 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
     this.props.playing(
       this.props.songs[previousSongIndex]
     );
-    debugger
-      audioPlayer.play()
-      this.setState({playStatus: 'pause'})
+
+      setTimeout(() => audioPlayer.play(), 500);
+
   }
 
   handleFordward(){
     const audioPlayer = document.getElementById("audioPlayer");
-    clearInterval(this.playerInterval);
+
     let nextSongIndex
     this.props.songs.forEach((song, index) => {
       if (this.props.currentlyPlaying.id === song.id){
@@ -126,9 +125,7 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
     })
     
     this.props.playing(this.props.songs[nextSongIndex % this.props.songs.length])
-    debugger
-    audioPlayer.play();
-    this.setState({ playStatus: "pause" });
+    setTimeout(() => audioPlayer.play(), 500);
   }
 
 
