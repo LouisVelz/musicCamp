@@ -15,7 +15,7 @@ class SongIndexItem extends React.Component{
 
     return (
       <li>
-        <button onClick={() => this.props.currentlyPlaying(song)} data-id={index}>
+        <button onClick={this.props.handleClick} data-id={index}>
           <FontAwesomeIcon icon={faPlayCircle} size="sm" />
         </button>{" "}
           {song.track_num}{". "}

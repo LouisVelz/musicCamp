@@ -11,9 +11,12 @@ import Player from './audio_player'
 const mSTP = (state) => {
 
   const { entities } = state
-    let currentSong = state.entities.songs[state.ui.player.id]
-      ? state.entities.songs[state.ui.player.id]
-      : null;
+    // let currentSong = state.entities.songs[state.ui.player.song]
+    //   ? state.entities.songs[state.ui.player.id]
+    //   : null;
+    debugger
+     const currentSong = !!state.ui.player.song ? state.ui.player.song : null
+     debugger
     // if(!currentSong && entities.songs){
     //    currentSong = entities.songs[0]
     // }

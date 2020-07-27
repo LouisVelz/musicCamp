@@ -15,8 +15,9 @@ class SongIndex extends React.Component{
 
   handleClick(e){
     e.preventDefault()
-    // this.setState({selectedTrack: this.state.songs[e.currentTarget.dataset.id]})
-    this.props.currentlyPlaying(e.currentTarget.dataset.id);
+    this.setState({selectedTrack: this.state.songs[e.currentTarget.dataset.id]})
+    // this.props.currentlyPlaying(e.currentTarget.dataset.id);
+    this.props.playing(this.state.selectedTrack)
 
   }
 
@@ -27,12 +28,16 @@ class SongIndex extends React.Component{
       this.setState({ songs: songs.songs, selectedTrack: songs.songs[0] })
 
     })
-
+    debugger
+    if(this.state.selectedTrack){
+      this.props.playing(this.state.selectedTrack)
+    }
 
   }
 
   render(){
-    const {currentlyPlaying} = this.props
+
+    // const {currentlyPlaying} = this.props
     if (this.state.songs.length === 0){ 
       return <div>fetching data...</div>
     } else {
@@ -40,8 +45,14 @@ class SongIndex extends React.Component{
         <div className="song-index">
           <ul>
             {this.state.songs.map((song, index) => {
-              return <SongIndexItem key={song.id} song={song} currentlyPlaying={this.props.currentlyPlaying} index={index}/>;
-              // return <SongIndexItem key={song.id} song={song} handleClick={this.handleClick} index={index}/>;
+              return (
+                  <SongIndexItem
+                    key={song.id}
+                    song={song}
+                    handleClick={this.handleClick}
+                    index={index}
+                  />
+              );              
             })}
           </ul>
         </div>

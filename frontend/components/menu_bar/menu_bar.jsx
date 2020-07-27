@@ -58,7 +58,6 @@ class MenuBar extends React.Component{
           <li>
             <input type="text" placeholder='    Search and discover music' />
             <button>{search}</button>
-        {/* <div ref={this.setWrapperRef}>{this.props.children}</div> */}
           </li>
         </ul>
         <ul className='logged-menu-bar-right'>

@@ -127,7 +127,7 @@ import { currentlyPlaying } from "../../actions/player_actions";
           </div>
         ) : null
   
-          debugger
+          // debugger
           return(
             <>
               <audio
