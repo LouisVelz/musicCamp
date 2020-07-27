@@ -3,8 +3,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle} from '@fortawesome/free-regular-svg-icons'
 import { faPauseCircle } from '@fortawesome/free-regular-svg-icons'
-import { faForward} from '@fortawesome/free-solid-svg-icons'
-import { faBackward} from '@fortawesome/free-solid-svg-icons'
+import { faFastForward} from '@fortawesome/free-solid-svg-icons'
+import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
 
 
   class Player extends React.Component{
@@ -110,7 +110,7 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
       this.props.songs[previousSongIndex]
     );
 
-      setTimeout(() => audioPlayer.play(), 500);
+    setTimeout(() => audioPlayer.play(), 1000);
 
   }
 
@@ -125,7 +125,7 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
     })
     
     this.props.playing(this.props.songs[nextSongIndex % this.props.songs.length])
-    setTimeout(() => audioPlayer.play(), 500);
+    setTimeout(() => audioPlayer.play(), 1000);
   }
 
 
@@ -159,17 +159,17 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons'
                   onInput={this.handleToggleBar}
                 />
                 <button onClick={this.handleBackward}>
-                  <FontAwesomeIcon icon={faBackward} size="lg" />
+                  <FontAwesomeIcon icon={faFastBackward} size="md" />
                 </button>
                 <button onClick={this.handleFordward}>
-                  <FontAwesomeIcon icon={faForward} size="lg" />
+                  <FontAwesomeIcon icon={faFastForward} size="md" />
                 </button>
               </div>
             </div>
           </div>
         ) : null;
   
-          // debugger
+
           return(
             <>
               <audio
