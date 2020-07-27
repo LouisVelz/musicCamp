@@ -13,9 +13,9 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-  fetchAlbum: (albumId) => dispatch(requestAlbum(albumId)),
-  fetchAlbumSongs: (albumId) => dispatch(requestSongs(albumId)),
-  playing: (song) => dispatch(currentlyPlaying(song))
+  fetchAlbum: (albumId) => dispatch(requestAlbum(albumId))
+  // fetchAlbumSongs: (albumId) => dispatch(requestSongs(albumId)),
+  // playing: (song) => dispatch(currentlyPlaying(song))
 })
 
 export default connect(mSTP, mDTP)(AlbumShow);

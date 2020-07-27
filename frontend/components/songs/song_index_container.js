@@ -5,7 +5,7 @@ import { currentlyPlaying } from '../../actions/player_actions'
 
 
 const mSTP = (state) => {
-  debugger
+
   return {
     
     songs: Object.values(state.entities.songs),
@@ -15,10 +15,9 @@ const mSTP = (state) => {
 }
 
 const mDTP = dispatch => {
-  debugger
+
   return {
-    // fetchSongs: (albumId) => dispatch(fetchSongs(albumId)),
-    currentyPlaying: (song) => dispatch(currentlyPlaying(song)),
+    playing: (song) => dispatch(currentlyPlaying(song)),
     fetchSongs: (albumId) => dispatch(requestSongs(albumId)),
   };
 }

@@ -6,7 +6,7 @@ import SongIndexItem from './song_index_item'
 class SongIndex extends React.Component{
   constructor(props){
     super(props)
-    this.state = {songs: [],
+    this.state = {
        selectedTrack : null}
 
     this.handleClick = this.handleClick.bind(this)
@@ -15,7 +15,8 @@ class SongIndex extends React.Component{
 
   handleClick(e){
     e.preventDefault()
-    this.setState({selectedTrack: this.state.songs[e.currentTarget.dataset.id]})
+    // this.setState({selectedTrack: this.state.songs[e.currentTarget.dataset.id]})
+    this.setState({selectedTrack: this.props.songs[e.currentTarget.dataset.id]})
     // this.props.currentlyPlaying(e.currentTarget.dataset.id);
     this.props.playing(this.state.selectedTrack)
 
@@ -25,26 +26,24 @@ class SongIndex extends React.Component{
     this.props.fetchSongs(this.props.albumId)
     .then(songs => {
 
-      this.setState({ songs: songs.songs, selectedTrack: songs.songs[0] })
-      this.props.playing(this.state.selectedTrack)
+      this.setState({ selectedTrack: songs.songs[0] })
+      this.props.playing(this.props.songs[0])
 
     })
-
-
 
 
   }
 
   render(){
-
+    debugger
     // const {currentlyPlaying} = this.props
-    if (this.state.songs.length === 0){ 
+    if (!this.props.songs){ 
       return <div>fetching data...</div>
     } else {
       return (
         <div className="song-index">
           <ul>
-            {this.state.songs.map((song, index) => {
+            {this.props.songs.map((song, index) => {
               return (
                   <SongIndexItem
                     key={song.id}

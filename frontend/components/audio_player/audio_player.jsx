@@ -1,4 +1,3 @@
-import AudioPlayer from "react-modular-audio-player";
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle} from '@fortawesome/free-regular-svg-icons'
@@ -159,10 +158,10 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
                   onInput={this.handleToggleBar}
                 />
                 <button onClick={this.handleBackward}>
-                  <FontAwesomeIcon icon={faFastBackward} size="md" />
+                  <FontAwesomeIcon icon={faFastBackward} size="sm" />
                 </button>
                 <button onClick={this.handleFordward}>
-                  <FontAwesomeIcon icon={faFastForward} size="md" />
+                  <FontAwesomeIcon icon={faFastForward} size="sm" />
                 </button>
               </div>
             </div>
