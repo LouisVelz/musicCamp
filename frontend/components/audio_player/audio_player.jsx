@@ -25,7 +25,6 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
     }
 
     togglePlay() {
-      // let status = this.state.playStatus;
       let audioPlayer = document.getElementById("audioPlayer");
       if (audioPlayer.paused) {
         this.props.isPlaying();
@@ -34,16 +33,16 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
         this.props.isPaused();
         audioPlayer.pause();
       }
-      // this.setState({ playStatus: status });
+ 
     }
 
     componentDidMount() {
       this.songDuration();
-      // this.props.isPaused()
     }
 
     componentWillUnmount() {
       clearInterval(this.playerInterval);
+      this.props.playing(null)
     }
 
     componentWillReceiveProps(nextProps){

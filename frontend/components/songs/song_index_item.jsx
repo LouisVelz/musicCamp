@@ -9,14 +9,13 @@ import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 class SongIndexItem extends React.Component{
   constructor(props){
     super(props)
-    this.state = { icon: null };
   }
 
   render(){
 
     const { song, currentlyPlaying, isPlaying } = this.props
     let icon
-    if (!!currentlyPlaying && isPlaying && currentlyPlaying.title === song.title){
+    if (isPlaying && currentlyPlaying.title === song.title){
         icon = <FontAwesomeIcon icon={faPauseCircle} size="sm" />
     }else{
       icon = <FontAwesomeIcon icon={faPlayCircle} size="sm" />
