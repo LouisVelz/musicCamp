@@ -15,7 +15,7 @@ new_artist = User.create(
 email: "new_artist@gmail.com",
  password: "hunter12",
  username: "Guitar Player",
- description: "Lorem ipsum dolor sit amet,
+ description: "Artist 1 decription Lorem ipsum dolor sit amet,
  consectetur adipisicing elit. Delectus quod, placeat accusamus.")
 
  new_artist_photo = open('https://musiccamp-seeds.s3.amazonaws.com/music.jpg')
@@ -25,7 +25,7 @@ new_artist_1 = User.create(
 email: "new_artist24@gmail.com",
  password: "hunter12",
  username: "Singer",
- description: "Lorem ipsum dolor sit amet,
+ description: "Artist 2 descriptio Lorem ipsum dolor sit amet,
  consectetur adipisicing elit. Delectus quod, placeat accusamus.")
 
  new_artist_photo_1 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar.jpg')
@@ -35,7 +35,7 @@ new_artist_2 = User.create(
 email: "new_artist54@gmail.com",
  password: "hunter12",
  username: "Experienced Musician",
- description: "Lorem ipsum dolor sit amet,
+ description: "Artist 3 description Lorem ipsum dolor sit amet,
  consectetur adipisicing elit. Delectus quod, placeat accusamus.")
 
  new_artist_photo_2 = open('https://musiccamp-seeds.s3.amazonaws.com/clem-onojeghuo-zGCxdJHklhA-unsplash.jpg')
@@ -45,7 +45,7 @@ new_artist_3 = User.create(
 email: "new_artist74@gmail.com",
  password: "hunter12",
  username: "Guitar Player Girl",
- description: "Lorem ipsum dolor sit amet,
+ description: "Artist 4 description Lorem ipsum dolor sit amet,
  consectetur adipisicing elit. Delectus quod, placeat accusamus.")
 
  new_artist_photo_3 = open('https://musiccamp-seeds.s3.amazonaws.com/girl1.jpg')
@@ -55,7 +55,7 @@ new_artist_4 = User.create(
  email: "new_artist95@gmail.com",
  password: "hunter12",
  username: "Guitar Player Guy",
- description: "Lorem ipsum dolor sit amet,
+ description: "Artist 5 description Lorem ipsum dolor sit amet,
  consectetur adipisicing elit. Delectus quod, placeat accusamus.")
 
  new_artist_photo_4 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar2.jpg')
@@ -63,7 +63,7 @@ new_artist_4 = User.create(
 
  album01 = Album.create(
    title: "Album 1",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 1 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
  )
@@ -72,7 +72,7 @@ new_artist_4 = User.create(
 
  album02 = Album.create(
    title: "Album 2",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 2 descriptionLorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
  )
@@ -82,7 +82,7 @@ new_artist_4 = User.create(
 
  album03 = Album.create(
    title: "Album 3",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 3 descriptionLorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
  )
@@ -92,7 +92,7 @@ new_artist_4 = User.create(
 
  album04 = Album.create(
    title: "Album 4",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 4 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist.id
  )
@@ -102,7 +102,7 @@ new_artist_4 = User.create(
 
  album05 = Album.create(
    title: "Album 5",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 5 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_1.id
  )
@@ -112,7 +112,7 @@ new_artist_4 = User.create(
 
  album06 = Album.create(
    title: "Album 6",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 6 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_1.id
  )
@@ -122,7 +122,7 @@ new_artist_4 = User.create(
 
  album07 = Album.create(
    title: "Album 7",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 7 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_1.id
  )
@@ -132,7 +132,7 @@ new_artist_4 = User.create(
 
  album08 = Album.create(
    title: "Album 8",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 8 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_2.id
  )
@@ -142,7 +142,7 @@ new_artist_4 = User.create(
 
  album09 = Album.create(
    title: "Album 9",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 9 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_2.id
  )
@@ -152,7 +152,7 @@ new_artist_4 = User.create(
 
  album10 = Album.create(
    title: "Album 10",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 10 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_3.id
  )
@@ -162,7 +162,7 @@ new_artist_4 = User.create(
 
  album11 = Album.create(
    title: "Album 11",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 11 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_3.id
  )
@@ -172,7 +172,7 @@ new_artist_4 = User.create(
 
  album12 = Album.create(
    title: "Album 12",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 12 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_3.id
  )
@@ -182,7 +182,7 @@ new_artist_4 = User.create(
 
  album13 = Album.create(
    title: "Album 13",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 13 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_4.id
  )
@@ -192,7 +192,7 @@ new_artist_4 = User.create(
 
  album14 = Album.create(
    title: "Album 14",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 14 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_4.id
  )
@@ -202,7 +202,7 @@ new_artist_4 = User.create(
 
  album15 = Album.create(
    title: "Album 15",
-   description: "Lorem ipsum dolor sit amet,
+   description: "Album 15 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
   artist_id: new_artist_4.id
  )
@@ -213,7 +213,7 @@ new_artist_4 = User.create(
 song01 = Song.create(
     title: "Je voudrais tre un pigeon",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 1 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
     artist_id: album01.artist_id
@@ -226,7 +226,7 @@ song01.photo.attach(io: song01_photo, filename: "jan-kronies-Ao1MeLnG_kY-unsplas
 song02 = Song.create(
     title: "JOn est bien",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 2 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
     artist_id: album01.artist_id
@@ -239,7 +239,7 @@ song02.photo.attach(io: song02_photo, filename: "ken-cheung-0F2nvpob0_c-unsplash
 song03 = Song.create(
     title: "Pourquoi est ce que jen ai quelque chose faire",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 3 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
     artist_id: album01.artist_id
@@ -252,7 +252,7 @@ song03.photo.attach(io: song03_photo, filename: "shawn-ang-npeUDxUHk8g-unsplash.
 song04 = Song.create(
     title: "Monplaisir #6",
     track_num: 4,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 4 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
     artist_id: album01.artist_id
@@ -265,7 +265,7 @@ song04.photo.attach(io: song04_photo, filename: "ephraim-mayrena-lkqK7NJeWG4-uns
 song05 = Song.create(
     title: "Theme Song",
     track_num: 5,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 5 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album01.id,
     artist_id: album01.artist_id
@@ -278,7 +278,7 @@ song05.photo.attach(io: song05_photo, filename: "aron-yigin-i19NWSLo5Ps-unsplash
 song06 = Song.create(
     title: "Traveling in your mind",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 6 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
     artist_id: album02.artist_id
@@ -291,7 +291,7 @@ song06.photo.attach(io: song06_photo, filename: "micah-tindell-AdOeV-qlAs4-unspl
 song07 = Song.create(
     title: "Monarch of the street",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 7 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
     artist_id: album02.artist_id
@@ -304,7 +304,7 @@ song07.photo.attach(io: song07_photo, filename: "micah-tindell-UJrFax0t7NM-unspl
 song08 = Song.create(
     title: "People are spinning",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 8 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
     artist_id: album02.artist_id
@@ -317,7 +317,7 @@ song08.photo.attach(io: song08_photo, filename: "mana5280-gmotW6RWWnA-unsplash.j
 song09 = Song.create(
     title: "Dans le dnide la saturation absolue",
     track_num: 4,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 9 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
     artist_id: album02.artist_id
@@ -330,7 +330,7 @@ song09.photo.attach(io: song09_photo, filename: "alla-razgonova-zPTq--yOK2Y-unsp
 song10 = Song.create(
     title: "Dans le nid de la gupe massone",
     track_num: 5,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 10 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album02.id,
     artist_id: album02.artist_id
@@ -343,7 +343,7 @@ song10.photo.attach(io: song10_photo, filename: "marian-kroell-tB_lUH5MozQ-unspl
 song11= Song.create(
     title: "Intranet",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 11 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
     artist_id: album03.artist_id
@@ -356,7 +356,7 @@ song11.photo.attach(io: song11_photo, filename: "logan-weaver-_5dGMn1RxX8-unspla
 song12 = Song.create(
     title: "One Way",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 12 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
     artist_id: album03.artist_id
@@ -369,7 +369,7 @@ song12.photo.attach(io: song12_photo, filename: "kristaps-ungurs-gOc4pVZYSN8-uns
 song13 = Song.create(
     title: "Picture Perfect",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 13 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
     artist_id: album03.artist_id
@@ -382,7 +382,7 @@ song13.photo.attach(io: song13_photo, filename: "alla-razgonova-ZyyDGo2Rykc-unsp
 song14 = Song.create(
     title: "Stranger",
     track_num: 4,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 14 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album03.id,
     artist_id: album03.artist_id
@@ -395,7 +395,7 @@ song14.photo.attach(io: song14_photo, filename: "vika-chartier-Y0dBD80odGw-unspl
 song15 = Song.create(
     title: "Landline",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 15 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album04.id,
     artist_id: album04.artist_id
@@ -408,7 +408,7 @@ song15.photo.attach(io: song15_photo, filename: "taisiia-shestopal-6uhVK8X-vgE-u
 song16 = Song.create(
     title: "Horizon Ending",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 16 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album04.id,
     artist_id: album04.artist_id
@@ -421,7 +421,7 @@ song16.photo.attach(io: song16_photo, filename: "nazarizal-mohammad-p0sU9EXH8Ok-
 song17 = Song.create(
     title: "Tequila Moonrise",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 17 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album04.id,
     artist_id: album04.artist_id
@@ -434,7 +434,7 @@ song17.photo.attach(io: song17_photo, filename: "sulthan-auliya-WU0oahZNCd8-unsp
 song18 = Song.create(
     title: "Lost European",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 18 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album05.id,
     artist_id: album05.artist_id
@@ -447,7 +447,7 @@ song18.photo.attach(io: song18_photo, filename: "hamza-bounaim-MmsbpVzPZjg-unspl
 song19 = Song.create(
     title: "Urban Sunrise ",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 19 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album05.id,
     artist_id: album05.artist_id
@@ -460,7 +460,7 @@ song19.photo.attach(io: song19_photo, filename: "toan-chu-RsFO5OG0rjA-unsplash.j
 song20 = Song.create(
     title: "Violin Bach",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 20 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album05.id,
     artist_id: album05.artist_id
@@ -473,7 +473,7 @@ song20.photo.attach(io: song20_photo, filename: "gantas-vaiciulenas-A5Xpl_7RQtk-
 song21 = Song.create(
     title: "The Chorus Ceases Instrumental",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 21 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album06.id,
     artist_id: album06.artist_id
@@ -486,7 +486,7 @@ song21.photo.attach(io: song21_photo, filename: "timo-wielink-8x9THjvhseg-unspla
 song22 = Song.create(
     title: "The Light filtering Canopy Instrumental",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 22 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album06.id,
     artist_id: album06.artist_id
@@ -499,7 +499,7 @@ song22.photo.attach(io: song22_photo, filename: "mark-rivera-yqRUcCRO9vI-unsplas
 song23 = Song.create(
     title: "Feeding Flock Instrumental",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 23 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album06.id,
     artist_id: album06.artist_id
@@ -512,7 +512,7 @@ song23.photo.attach(io: song23_photo, filename: "natallia-nagorniak-YJnX-S4Ib5I-
 song24 = Song.create(
     title: "Sentinel",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 24 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album07.id,
     artist_id: album07.artist_id
@@ -525,7 +525,7 @@ song24.photo.attach(io: song24_photo, filename: "nazarizal-mohammad-cN7TzNvWkU4-
 song25 = Song.create(
     title: "Homeroad",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 25 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album07.id,
     artist_id: album07.artist_id
@@ -538,7 +538,7 @@ song25.photo.attach(io: song25_photo, filename: "meireles-neto-MqayxyUiiL0-unspl
 song26 = Song.create(
     title: "Interception",
     track_num: 3,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 26 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album07.id,
     artist_id: album07.artist_id
@@ -551,7 +551,7 @@ song26.photo.attach(io: song26_photo, filename: "shahin-khalaji-HscNqrWavms-unsp
 song27 = Song.create(
     title: "A_Little_Swing_Music",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 27 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album08.id,
     artist_id: album08.artist_id
@@ -564,7 +564,7 @@ song27.photo.attach(io: song27_photo, filename: "tim-mossholder-i59g1T0od8A-unsp
 song28 = Song.create(
     title: "Balmy_Summer_Night",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 28 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album08.id,
     artist_id: album08.artist_id
@@ -577,7 +577,7 @@ song28.photo.attach(io: song28_photo, filename: "hannah-middleton-moyBDVgDur4-un
 song29 = Song.create(
     title: "Spring_Swing",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 29 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album09.id,
     artist_id: album09.artist_id
@@ -590,7 +590,7 @@ song29.photo.attach(io: song29_photo, filename: "sj-objio-J7MVwbYXXJY-unsplash.j
 song30 = Song.create(
     title: "Bees",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 30 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album09.id,
     artist_id: album09.artist_id
@@ -603,7 +603,7 @@ song30.photo.attach(io: song30_photo, filename: "se-nuno-BN2bJBgz_G4-unsplash.jp
 song31 = Song.create(
     title: "In_Former_Rings",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 31 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album10.id,
     artist_id: album10.artist_id
@@ -616,7 +616,7 @@ song31.photo.attach(io: song31_photo, filename: "hannah-middleton-tB1eN4-Gl8U-un
 song32 = Song.create(
     title: "Microwave",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 32 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album10.id,
     artist_id: album10.artist_id
@@ -629,7 +629,7 @@ song32.photo.attach(io: song32_photo, filename: "natallia-nagorniak-2lUo-DcYdwk-
 song33 = Song.create(
     title: "Turning",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 33 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album11.id,
     artist_id: album11.artist_id
@@ -642,7 +642,7 @@ song33.photo.attach(io: song33_photo, filename: "dave-hoefler--uX-adCabaI-unspla
 song34 = Song.create(
     title: "Depressed_Buddhist",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 34 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album11.id,
     artist_id: album11.artist_id
@@ -655,7 +655,7 @@ song34.photo.attach(io: song34_photo, filename: "riddhesh-patil-VoyTAHY3K_8-unsp
 song35 = Song.create(
     title: "Smuggler",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 35 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album12.id,
     artist_id: album12.artist_id
@@ -668,7 +668,7 @@ song35.photo.attach(io: song35_photo, filename: "timo-wielink-1EM6lrWfqMA-unspla
 song36 = Song.create(
     title: "The_Lasso_of_Time",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 36 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album12.id,
     artist_id: album12.artist_id
@@ -681,7 +681,7 @@ song36.photo.attach(io: song36_photo, filename: "fly-d-H8ALEQLhUxQ-unsplash.jpg"
 song37 = Song.create(
     title: "Sounding_Steam_Engine",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 37 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album13.id,
     artist_id: album13.artist_id
@@ -694,7 +694,7 @@ song37.photo.attach(io: song37_photo, filename: "archie-R84IM1cI5YQ-unsplash.jpg
 song38 = Song.create(
     title: "Played_by_Ear",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 38 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album13.id,
     artist_id: album13.artist_id
@@ -707,7 +707,7 @@ song38.photo.attach(io: song38_photo, filename: "johny-goerend-qm2rUzrP64U-unspl
 song39 = Song.create(
     title: "Waltz_For_a_Memory",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 39 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album14.id,
     artist_id: album14.artist_id
@@ -720,7 +720,7 @@ song39.photo.attach(io: song39_photo, filename: "alla-razgonova-jSKWjT5ON7A-unsp
 song40 = Song.create(
     title: "The_Strip",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 40 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album14.id,
     artist_id: album14.artist_id
@@ -733,7 +733,7 @@ song40.photo.attach(io: song40_photo, filename: "jasmin-chew-wZQ3engj7b4-unsplas
 song41 = Song.create(
     title: "Good_Times_Walk",
     track_num: 1,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 41 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album15.id,
     artist_id: album15.artist_id
@@ -746,7 +746,7 @@ song41.photo.attach(io: song41_photo, filename: "erik-mclean-sDMrGD3T-NU-unsplas
 song42 = Song.create(
     title: "Dixie_Parade",
     track_num: 2,
-    description: "Lorem ipsum dolor sit amet,
+    description: "Song 42 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
     album_id: album15.id,
     artist_id: album15.artist_id
