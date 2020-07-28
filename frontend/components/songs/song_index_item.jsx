@@ -14,10 +14,10 @@ class SongIndexItem extends React.Component{
   componentDidMount(){
     const audioPlayer = document.getElementById("audioPlayer");
     debugger
-    if (this.props.currentlyPlaying.title === this.props.song.title && audioPlayer.paused) {
-      this.setState({icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" />})
-    } else {
+    if (this.props.currentlyPlaying.title === this.props.song.title && this.props.isPlaying) {
       this.setState({icon: <FontAwesomeIcon icon={faPauseCircle} size="sm" />})
+    } else {
+      this.setState({icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" />})
     }
   }
 
@@ -27,7 +27,7 @@ class SongIndexItem extends React.Component{
 
     return (
       <li>
-        <button onClick={() => this.props.playing(song)} data-id={index}>
+        <button onClick={() => this.props.playing(song)}>
           {this.state.icon}
         </button>{" "}
           {song.track_num}{". "}

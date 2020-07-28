@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { requestSongs } from './../../actions/song_actions';
 import SongIndex from './song_index'
-import { currentlyPlaying } from '../../actions/player_actions'
+import { currentlyPlaying, isPlaying } from '../../actions/player_actions'
 
 
 const mSTP = (state) => {
@@ -10,7 +10,8 @@ const mSTP = (state) => {
     
     songs: Object.values(state.entities.songs),
     errors: state.errors.songs,
-    currentlyPlaying: state.ui.player
+    currentlyPlaying: state.ui.player.song
+  
   }
 }
 

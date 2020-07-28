@@ -1,5 +1,5 @@
 import React from 'react'
-import SongIndexItem from './song_index_item'
+import SongIndexItem from './song_index_item_container'
 
 
 
@@ -30,9 +30,6 @@ class SongIndex extends React.Component{
                   <SongIndexItem
                     key={song.id}
                     song={song}
-                    playing={this.props.playing}
-                    index={index}
-                    currentlyPlaying = {this.props.currentlyPlaying}
                   />
               );              
             })}

@@ -29,7 +29,7 @@ class AlbumShow extends React.Component {
             </div>
 
             <SongIndex 
-            albumId={album.id}
+              albumId={album.id}
             />
             <Player/>
             <img src={`${album.photoUrl}`} width="350" height='350' />
