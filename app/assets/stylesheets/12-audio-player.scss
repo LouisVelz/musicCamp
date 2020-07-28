@@ -1,0 +1,35 @@
+.player{
+  margin: 30px 0px;
+  display: flex;
+  flex-flow: row wrap;
+  height: 55px;
+  justify-content: flex-start;
+
+  .player-button {
+    width: 50px;
+    height: 55px;
+    border: 1px solid lightgray;
+    margin-right: 12px;
+    display: flex;
+    button{
+      align-items: center;
+    }
+  }
+
+  .player-info{
+    display: flex;
+    p:first-child{
+      font-weight: 500;
+      font-size: 13px;
+      margin-right: 10px;
+    }
+    p:last-child{
+      font-size: 13px;
+      color: #898a89;
+    }
+  }
+
+  .scroll-skip{
+    display: flex;
+  }
+}

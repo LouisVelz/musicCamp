@@ -1,5 +1,7 @@
 .album-show{
-  margin: 180px 16% 40px 16% ;
+  margin: 0px 16% 40px 16% ;
+  border: lightgrey solid 1px;
+  // background-color: lightgray;
 
   .album-top-bar{
     display: flex;
@@ -12,6 +14,45 @@
       margin-left: 40px;
     }
   }
+
+  .album-content{
+    display: flex;
+    flex-direction: row;
+
+    .main-content{
+      margin: 0px 32px 20px 32px;
+      flex: 4.5 1 0;
+
+      .album-title{
+
+        h1 {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 14px;
+
+          a {
+                color: #3393f6
+          }
+        }
+
+      }
+
+    }
+
+    .album-picture{
+      flex: 3.5 1 0;
+    }
+
+    .album-artist{
+      margin: 0px 32px 20px 40px;
+      flex: 2 1 0;
+    }
+
+  }
+
+
 
 
 }

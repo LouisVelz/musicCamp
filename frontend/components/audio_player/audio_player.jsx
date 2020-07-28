@@ -153,13 +153,15 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
             <button onClick={this.togglePlay}>{playPause}</button>
           </div>
           <div className="player-info">
-            <div className="player-song-title">
-              <p>{currentlyPlaying.title}</p>
-            </div>
-            <div className="song-timestamp">
-              {this.timeStamp(this.state.currentTime)} /{" "}
-              {this.timeStamp(this.state.duration)}
-            </div>
+              <p>
+                {currentlyPlaying.title}
+              </p>
+              <p>
+                  {this.timeStamp(this.state.currentTime)} /{" "}
+                  {this.timeStamp(this.state.duration)}
+              </p>
+          </div>
+          <br/>
             <div className="scroll-skip">
               <input
                 className="scrollbar"
@@ -177,7 +179,6 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
                 <FontAwesomeIcon icon={faFastForward} size="sm" />
               </button>
             </div>
-          </div>
         </div>
       ) : null;
 
