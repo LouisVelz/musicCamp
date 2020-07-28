@@ -9,28 +9,23 @@ import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 class SongIndexItem extends React.Component{
   constructor(props){
     super(props)
-    this.state = { icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" /> };
-  }
-  componentDidMount(){
-    const audioPlayer = document.getElementById("audioPlayer");
-    debugger
-    if(this.props.currentlyPlaying){
-      if (this.props.currentlyPlaying.title === this.props.song.title && this.props.isPlaying) {
-        this.setState({icon: <FontAwesomeIcon icon={faPauseCircle} size="sm" />})
-      } else {
-        this.setState({icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" />})
-      }
-    }
+    this.state = { icon: null };
   }
 
   render(){
 
-    const { song, index } = this.props
+    const { song, currentlyPlaying, isPlaying } = this.props
+    let icon
+    if (!!currentlyPlaying && isPlaying && currentlyPlaying.title === song.title){
+        icon = <FontAwesomeIcon icon={faPauseCircle} size="sm" />
+    }else{
+      icon = <FontAwesomeIcon icon={faPlayCircle} size="sm" />
+    }
 
     return (
       <li>
         <button onClick={() => this.props.playing(song)}>
-          {this.state.icon}
+          {icon}
         </button>{" "}
           {song.track_num}{". "}
           <Link to={`/songs/${song.id}`}>{song.title}</Link>

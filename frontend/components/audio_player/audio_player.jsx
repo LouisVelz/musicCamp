@@ -10,7 +10,6 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
     constructor(props) {
       super(props);
       this.state = {
-        // playStatus: "play",
         currentTime: 0,
         duration: 0,
       };
@@ -22,6 +21,7 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       this.handleCurrentTime = this.handleCurrentTime.bind(this);
       this.handleBackward = this.handleBackward.bind(this);
       this.handleFordward = this.handleFordward.bind(this);
+      this.handleNextSong = this.handleNextSong.bind(this)
     }
 
     togglePlay() {
@@ -58,6 +58,12 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       }
     }
 
+    handleNextSong(){
+      if((Math.floor(this.state.currentTime) + 1) === Math.floor(this.state.duration)){
+        this.handleFordward()
+      }
+    }
+
 
     songDuration() {
       let audioPlayer = document.getElementById("audioPlayer");
@@ -72,13 +78,11 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       if (seconds < 10) {
         seconds = `0 ${seconds}`;
       }
-
       return `${minutes} : ${seconds}`;
     }
 
     handleToggleBar(e) {
       let audioPlayer = document.getElementById("audioPlayer");
-
       audioPlayer.currentTime = e.target.value;
       this.setState({ currentTime: e.target.value });
     }
@@ -90,10 +94,11 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       if (!audioPlayer.paused) {
         this.playerInterval = setInterval(() => {
           scrollBar.value = audioPlayer.currentTime;
-
           this.setState({ currentTime: audioPlayer.currentTime });
+          this.handleNextSong()
         }, 1000);
       }
+      
     }
 
     handleBackward() {
@@ -117,7 +122,6 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
 
     handleFordward() {
       const audioPlayer = document.getElementById("audioPlayer");
-
       let nextSongIndex;
       this.props.songs.forEach((song, index) => {
         if (this.props.currentlyPlaying.id === song.id) {
@@ -130,12 +134,12 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       );
       setTimeout(() => {
         audioPlayer.play();
-        // this.togglePlay();
         this.props.isPlaying()
       }, 500);
     }
 
     render() {
+
       const { currentlyPlaying } = this.props;
       let playPause =
         this.props.isPlayingAudio ? (
