@@ -6,184 +6,180 @@ import { faFastForward} from '@fortawesome/free-solid-svg-icons'
 import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
 
 
-  class Player extends React.Component{
-    constructor(props){
-      super(props)
+  class Player extends React.Component {
+    constructor(props) {
+      super(props);
       this.state = {
-        playStatus: 'play',
-         currentTime: 0,
-         duration: 0
+        playStatus: "play",
+        currentTime: 0,
+        duration: 0,
+      };
+
+      this.togglePlay = this.togglePlay.bind(this);
+      this.songDuration = this.songDuration.bind(this);
+      this.timeStamp = this.timeStamp.bind(this);
+      this.handleToggleBar = this.handleToggleBar.bind(this);
+      this.handleCurrentTime = this.handleCurrentTime.bind(this);
+      this.handleBackward = this.handleBackward.bind(this);
+      this.handleFordward = this.handleFordward.bind(this);
+    }
+
+    togglePlay() {
+      let status = this.state.playStatus;
+      let audioPlayer = document.getElementById("audioPlayer");
+      if (audioPlayer.paused) {
+        status = "pause";
+        audioPlayer.play();
+      } else {
+        status = "play";
+        audioPlayer.pause();
+      }
+      this.setState({ playStatus: status });
+    }
+
+    componentDidMount() {
+      this.songDuration();
+    }
+
+    componentWillUnmount() {
+      clearInterval(this.playerInterval);
+    }
+
+    componentWillReceiveProps(nextProps){
+      const audioPlayer = document.getElementById("audioPlayer");
+      if (!!Object.keys(this.props.currentlyPlaying).length){
+        if(nextProps.currentlyPlaying !== this.props.currentlyPlaying){
+          this.setState({playStatus: 'pause'})
+          setTimeout(() => audioPlayer.play(), 10);
         }
-
-      this.togglePlay = this.togglePlay.bind(this)
-      this.songDuration = this.songDuration.bind(this)
-      this.timeStamp = this.timeStamp.bind(this)
-      this.handleToggleBar = this.handleToggleBar.bind(this)
-      this.handleCurrentTime = this.handleCurrentTime.bind(this)
-      this.handleBackward = this.handleBackward.bind(this)
-      this.handleFordward = this.handleFordward.bind(this)
-    }
-
-  togglePlay() {
-    // debugger
-    // e.preventDefault()
-    let status = this.state.playStatus;
-    let audioPlayer = document.getElementById('audioPlayer');
-    if (status === 'play') {
-      clearInterval(this.playerInterval)
-      status = 'pause';
-      audioPlayer.play();
-    } else {
-      status = 'play';
-      audioPlayer.pause();
-    }
-    this.setState({ playStatus: status });
-  }
-
-  componentDidMount(){
-    this.songDuration()
-
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.playerInterval)
-  }
-
-  // componentDidUpdate(prevProps){
-  //   if(this.props.song.id !== prevProps.song.id){
-  //         this.setState({ playStatus: "pause" });
-  //         let audioPlayer = document.getElementById('audioPlayer')
-  //         audioPlayer.play()
-  //   }
-  // }
-
-  songDuration (){
-    let audioPlayer = document.getElementById('audioPlayer')
-    this.setState({
-      duration: audioPlayer.duration
-    })
-  }
-
-  timeStamp(time){
-    let minutes = Math.floor(time / 60);
-    let seconds = Math.floor(time - (minutes * 60));
-    if (seconds < 10) {
-      seconds = `0 ${seconds}`;
-    }
-     
-    return `${minutes} : ${seconds}`
-  }
-
-  handleToggleBar(e){
-    let audioPlayer = document.getElementById("audioPlayer");
-
-    audioPlayer.currentTime = e.target.value;
-    this.setState({ currentTime: e.target.value });
-  }
-
-  handleCurrentTime(){
-    const audioPlayer = document.getElementById("audioPlayer");
-    const scrollBar = document.getElementById("scrollbar")
-
-    if (!audioPlayer.paused) {
-      this.playerInterval = setInterval(() => {
-        scrollBar.value = audioPlayer.currentTime;
-
-        this.setState({ currentTime: audioPlayer.currentTime  })
-      }, 1000);
-    }
-  }
-
-  handleBackward(){
-    const audioPlayer = document.getElementById('audioPlayer')
-    let previousSongIndex;
-    this.props.songs.forEach((song, index) => {
-      if (this.props.currentlyPlaying.id === song.id) {
-        previousSongIndex = index - 1;
       }
-    });
-    if(previousSongIndex < 0 ){
-      previousSongIndex = this.props.songs.length - 1
     }
-    this.props.playing(
-      this.props.songs[previousSongIndex]
-    );
 
-    setTimeout(() => audioPlayer.play(), 1000);
 
-  }
+    songDuration() {
+      let audioPlayer = document.getElementById("audioPlayer");
+      this.setState({
+        duration: audioPlayer.duration,
+      });
+    }
 
-  handleFordward(){
-    const audioPlayer = document.getElementById("audioPlayer");
-
-    let nextSongIndex
-    this.props.songs.forEach((song, index) => {
-      if (this.props.currentlyPlaying.id === song.id){
-        nextSongIndex = index + 1
+    timeStamp(time) {
+      let minutes = Math.floor(time / 60);
+      let seconds = Math.floor(time - minutes * 60);
+      if (seconds < 10) {
+        seconds = `0 ${seconds}`;
       }
-    })
-    
-    this.props.playing(this.props.songs[nextSongIndex % this.props.songs.length])
-    setTimeout(() => audioPlayer.play(), 1000);
-  }
 
+      return `${minutes} : ${seconds}`;
+    }
 
-    render(){
+    handleToggleBar(e) {
+      let audioPlayer = document.getElementById("audioPlayer");
 
-        const { currentlyPlaying } = this.props
-        let playPause = this.state.playStatus === 'play' ?
-          <FontAwesomeIcon icon={faPlayCircle} size='3x' /> : <FontAwesomeIcon icon={faPauseCircle} size='3x' />
-  
-        let audioPlayer = this.props.currentlyPlaying ? (
-          <div className="player">
-            <div className="player-button">
-              <button onClick={this.togglePlay}>{playPause}</button>
+      audioPlayer.currentTime = e.target.value;
+      this.setState({ currentTime: e.target.value });
+    }
+
+    handleCurrentTime() {
+      const audioPlayer = document.getElementById("audioPlayer");
+      const scrollBar = document.getElementById("scrollbar");
+
+      if (!audioPlayer.paused) {
+        this.playerInterval = setInterval(() => {
+          scrollBar.value = audioPlayer.currentTime;
+
+          this.setState({ currentTime: audioPlayer.currentTime });
+        }, 1000);
+      }
+    }
+
+    handleBackward() {
+      const audioPlayer = document.getElementById("audioPlayer");
+      let previousSongIndex;
+      this.props.songs.forEach((song, index) => {
+        if (this.props.currentlyPlaying.id === song.id) {
+          previousSongIndex = index - 1;
+        }
+      });
+      if (previousSongIndex < 0) {
+        previousSongIndex = this.props.songs.length - 1;
+      }
+      this.props.playing(this.props.songs[previousSongIndex]);
+
+      setTimeout(() => audioPlayer.play(), 1000);
+    }
+
+    handleFordward() {
+      const audioPlayer = document.getElementById("audioPlayer");
+
+      let nextSongIndex;
+      this.props.songs.forEach((song, index) => {
+        if (this.props.currentlyPlaying.id === song.id) {
+          nextSongIndex = index + 1;
+        }
+      });
+
+      this.props.playing(
+        this.props.songs[nextSongIndex % this.props.songs.length]
+      );
+      setTimeout(() => audioPlayer.play(), 1000);
+    }
+
+    render() {
+      const { currentlyPlaying } = this.props;
+      let playPause =
+        this.state.playStatus === "play" ? (
+          <FontAwesomeIcon icon={faPlayCircle} size="3x" />
+        ) : (
+          <FontAwesomeIcon icon={faPauseCircle} size="3x" />
+        );
+
+      let audioPlayer = this.props.currentlyPlaying ? (
+        <div className="player">
+          <div className="player-button">
+            <button onClick={this.togglePlay}>{playPause}</button>
+          </div>
+          <div className="player-info">
+            <div className="player-song-title">
+              <p>{currentlyPlaying.title}</p>
             </div>
-            <div className="player-info">
-              <div className="player-song-title">
-                <p>{currentlyPlaying.title}</p>
-              </div>
-              <div className="song-timestamp">
-                {this.timeStamp(this.state.currentTime)} /{" "}
-                {this.timeStamp(this.state.duration)}
-              </div>
-              <div className="scroll-skip">
-                <input
-                  className="scrollbar"
-                  id="scrollbar"
-                  type="range"
-                  min="0"
-                  defaultValue="0"
-                  max={`${this.state.duration}`}
-                  onInput={this.handleToggleBar}
-                />
-                <button onClick={this.handleBackward}>
-                  <FontAwesomeIcon icon={faFastBackward} size="sm" />
-                </button>
-                <button onClick={this.handleFordward}>
-                  <FontAwesomeIcon icon={faFastForward} size="sm" />
-                </button>
-              </div>
+            <div className="song-timestamp">
+              {this.timeStamp(this.state.currentTime)} /{" "}
+              {this.timeStamp(this.state.duration)}
+            </div>
+            <div className="scroll-skip">
+              <input
+                className="scrollbar"
+                id="scrollbar"
+                type="range"
+                min="0"
+                defaultValue="0"
+                max={`${this.state.duration}`}
+                onInput={this.handleToggleBar}
+              />
+              <button onClick={this.handleBackward}>
+                <FontAwesomeIcon icon={faFastBackward} size="sm" />
+              </button>
+              <button onClick={this.handleFordward}>
+                <FontAwesomeIcon icon={faFastForward} size="sm" />
+              </button>
             </div>
           </div>
-        ) : null;
-  
+        </div>
+      ) : null;
 
-          return(
-            <>
-              <audio
-               id='audioPlayer'
-               src={currentlyPlaying ? currentlyPlaying.songUrl : null}
-               onPlay={this.handleCurrentTime}
-               onLoadedMetadata={this.songDuration}
-               >
-              </audio> 
-              {audioPlayer}
-            </>
-          )
-      }
-    // }
-    
+      return (
+        <>
+          <audio
+            id="audioPlayer"
+            src={currentlyPlaying ? currentlyPlaying.songUrl : null}
+            onPlay={this.handleCurrentTime}
+            onLoadedMetadata={this.songDuration}
+          ></audio>
+          {audioPlayer}
+        </>
+      );
+    }
   }
   
   export default Player;

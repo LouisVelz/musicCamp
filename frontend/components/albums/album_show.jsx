@@ -29,8 +29,6 @@ class AlbumShow extends React.Component {
             </div>
 
             <SongIndex 
-            // fetchSongs={this.props.fetchAlbumSongs}
-            // playing={this.props.playing}
             albumId={album.id}
             />
             <Player/>

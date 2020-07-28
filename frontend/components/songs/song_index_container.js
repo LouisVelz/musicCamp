@@ -5,12 +5,12 @@ import { currentlyPlaying } from '../../actions/player_actions'
 
 
 const mSTP = (state) => {
-
+  debugger
   return {
     
     songs: Object.values(state.entities.songs),
-    errors: state.errors.songs
-    
+    errors: state.errors.songs,
+    currentlyPlaying: state.ui.player
   }
 }
 
