@@ -10,7 +10,7 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
     constructor(props) {
       super(props);
       this.state = {
-        playStatus: "play",
+        // playStatus: "play",
         currentTime: 0,
         duration: 0,
       };
@@ -25,20 +25,21 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
     }
 
     togglePlay() {
-      let status = this.state.playStatus;
+      // let status = this.state.playStatus;
       let audioPlayer = document.getElementById("audioPlayer");
       if (audioPlayer.paused) {
-        status = "pause";
+        this.props.isPlaying();
         audioPlayer.play();
       } else {
-        status = "play";
+        this.props.isPaused();
         audioPlayer.pause();
       }
-      this.setState({ playStatus: status });
+      // this.setState({ playStatus: status });
     }
 
     componentDidMount() {
       this.songDuration();
+      // this.props.isPaused()
     }
 
     componentWillUnmount() {
@@ -47,10 +48,12 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
 
     componentWillReceiveProps(nextProps){
       const audioPlayer = document.getElementById("audioPlayer");
-      if (!!Object.keys(this.props.currentlyPlaying).length){
+      if (!!this.props.currentlyPlaying){
         if(nextProps.currentlyPlaying !== this.props.currentlyPlaying){
-          this.setState({playStatus: 'pause'})
-          setTimeout(() => audioPlayer.play(), 10);
+          setTimeout(() => {
+            audioPlayer.play();
+            this.props.isPlaying();
+          }, 10);
         }
       }
     }
@@ -106,7 +109,10 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       }
       this.props.playing(this.props.songs[previousSongIndex]);
 
-      setTimeout(() => audioPlayer.play(), 1000);
+      setTimeout(() => {
+        audioPlayer.play();
+        this.props.isPlaying();
+      }, 500);
     }
 
     handleFordward() {
@@ -122,16 +128,20 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       this.props.playing(
         this.props.songs[nextSongIndex % this.props.songs.length]
       );
-      setTimeout(() => audioPlayer.play(), 1000);
+      setTimeout(() => {
+        audioPlayer.play();
+        // this.togglePlay();
+        this.props.isPlaying()
+      }, 500);
     }
 
     render() {
       const { currentlyPlaying } = this.props;
       let playPause =
-        this.state.playStatus === "play" ? (
-          <FontAwesomeIcon icon={faPlayCircle} size="3x" />
-        ) : (
+        this.props.isPlayingAudio ? (
           <FontAwesomeIcon icon={faPauseCircle} size="3x" />
+          ) : (
+          <FontAwesomeIcon icon={faPlayCircle} size="3x" />
         );
 
       let audioPlayer = this.props.currentlyPlaying ? (

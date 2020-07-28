@@ -1,7 +1,11 @@
 import { CURRENTLY_PLAYING, IS_PLAYING, IS_PAUSED } from '../actions/player_actions' 
 
+const initialState = {
+  song: null,
+  isPlaying: false
+}
 
-const playerReducer = (state = {}, action) => {
+const playerReducer = (state = initialState, action) => {
   Object.freeze(state)
 
   switch (action.type) {

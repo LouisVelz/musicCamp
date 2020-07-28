@@ -14,10 +14,12 @@ class SongIndexItem extends React.Component{
   componentDidMount(){
     const audioPlayer = document.getElementById("audioPlayer");
     debugger
-    if (this.props.currentlyPlaying.title === this.props.song.title && this.props.isPlaying) {
-      this.setState({icon: <FontAwesomeIcon icon={faPauseCircle} size="sm" />})
-    } else {
-      this.setState({icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" />})
+    if(this.props.currentlyPlaying){
+      if (this.props.currentlyPlaying.title === this.props.song.title && this.props.isPlaying) {
+        this.setState({icon: <FontAwesomeIcon icon={faPauseCircle} size="sm" />})
+      } else {
+        this.setState({icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" />})
+      }
     }
   }
 

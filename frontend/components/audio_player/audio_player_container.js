@@ -11,12 +11,12 @@ const mSTP = (state) => {
   return {
     songs: Object.values(entities.songs),
     currentlyPlaying: state.ui.player.song,
-    isPlaying: state.ui.player.isPlaying
+    isPlayingAudio: state.ui.player.isPlaying
   };
 }
 
 const mDTP = dispatch => {
-  return { 
+  return {
     playing: (song) => dispatch(currentlyPlaying(song)),
     isPaused: () => dispatch(isPaused()),
     isPlaying: () => dispatch(isPlaying())
