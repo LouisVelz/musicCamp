@@ -8,3 +8,7 @@ export const currentlyPlaying = (song) => {
   };
 };
 
+export const isPlaying = () => {
+
+}
+

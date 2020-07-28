@@ -13,7 +13,8 @@ class SongIndexItem extends React.Component{
   }
   componentDidMount(){
     const audioPlayer = document.getElementById("audioPlayer");
-    if (this.props.currentlyPlaying.title === this.props.song.title && !audioPlayer.paused) {
+    debugger
+    if (this.props.currentlyPlaying.title === this.props.song.title && audioPlayer.paused) {
       this.setState({icon: <FontAwesomeIcon icon={faPlayCircle} size="sm" />})
     } else {
       this.setState({icon: <FontAwesomeIcon icon={faPauseCircle} size="sm" />})
