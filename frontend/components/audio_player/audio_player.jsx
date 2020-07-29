@@ -4,7 +4,7 @@ import { faPlayCircle} from '@fortawesome/free-regular-svg-icons'
 import { faPauseCircle } from '@fortawesome/free-regular-svg-icons'
 import { faFastForward} from '@fortawesome/free-solid-svg-icons'
 import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
-
+import {togglePlay} from './../../util/player_util'
 
   class Player extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
         duration: 0,
       };
 
-      this.togglePlay = this.togglePlay.bind(this);
+      // this.togglePlay = this.togglePlay.bind(this);
       this.songDuration = this.songDuration.bind(this);
       this.timeStamp = this.timeStamp.bind(this);
       this.handleToggleBar = this.handleToggleBar.bind(this);
@@ -24,17 +24,17 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       this.handleNextSong = this.handleNextSong.bind(this)
     }
 
-    togglePlay() {
-      let audioPlayer = document.getElementById("audioPlayer");
-      if (audioPlayer.paused) {
-        this.props.isPlaying();
-        audioPlayer.play();
-      } else {
-        this.props.isPaused();
-        audioPlayer.pause();
-      }
+    // togglePlay() {
+    //   let audioPlayer = document.getElementById("audioPlayer");
+    //   if (audioPlayer.paused) {
+    //     this.props.isPlaying();
+    //     audioPlayer.play();
+    //   } else {
+    //     this.props.isPaused();
+    //     audioPlayer.pause();
+    //   }
  
-    }
+    // }
 
     componentDidMount() {
       this.songDuration();
@@ -150,7 +150,7 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       let audioPlayer = this.props.currentlyPlaying ? (
         <div className="player">
           <div className="player-button">
-            <button onClick={this.togglePlay}>{playPause}</button>
+            <button onClick={() => togglePlay(this.props.isPlaying, this.props.isPaused)}>{playPause}</button>
           </div>
           <div className='player-side'>
 
