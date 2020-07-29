@@ -26,7 +26,7 @@ class SongIndexItem extends React.Component{
         <button onClick={() => this.props.playing(song)}>
           {icon}
         </button>{" "}
-          {song.track_num}{". "}
+        <span>{song.track_num}{". "}</span>
           <Link to={`/songs/${song.id}`}>{song.title}</Link>
       </li>
     );

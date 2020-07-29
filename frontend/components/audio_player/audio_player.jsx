@@ -152,6 +152,8 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
           <div className="player-button">
             <button onClick={this.togglePlay}>{playPause}</button>
           </div>
+          <div className='player-side'>
+
           <div className="player-info">
               <p>
                 {currentlyPlaying.title}
@@ -172,13 +174,16 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
                 max={`${this.state.duration}`}
                 onInput={this.handleToggleBar}
               />
-              <button onClick={this.handleBackward}>
-                <FontAwesomeIcon icon={faFastBackward} size="sm" />
-              </button>
-              <button onClick={this.handleFordward}>
-                <FontAwesomeIcon icon={faFastForward} size="sm" />
-              </button>
+              {/* <div className="player-buttons"> */}
+                <button onClick={this.handleBackward}>
+                  <FontAwesomeIcon icon={faFastBackward} size="sm" />
+                </button>
+                <button onClick={this.handleFordward}>
+                  <FontAwesomeIcon icon={faFastForward} size="sm" />
+                </button>
+              {/* </div> */}
             </div>
+          </div>
         </div>
       ) : null;
 

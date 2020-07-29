@@ -52,7 +52,46 @@
 
   }
 
+  .stream-download{
+    margin-bottom: 15px;
+    p:first-child{
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    p:nth-child(2){
+      font-size: 12px;
+      font-weight: lighter;
+      color: #898a89;
+      margin-bottom: 15px;
+    }
+    p:last-child{
+      font-size: 13px;
+    }
+  }
 
+  .song-index{
+    margin-bottom: 15px;
+    ul {
+      li {
+        button{
+          border: 1px solid lightgray;
+        }
+        span{
+          color: #898a89;
+          font-size: 14px;
+        }
+        a {
+          color: #3393f6;
+          font-size: 14px;
+        };
+      }
+    }
+  }
 
-
+  .album-description{
+    p{
+      font-size: 13px;
+    }
+  }
 }

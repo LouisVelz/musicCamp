@@ -32,18 +32,23 @@ class AlbumShow extends React.Component {
               <p>by <Link to={`users/${album.artist_id}`}>{album.artist.artistName}</Link></p>
             </div>
             <Player/>
-            <p>Digital Album</p>
-            <p>Streaming + Download</p>
-            <p>Includes unlimited streaming via the free Bandcamp app,
-              plus high-quality download in MP3, FLAC and more.</p>
+            <div className="stream-download">
+              <p>Digital Album</p>
+              <p>Streaming + Download</p>
+              <p>Includes unlimited streaming via the free Bandcamp app,
+                plus high-quality download in MP3, FLAC and more.</p>
+            </div>
 
             <SongIndex 
               albumId={album.id}
             />
-
-            <p>{album.decription} Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            A maiores magnam at fugit ut harum non consectetur eius? Soluta voluptate at, 
-            corrupti recusandae fugit incidunt nesciunt. Repellendus velit reiciendis rerum!</p>
+            <div className="album-description">
+              <p>
+                {album.decription} Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                A maiores magnam at fugit ut harum non consectetur eius? Soluta voluptate at, 
+                corrupti recusandae fugit incidunt nesciunt. Repellendus velit reiciendis rerum!
+              </p>
+            </div>
           </div>
           <div className="album-picture">
             <img src={`${album.photoUrl}`} width="350" height='350' />
