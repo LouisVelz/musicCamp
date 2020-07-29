@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import { requestSong } from './../../actions/song_actions';
 import SongShow from './song_show'
+import { currentlyPlaying, isPaused, isPlaying } from '../../actions/player_actions'
+
 
 const mSTP = (state, ownProps) => {
-
   return {
     song: state.entities.songs[ownProps.match.params.songId],
     currentlyPlaying: state.ui.player.song,

@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
-import { togglePlay } from './../../actions/player_actions'
+import { togglePlay } from './../../util/player_util'
+
 
 
 
@@ -19,9 +20,9 @@ class SongShow extends React.Component{
   }
 
   render(){
-    const { song, currentlyPlaying, isPlaying } = this.props
+    const { song, currentlyPlaying, isAudioPlaying } = this.props
     let icon
-    if (isPlaying) {
+    if (isAudioPlaying) {
       icon = <FontAwesomeIcon icon={faPauseCircle} size="3x" />
     } else {
       icon = <FontAwesomeIcon icon={faPlayCircle} size="3x" />
@@ -34,7 +35,7 @@ class SongShow extends React.Component{
         <div className='show-song'>
           <div className='show-song-title'>
             <h1>
-              Inspired by {song.artist.artisName}, 
+              Inspired by {song.artist.artistName}, 
               {song.title} from the album {song.album.albumName} takes flight
              </h1>
           </div>
@@ -57,7 +58,7 @@ class SongShow extends React.Component{
                 </div>
                 <div className="goto-and-buy">
                   <p>BUY</p>
-                  <p><FontAwesomeIcon icon={faHeartBroken} size="3x" />WHISHLIST</p>
+                  <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />WHISHLIST</p>
                   <p><Link to={`album/${song.album_id}`}>GO TO ALBUM</Link></p>
                 </div>
               </div>
@@ -68,12 +69,12 @@ class SongShow extends React.Component{
              quis molestias reprehenderit quas consectetur numquam possimus
              illo id alias sit corporis mollitia expedita.
             </p>
-            <img src={song.artist.artistName} alt=""/>
+            <img src={song.artist.photo} alt=""/>
           </div>
 
           <audio
             id="audioPlayer"
-            src={currentlyPlaying ? currentlyPlaying.songUrl : null}
+            src={song.songUrl}
           ></audio>
         </div>
       )
