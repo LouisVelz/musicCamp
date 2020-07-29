@@ -4,7 +4,7 @@ import { faPlayCircle} from '@fortawesome/free-regular-svg-icons'
 import { faPauseCircle } from '@fortawesome/free-regular-svg-icons'
 import { faFastForward} from '@fortawesome/free-solid-svg-icons'
 import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
-import {togglePlay} from './../../util/player_util'
+
 
   class Player extends React.Component {
     constructor(props) {
@@ -150,7 +150,7 @@ import {togglePlay} from './../../util/player_util'
       let audioPlayer = this.props.currentlyPlaying ? (
         <div className="player">
           <div className="player-button">
-            <button onClick={() => togglePlay(this.props.isPlaying, this.props.isPaused)}>{playPause}</button>
+            <button onClick={() => this.props.togglePlay()}>{playPause}</button>
           </div>
           <div className='player-side'>
 
@@ -174,7 +174,6 @@ import {togglePlay} from './../../util/player_util'
                 max={`${this.state.duration}`}
                 onInput={this.handleToggleBar}
               />
-              {/* <div className="player-buttons"> */}
                 <button onClick={this.handleBackward}>
                   <FontAwesomeIcon icon={faFastBackward} size="sm" />
                 </button>

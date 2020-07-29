@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
-import { togglePlay } from './../../util/player_util'
+
 
 
 
@@ -16,16 +16,23 @@ class SongShow extends React.Component{
 
   componentDidMount(){
     this.props.fetchSong(this.props.match.params.songId)
-    .then(song => this.props.playing(song))
+    .then(song => this.props.playing(song.song))
   }
 
   render(){
     const { song, currentlyPlaying, isAudioPlaying } = this.props
-    let icon
+    let playPause
     if (isAudioPlaying) {
-      icon = <FontAwesomeIcon icon={faPauseCircle} size="3x" />
+      playPause =
+      <button onClick={() => this.props.togglePlay()}>
+        <FontAwesomeIcon icon={faPauseCircle} size="3x" />
+      </button> 
     } else {
-      icon = <FontAwesomeIcon icon={faPlayCircle} size="3x" />
+      playPause = 
+        <button onClick={() => this.props.togglePlay()}>
+          <FontAwesomeIcon icon={faPlayCircle} size="3x" />
+        </button> 
+      
     }
 
     if(!this.props.song){
@@ -33,16 +40,14 @@ class SongShow extends React.Component{
     }else{
       return(
         <div className='show-song'>
-          <div className='show-song-title'>
+          <div className='song-show-title'>
             <h1>
               Inspired by {song.artist.artistName}, 
               {song.title} from the album {song.album.albumName} takes flight
              </h1>
           </div>
           <div className='song-icon-top'>
-            <button onClick={() => togglePlay(this.props.isPlaying, this.props.isPaused)}>
-              {icon}
-            </button>
+              {playPause}
           </div>
           <div className="song-show-image">
             <img src={`${song.photoUrl}`} alt=""/>
@@ -52,7 +57,7 @@ class SongShow extends React.Component{
               <img src={`${song.album.photo}`} alt=""/>
               <div className="lower-content">
                 <div className="play-and-info">
-                  {icon} 
+                  {playPause} 
                   <Link to={`album/${song.album_id}`}>{song.album.albumName}</Link>
                   <Link to={`user/${song.artist_id}`}>by {song.artist.artistName}</Link>
                 </div>
