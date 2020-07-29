@@ -1,7 +1,5 @@
 .player{
   margin: 30px 0px;
-  display: flex;
-  flex-flow: column wrap;
   height: 55px;
 
   .player-button {
@@ -15,11 +13,9 @@
     }
   }
   .player-side{
-    display: flex;
-    flex-flow: column;
+    margin-left: 70px;
     position: relative;
-    align-items: stretch;
-    left: -50px;
+    bottom: 60px;
   }
   .player-info{
     display: flex;
