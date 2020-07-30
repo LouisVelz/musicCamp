@@ -549,7 +549,7 @@ song26_photo = open('https://musiccamp-seeds.s3.amazonaws.com/shahin-khalaji-Hsc
 song26.photo.attach(io: song26_photo, filename: "shahin-khalaji-HscNqrWavms-unsplash.jpg")
 
 song27 = Song.create(
-    title: "A_Little_Swing_Music",
+    title: "A Little Swing Music",
     track_num: 1,
     description: "Song 27 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -562,7 +562,7 @@ song27_photo = open('https://musiccamp-seeds.s3.amazonaws.com/tim-mossholder-i59
 song27.photo.attach(io: song27_photo, filename: "tim-mossholder-i59g1T0od8A-unsplash.jpg")
 
 song28 = Song.create(
-    title: "Balmy_Summer_Night",
+    title: "Balmy Summer Night",
     track_num: 2,
     description: "Song 28 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -575,7 +575,7 @@ song28_photo = open('https://musiccamp-seeds.s3.amazonaws.com/hannah-middleton-m
 song28.photo.attach(io: song28_photo, filename: "hannah-middleton-moyBDVgDur4-unsplash.jpg")
 
 song29 = Song.create(
-    title: "Spring_Swing",
+    title: "Spring Swing",
     track_num: 1,
     description: "Song 29 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -640,7 +640,7 @@ song33_photo = open('https://musiccamp-seeds.s3.amazonaws.com/dave-hoefler--uX-a
 song33.photo.attach(io: song33_photo, filename: "dave-hoefler--uX-adCabaI-unsplash.jpg")
 
 song34 = Song.create(
-    title: "Depressed_Buddhist",
+    title: "Depressed Buddhist",
     track_num: 2,
     description: "Song 34 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -666,7 +666,7 @@ song35_photo = open('https://musiccamp-seeds.s3.amazonaws.com/timo-wielink-1EM6l
 song35.photo.attach(io: song35_photo, filename: "timo-wielink-1EM6lrWfqMA-unsplash.jpg")
 
 song36 = Song.create(
-    title: "The_Lasso_of_Time",
+    title: "The Lasso of Time",
     track_num: 2,
     description: "Song 36 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -679,7 +679,7 @@ song36_photo = open('https://musiccamp-seeds.s3.amazonaws.com/fly-d-H8ALEQLhUxQ-
 song36.photo.attach(io: song36_photo, filename: "fly-d-H8ALEQLhUxQ-unsplash.jpg")
 
 song37 = Song.create(
-    title: "Sounding_Steam_Engine",
+    title: "Sounding Steam Engine",
     track_num: 1,
     description: "Song 37 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -692,7 +692,7 @@ song37_photo = open('https://musiccamp-seeds.s3.amazonaws.com/archie-R84IM1cI5YQ
 song37.photo.attach(io: song37_photo, filename: "archie-R84IM1cI5YQ-unsplash.jpg")
 
 song38 = Song.create(
-    title: "Played_by_Ear",
+    title: "Played by Ear",
     track_num: 2,
     description: "Song 38 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -705,7 +705,7 @@ song38_photo = open('https://musiccamp-seeds.s3.amazonaws.com/johny-goerend-qm2r
 song38.photo.attach(io: song38_photo, filename: "johny-goerend-qm2rUzrP64U-unsplash.jpg")
 
 song39 = Song.create(
-    title: "Waltz_For_a_Memory",
+    title: "Waltz For a Memory",
     track_num: 1,
     description: "Song 39 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -718,7 +718,7 @@ song39_photo = open('https://musiccamp-seeds.s3.amazonaws.com/alla-razgonova-jSK
 song39.photo.attach(io: song39_photo, filename: "alla-razgonova-jSKWjT5ON7A-unsplash.jpg")
 
 song40 = Song.create(
-    title: "The_Strip",
+    title: "The Strip",
     track_num: 2,
     description: "Song 40 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -731,7 +731,7 @@ song40_photo = open('https://musiccamp-seeds.s3.amazonaws.com/jasmin-chew-wZQ3en
 song40.photo.attach(io: song40_photo, filename: "jasmin-chew-wZQ3engj7b4-unsplash.jpg")
 
 song41 = Song.create(
-    title: "Good_Times_Walk",
+    title: "Good Times Walk",
     track_num: 1,
     description: "Song 41 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
@@ -744,7 +744,7 @@ song41_photo = open('https://musiccamp-seeds.s3.amazonaws.com/erik-mclean-sDMrGD
 song41.photo.attach(io: song41_photo, filename: "erik-mclean-sDMrGD3T-NU-unsplash.jpg")
 
 song42 = Song.create(
-    title: "Dixie_Parade",
+    title: "Dixie Parade",
     track_num: 2,
     description: "Song 42 Description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",

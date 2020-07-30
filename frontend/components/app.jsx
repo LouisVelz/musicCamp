@@ -10,7 +10,7 @@ import UserContainer from './users_component/user_container'
 import SongFormContainer from './songs/song_form_container'
 import AlbumShowContainer from "./albums/album_show_container";
 import SongShowContainer from './songs/song_show_container'
-import Footer from './footer'
+import Footer from './footer/footer'
 
 
 const App = () => (

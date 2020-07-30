@@ -14,7 +14,6 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
         duration: 0,
       };
 
-      // this.togglePlay = this.togglePlay.bind(this);
       this.songDuration = this.songDuration.bind(this);
       this.timeStamp = this.timeStamp.bind(this);
       this.handleToggleBar = this.handleToggleBar.bind(this);
@@ -23,18 +22,6 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
       this.handleFordward = this.handleFordward.bind(this);
       this.handleNextSong = this.handleNextSong.bind(this)
     }
-
-    // togglePlay() {
-    //   let audioPlayer = document.getElementById("audioPlayer");
-    //   if (audioPlayer.paused) {
-    //     this.props.isPlaying();
-    //     audioPlayer.play();
-    //   } else {
-    //     this.props.isPaused();
-    //     audioPlayer.pause();
-    //   }
- 
-    // }
 
     componentDidMount() {
       this.songDuration();
@@ -180,7 +167,7 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
                 <button onClick={this.handleFordward}>
                   <FontAwesomeIcon icon={faFastForward} size="sm" />
                 </button>
-              {/* </div> */}
+
             </div>
           </div>
         </div>

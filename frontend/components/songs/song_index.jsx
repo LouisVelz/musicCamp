@@ -25,7 +25,7 @@ class SongIndex extends React.Component{
       return (
         <div className="song-index">
           <ul>
-            {this.props.songs.map((song, index) => {
+            {this.props.songs.map((song) => {
               return (
                   <SongIndexItem
                     key={song.id}
