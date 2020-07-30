@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 
@@ -30,7 +30,7 @@ class SongShow extends React.Component{
     } else {
       playPause = 
         <button onClick={() => this.props.togglePlay()}>
-          <FontAwesomeIcon icon={faPlayCircle} size="3x" />
+          <FontAwesomeIcon icon={faPlay} size="3x" />
         </button> 
       
     }
@@ -39,7 +39,7 @@ class SongShow extends React.Component{
       return <div>fetching data...</div>
     }else{
       return(
-        <div className='show-song'>
+        <div className='song-show'>
           <div className='song-show-title'>
             <h1>
               Inspired by {song.artist.artistName}, 
@@ -50,21 +50,28 @@ class SongShow extends React.Component{
               {playPause}
           </div>
           <div className="song-show-image">
-            <img src={`${song.photoUrl}`} alt=""/>
+            <img src={`${song.photoUrl}`} height='765'/>
           </div>
           <div className="main-content">
             <div className="player-and-picture">
-              <img src={`${song.album.photo}`} alt=""/>
+              <div className="larger-image">
+                <img src={`${song.album.photo}`} alt=""/>
+              </div>
+              <div className="smaller-image">
+                <img src={`${song.album.photo}`} alt=""/>
+              </div>
               <div className="lower-content">
                 <div className="play-and-info">
-                  {playPause} 
-                  <Link to={`album/${song.album_id}`}>{song.album.albumName}</Link>
-                  <Link to={`user/${song.artist_id}`}>by {song.artist.artistName}</Link>
-                </div>
-                <div className="goto-and-buy">
-                  <p>BUY</p>
-                  <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />WHISHLIST</p>
-                  <p><Link to={`album/${song.album_id}`}>GO TO ALBUM</Link></p>
+                  <div className="play-info">
+                    {playPause} 
+                    <Link to={`album/${song.album_id}`}>{song.album.albumName}</Link>
+                    <Link to={`user/${song.artist_id}`}>by {song.artist.artistName}</Link>
+                  </div>
+                  <div className="goto-and-buy">
+                    <p>BUY</p>
+                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />WHISHLIST</p>
+                    <p><Link to={`album/${song.album_id}`}>GO TO ALBUM</Link></p>
+                  </div>
                 </div>
               </div>
             </div>
