@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
+import { faPause } from "@fortawesome/free-solid-svg-icons";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -25,7 +25,7 @@ class SongShow extends React.Component{
     if (isAudioPlaying) {
       playPause =
       <button onClick={() => this.props.togglePlay()}>
-        <FontAwesomeIcon icon={faPauseCircle} size="3x" />
+        <FontAwesomeIcon icon={faPause} size="3x" />
       </button> 
     } else {
       playPause = 
@@ -35,7 +35,7 @@ class SongShow extends React.Component{
       
     }
 
-    if(!this.props.song){
+    if(!song){
       return <div>fetching data...</div>
     }else{
       return(
@@ -63,25 +63,35 @@ class SongShow extends React.Component{
               <div className="lower-content">
                 <div className="play-and-info">
                   <div className="play-info">
-                    {playPause} 
-                    <Link to={`album/${song.album_id}`}>{song.album.albumName}</Link>
-                    <Link to={`user/${song.artist_id}`}>by {song.artist.artistName}</Link>
+                    <div className="icon-bottom">
+                      {playPause} 
+                    </div>
+                    <Link to={`albums/${song.album_id}`}>{song.album.albumName}</Link>
+                    <Link to={`users/${song.artist_id}`}>by {song.artist.artistName}</Link>
                   </div>
                   <div className="goto-and-buy">
                     <p>BUY</p>
-                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />WHISHLIST</p>
-                    <p><Link to={`album/${song.album_id}`}>GO TO ALBUM</Link></p>
+                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '}WISHLIST</p>
+                    <p><Link to={`albums/${song.album_id}`}>GO TO ALBUM</Link></p>
                   </div>
                 </div>
               </div>
             </div>
-            <p>
-            {song.description} Lorem ipsum dolor, sit amet consectetur
-             adipisicing elit. Sed, ducimus eaque. Sint neque minima molestiae architecto,
-             quis molestias reprehenderit quas consectetur numquam possimus
-             illo id alias sit corporis mollitia expedita.
-            </p>
-            <img src={song.artist.photo} alt=""/>
+            <div className="description-picture">
+              <p>
+              {song.description} Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Sed, ducimus eaque. Sint neque minima molestiae architecto,
+              quis molestias reprehenderit quas consectetur numquam possimus
+              illo id alias sit corporis mollitia expedita.
+              </p>
+              <p>
+              {song.description} Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Sed, ducimus eaque. Sint neque minima molestiae architecto,
+              quis molestias reprehenderit quas consectetur numquam possimus
+              illo id alias sit corporis mollitia expedita.
+              </p>
+              <img src={song.artist.photo} height='435'/>
+            </div>
           </div>
 
           <audio

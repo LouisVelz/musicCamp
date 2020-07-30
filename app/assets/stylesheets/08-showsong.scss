@@ -28,10 +28,9 @@
     z-index: 1;
     position: relative;
     top: 33px;
-    button{
-      position: relative;
-      left: 15px;
-    }
+    justify-content: center;
+    align-items: center;
+
   }
 
   .main-content{
@@ -39,13 +38,88 @@
 
     .player-and-picture{
       border: 1px solid black;
-      img:first-child{
+
+      .larger-image img{
         max-height: 720px;
+        width: 100%;
       }
-      img:last-child{
-        width: 72px;
-        height: 72px;
-        margin: 20px;
+      .smaller-image{
+
+        img{
+          width: 72px;
+          height: 72px;
+          margin: 20px;
+        }
+
+      } 
+    }
+
+    .play-and-info{
+      border-top: 1px dotted black;
+      display: flex;
+      height: 110px;
+
+      .play-info{
+        display: flex;
+        border-right: 1px dotted black;
+        flex: 3 1 0;
+        align-items: center;
+
+          .icon-bottom{
+            display: flex;
+            margin: 20px;
+            width: 75px;
+            height: 75px;
+            cursor: pointer;
+            border: solid 1px black;
+            border-radius: 100%;
+            background-color: white;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+          }
+
+          a:nth-child(2){
+            font-weight: bold;
+          }
+          a:nth-child(3){
+            margin-left: 10px;
+          }
+      }
+
+      .goto-and-buy{
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        p{
+          border-bottom: 1px dotted black;
+          flex: 1 1 0;
+          align-self: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          font-weight: bold;
+          a {
+            font-weight: bold;
+            border-bottom: none;
+          }
+        }
+
+      }
+
+
+    }
+    .description-picture{
+
+      p {
+        margin-top: 60px;
+        font-size: 17px;
+      }
+      img{
+        margin-top: 20px;
       }
     }
   }
