@@ -18,6 +18,10 @@ class SongShow extends React.Component{
     this.props.fetchSong(this.props.match.params.songId)
     .then(song => this.props.playing(song.song))
   }
+  componentWillUnmount(){
+    this.props.playing(null)
+    this.props.isPaused()
+  }
 
   render(){
     const { song, currentlyPlaying, isAudioPlaying } = this.props

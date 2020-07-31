@@ -12,6 +12,9 @@ class AlbumShow extends React.Component {
     this.props.fetchAlbum(this.props.match.params.albumId)
 
   }
+  componentWillUnmount(){
+    
+  }
 
   render() {
     const { album } = this.props

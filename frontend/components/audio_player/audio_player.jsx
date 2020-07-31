@@ -30,6 +30,7 @@ import { faFastBackward} from '@fortawesome/free-solid-svg-icons'
     componentWillUnmount() {
       clearInterval(this.playerInterval);
       this.props.playing(null)
+      this.props.isPaused()
     }
 
     componentWillReceiveProps(nextProps){

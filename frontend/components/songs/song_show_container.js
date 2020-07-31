@@ -16,6 +16,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   fetchSong: (songId) => dispatch(requestSong(songId)),
   playing: (song) => dispatch(currentlyPlaying(song)),
+  isPaused: () => dispatch(isPaused()),
   togglePlay: () => togglePlay(() => dispatch(isPlaying()),() => dispatch(isPaused()))
 });
 

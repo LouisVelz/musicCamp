@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
   fetchAlbum: (albumId) => dispatch(requestAlbum(albumId))
+  
 })
 
 export default connect(mSTP, mDTP)(AlbumShow);
