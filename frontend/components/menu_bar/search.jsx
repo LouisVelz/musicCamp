@@ -14,6 +14,7 @@ class Search extends React.Component{
       message: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this)
+    // this.handleInputChange = this.handleClick.bind(this)
   }
 
   handleInputChange (e) {
@@ -26,10 +27,16 @@ class Search extends React.Component{
     )
   }
 
+  // handleClick (e){
+  //   debugger
+  //   setTimeout(() => this.setState({ query: '' }),100)
+  // }
+
   render(){
     let search = <FontAwesomeIcon icon={faSearch} size='1x' />
     const {query} = this.state
     return(
+      <div className='search-bar'>
       <label className='search-input'>
         <input
           type="text"
@@ -38,22 +45,32 @@ class Search extends React.Component{
           placeholder='    Search and discover music'
           onChange={this.handleInputChange}
          />
+      </label>
         <button>{search}</button>
         <div className='search-results-list'>
+ 
+          {this.state.results.length === 0 ? null :
           <ul>
-          {this.state.results.length === 0 ? null : this.state.results.map((result, index) => {
+          {this.state.results.map((result, index) => {
               return (
-              <li key={result.id + index}>
-                  <Link to={`/${result.type}/${result.id}`} >
-                    <p>{result.title}</p>
-                    <p>{result.type.slice(0,-1)}</p>
+                <li key={index} >
+                  <Link to={`/${result.type}/${result.id}`}>
+                    <div className="result-content">
+                      <img src={result.photo} height='50' width='50'/>
+                      <div>
+                        <p>{result.title}</p>
+                        <p>{result.label}</p>
+                      </div>
+                    </div>
                   </Link>
                 </li>              
               )
           })}
           </ul>
+          }
+
         </div>
-      </label>
+      </div>
     )
   }
 }
