@@ -16,8 +16,8 @@ class MainPage extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchAlbums()
-    this.props.fetchSongs()
+    // this.props.fetchAlbums()
+    // this.props.fetchSongs()
   }
 
 

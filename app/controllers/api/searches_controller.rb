@@ -2,20 +2,24 @@ class Api::SearchesController < ApplicationController
 
   def index
 
-    if params[:user_id] != 'undefined'
-      @users = User.where(username: params[:query]).limit(2)
-      @albums = Album.where(title: params[:query]).limit(2)
-      @songs = Song.where(title: params[:query]).limit(2)
-    else
-        @albums = Album.order('RANDOM()').joins(:artist)
-        # .where(artist_id: params[:artist_id])
+    # if search_params[:query].length > 0
+    #   parameter = search_params[:query].downcase
+    #   @users = User.all.where("lower(username) LIKE ?", "%#{parameter}%").limit(2)
+    #   @albums = Album.all.where("lower(title) LIKE ?", "%#{parameter}%").limit(2)
+    #   @songs = Song.where("lower(title) LIKE ?", "%#{parameter}%").limit(2)
+    # end
+    if params[:query].length > 0
+      parameter = params[:query].downcase
+      @users = User.all.where("lower(username) LIKE ?", "%#{parameter}%").limit(2)
+      @albums = Album.all.where("lower(title) LIKE ?", "%#{parameter}%").limit(2)
+      @songs = Song.where("lower(title) LIKE ?", "%#{parameter}%").limit(2)
     end
 
     render :index
   end
 
   private
-  def album_params
+  def search_params
     params.require(:search).permit(:query)
   end
 end

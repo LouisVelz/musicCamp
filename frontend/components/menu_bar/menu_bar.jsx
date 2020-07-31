@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import { faBolt } from '@fortawesome/free-solid-svg-icons'
-
+import Search from './search'
 
 
 class MenuBar extends React.Component{
@@ -56,8 +56,9 @@ class MenuBar extends React.Component{
         <ul className='logged-menu-bar-left'>
           <li><div className="rhomboid"></div><Link to='/'><strong>musiccamp</strong></Link></li>
           <li>
-            <input type="text" placeholder='    Search and discover music' />
-            <button>{search}</button>
+            {/* <input type="text" placeholder='    Search and discover music' />
+            <button>{search}</button> */}
+            <Search />
           </li>
         </ul>
         <ul className='logged-menu-bar-right'>
@@ -88,8 +89,9 @@ class MenuBar extends React.Component{
           <li><div className='rhomboid'></div><Link to='/'><strong>musiccamp</strong></Link></li>
 
           <li>
-            <input type="text" placeholder='    Search and discover music' />
-            <button>{search}</button>
+            {/* <input type="text" placeholder='    Search and discover music' />
+            <button>{search}</button> */}
+            <Search />
           </li>
         </ul>
 
