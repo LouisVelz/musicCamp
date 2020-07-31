@@ -1,6 +1,7 @@
 # json.users do 
   json.array! @users do |user|
-    json.extract! user, :id, :username
+    json.extract! user, :id
+    json.title user.username
     json.type 'users'
     # json.photoUrl url_for(album.photo)
   end

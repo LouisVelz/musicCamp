@@ -17,7 +17,6 @@ class Search extends React.Component{
   }
 
   handleInputChange (e) {
-    debugger
     const query = e.target.value;
     this.setState({query, loading: true, message: ''});
     fetchSearches(query).then(
@@ -40,9 +39,20 @@ class Search extends React.Component{
           onChange={this.handleInputChange}
          />
         <button>{search}</button>
-        {/* {this.state.results.length === 0 ? null : this.state.results.map(result => {
-          return <li><Link to ></Link></li>
-        })} */}
+        <div className='search-results-list'>
+          <ul>
+          {this.state.results.length === 0 ? null : this.state.results.map((result, index) => {
+              return (
+              <li key={result.id + index}>
+                  <Link to={`/${result.type}/${result.id}`} >
+                    <p>{result.title}</p>
+                    <p>{result.type.slice(0,-1)}</p>
+                  </Link>
+                </li>              
+              )
+          })}
+          </ul>
+        </div>
       </label>
     )
   }
