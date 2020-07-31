@@ -7,19 +7,19 @@ import { Link } from 'react-router-dom';
 class Search extends React.Component{
   constructor(props){
     super(props);
+    this.container = React.createRef();
     this.state = {
       query: '',
       results: [],
       loading: false,
-      message: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this)
-    // this.handleInputChange = this.handleClick.bind(this)
+    this.handleClickOutside = this.handleClickOutside.bind(this)
   }
 
   handleInputChange (e) {
     const query = e.target.value;
-    this.setState({query, loading: true, message: ''});
+    this.setState({query, loading: true});
     fetchSearches(query).then(
       results => {
         this.setState({results})
@@ -27,10 +27,25 @@ class Search extends React.Component{
     )
   }
 
-  // handleClick (e){
-  //   debugger
-  //   setTimeout(() => this.setState({ query: '' }),100)
-  // }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', () => {
+      this.setState({ loading: false })
+    });
+  }
+
+  handleClickOutside(e) {
+
+    if (this.container.current && !this.container.current.contains(e.target)) {
+      setTimeout(() => this.setState({
+        loading: false,
+      }), 500 ) 
+    }
+  }
+
 
   render(){
     let search = <FontAwesomeIcon icon={faSearch} size='1x' />
@@ -39,6 +54,7 @@ class Search extends React.Component{
       <div className='search-bar'>
       <label className='search-input'>
         <input
+          ref={this.container}
           type="text"
           value={query}
           id='search-input'
@@ -49,7 +65,7 @@ class Search extends React.Component{
         <button>{search}</button>
         <div className='search-results-list'>
  
-          {this.state.results.length === 0 ? null :
+          {this.state.loading ? 
           <ul>
           {this.state.results.map((result, index) => {
               return (
@@ -66,7 +82,7 @@ class Search extends React.Component{
                 </li>              
               )
           })}
-          </ul>
+          </ul> : null
           }
 
         </div>
