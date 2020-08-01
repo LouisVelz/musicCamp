@@ -2,7 +2,6 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.order('RANDOM()')
-
     render :index
   end
   

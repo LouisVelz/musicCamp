@@ -12,13 +12,12 @@ Album.destroy_all
 Song.destroy_all
 
 jimi_hendrix = User.create(
- email: "jimi_hendrix@gmail.com",
+ email: "Aladean Kheroufi@gmail.com",
  password: "hunter12",
- username: "Jimi Hendrix",
- description: "James Marshall 'Jimi' Hendrix is
-  an American rock guitarist, singer, and songwriter. He is widely 
-  regarded as one of the most influential guitarists in history and one of 
-  the most celebrated musicians of the 20th century.")
+ username: "Aladean Kheroufi",
+ description: "Aladean Kheroufi Canadian by way of Algeria writes songs that are soulful, 
+ Idiosyncratic and devastating. With a glass half full 
+ stubbornness that turns heartbreak into melancholy party anthems.")
 
  jimi_hendrix_photo = open('https://musiccamp-seeds.s3.amazonaws.com/music.jpg')
  jimi_hendrix.photo.attach(io: jimi_hendrix_photo, filename: "music.jpeg")
@@ -31,8 +30,8 @@ email: "taylor_swift@gmail.com",
   Her narrative songwriting, which often centers around her personal life, has
   received widespread critical praise and media coverage")
 
- taylor_swift_photo_1 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar.jpg')
- taylor_swift.photo.attach(io: taylor_swift_photo_1, filename: "guitar.jpeg")
+ taylor_swift_photo = open('https://musiccamp-seeds.s3.amazonaws.com/guitar.jpg')
+ taylor_swift.photo.attach(io: taylor_swift_photo, filename: "guitar.jpeg")
 
 nina_simone = User.create(
 email: "nina_simone@gmail.com",
@@ -68,20 +67,21 @@ eric_clapton = User.create(
  eric_clapton.photo.attach(io: eric_clapton_photo_4, filename: "guitar2.jpg")
 
  album01 = Album.create(
-   title: "IN RAINBOWS",
-   description: "Ever since In Rainbows arrived in everyone's inbox simultaneously
-    and listeners experienced those torrid first notes of '15 Step' together,
-     many artists have tried to 'pull a Radiohead,' with Beyoncé and U2 succeeding in delivering
-      their music in a similarly egalitarian manner",
+   title: "Woodstock",
+   description: "Woodstock is a live album by Jimi Hendrix released posthumously on August 20, 1994.
+    It presents some of Hendrix's performance at Woodstock Festival on August 18
+   , 1969. The album was replaced by a more-complete version in 1999 titled Live at Woodstock,
+    albeit with some of the performers mixed out",
   artist_id: jimi_hendrix.id
  )
  album01_photo = open('https://musiccamp-seeds.s3.amazonaws.com/girl_radio.jpg')
  album01.photo.attach(io: album01_photo, filename: "girl_radio.jpg")
 
  album02 = Album.create(
-   title: "THE CHRONIC",
-   description: "THE CHRONIC descriptionLorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Electric Ladyland",
+   description: "Electric Ladyland is the third and final studio album by the 
+   Jimi Hendrix Experience and the final studio album released in Hendrix's
+    lifetime before his death in 1970",
   artist_id: jimi_hendrix.id
  )
 
@@ -89,9 +89,12 @@ eric_clapton = User.create(
  album02.photo.attach(io: album02_photo, filename: "red_lights.jpg")
 
  album03 = Album.create(
-   title: "NEVERMIND",
-   description: "NEVERMIND descriptionLorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Band of Gypsys",
+   description: "Band of Gypsys is a live album by Jimi Hendrix
+    and the first without his original group, the Jimi Hendrix Experience.
+     It was recorded on January 1, 1970, at the Fillmore East in New York
+      City with Billy Cox on bass and Buddy Miles on drums,
+    frequently referred to as the Band of Gypsys",
   artist_id: jimi_hendrix.id
  )
 
@@ -99,9 +102,11 @@ eric_clapton = User.create(
  album03.photo.attach(io: album03_photo, filename: "you_are_what.jpg")
 
  album04 = Album.create(
-   title: "Album 4",
-   description: "Album 4 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Live at the Fillmore East",
+   description: "Live at the Fillmore East is a posthumous live album by 
+   Jimi Hendrix released on February 23, 1999. The album documents Hendrix's 
+   performances with the Band of Gypsys at the Fillmore East on December 31
+   , 1969 and January 1, 1970",
   artist_id: jimi_hendrix.id
  )
 
@@ -109,9 +114,11 @@ eric_clapton = User.create(
  album04.photo.attach(io: album04_photo, filename: "cassette2.jpg")
 
  album05 = Album.create(
-   title: "Album 5",
-   description: "Album 5 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Lover",
+   description: "Lover is the seventh studio album by American singer-songwriter 
+   Taylor Swift, released on August 23, 2019, through Republic Records. 
+   As the executive producer, Swift enlisted producers Jack Antonoff, Louis Bell,
+    Frank Dukes and Joel Little for the album",
   artist_id: taylor_swift.id
  )
 
@@ -119,9 +126,11 @@ eric_clapton = User.create(
  album05.photo.attach(io: album05_photo, filename: "keyboard.jpg")
 
  album06 = Album.create(
-   title: "Album 6",
-   description: "Album 6 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Reputation",
+   description: "Reputation is the sixth studio album by American singer-songwriter 
+   Taylor Swift. It was released on November 10, 2017, through Big Machine Records. 
+   The record was primarily produced by Jack Antonoff, Max Martin, Shellback and Swift herself,
+    who also serves as the executive producer.",
   artist_id: taylor_swift.id
  )
 
@@ -129,9 +138,11 @@ eric_clapton = User.create(
  album06.photo.attach(io: album06_photo, filename: "headphones.jpg")
 
  album07 = Album.create(
-   title: "Album 7",
-   description: "Album 7 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Speak Now ",
+   description: "Speak Now is the third studio album by American singer-songwriter 
+   Taylor Swift. It was released on October 25, 2010, by Big Machine Records. 
+   Production for the album took place during 2009 to 2010 at several recording studios, 
+   and was handled by Swift and Nathan Chapman",
   artist_id: taylor_swift.id
  )
 
@@ -139,9 +150,11 @@ eric_clapton = User.create(
  album07.photo.attach(io: album07_photo, filename: "nice_guitar.jpg")
 
  album08 = Album.create(
-   title: "Album 8",
-   description: "Album 8 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "I Put a Spell",
+   description: "I Put a Spell on You is a studio album by American jazz singer,
+    songwriter, and pianist Nina Simone. Recorded in 1964 and 1965 in New York City,
+     it was released by Philips Records in 1965. It peaked at number 99 on the Billboard
+    200 chart and number 9 on the UK Albums Chart",
   artist_id: nina_simone.id
  )
 
@@ -149,9 +162,10 @@ eric_clapton = User.create(
  album08.photo.attach(io: album08_photo, filename: "vinyl.jpg")
 
  album09 = Album.create(
-   title: "Album 9",
-   description: "Album 9 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Here Comes the Sun",
+   description: "Here Comes the Sun is the thirteenth studio album by American singer Nina Simone, 
+   consisting of cover versions of songs by pop and rock musicians, released by RCA in April 1971. 
+   It features songs recorded in the RCA studios with a full orchestra and backing vocals.",
   artist_id: nina_simone.id
  )
 
@@ -159,19 +173,27 @@ eric_clapton = User.create(
  album09.photo.attach(io: album09_photo, filename: "drumset.jpg")
 
  album10 = Album.create(
-   title: "Album 10",
-   description: "Album 10 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
-  artist_id: sarah_lipstate.id
+   title: "To Love Somebody",
+   description: "To Love Somebody is an album by jazz singer-songwriter/pianist Nina Simone. 
+   It was released as quickly as possible to prolong the unexpected success of \'Nuff Said! 
+   The title is taken from the Bee Gees song 'To Love Somebody'; 
+   her cover of the song became her second British hit single after 'Ain\'t Got No-I Got Life'".,
+  artist_id: nina_simone.id
  )
 
  album10_photo = open('https://musiccamp-seeds.s3.amazonaws.com/black_and_white.jpg')
  album10.photo.attach(io: album10_photo, filename: "black_and_white.jpg")
 
  album11 = Album.create(
-   title: "Album 11",
-   description: "Album 11 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "A Pink Sunset For No One",
+   description: "A Pink Sunset For No One’ is the eighth studio album from Noveller, 
+   the solo electric guitar project from US composer and filmmaker.
+
+One of the most adept guitarists of our time, Lipstate returns with her signature breathtaking 
+cinematic, experimental soundscapes. Eloquent and striking, her instrumentals evoke colourful and 
+otherworldly imagery. Lipstate writes in majestic, emotional strokes with pieces ranging from 
+remarkably tense environments 
+to shimmering psychedelic rock or unravelling into something darker",
   artist_id: sarah_lipstate.id
  )
 
@@ -179,9 +201,12 @@ eric_clapton = User.create(
  album11.photo.attach(io: album11_photo, filename: "playing_guitar.jpg")
 
  album12 = Album.create(
-   title: "Album 12",
-   description: "Album 12 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Fantastic Planet",
+   description: "Fantastic Planet is the soaring, evocative new album from Noveller, 
+   the solo instrumental venture of Austin-based composer and filmmaker Sarah Lipstate. 
+   The LP is a journey through eclectic sonic terrain, blending rich waves of synth with 
+   soaring cinematic guitar lines, guiding the listener through Noveller's
+    most diverse and compelling release to date.",
   artist_id: sarah_lipstate.id
  )
 
@@ -189,9 +214,12 @@ eric_clapton = User.create(
  album12.photo.attach(io: album12_photo, filename: "guitars3.jpg")
 
  album13 = Album.create(
-   title: "Album 13",
-   description: "Album 13 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
+   title: "Fantastic Planet",
+   description: "Fantastic Planet is the soaring, evocative new album from Noveller, 
+   the solo instrumental venture of Austin-based composer and filmmaker Sarah Lipstate. 
+   The LP is a journey through eclectic sonic terrain, blending rich waves of synth with 
+   soaring cinematic guitar lines, guiding the listener through Noveller's
+    most diverse and compelling release to date.",
   artist_id: eric_clapton.id
  )
 

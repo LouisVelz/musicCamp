@@ -184,6 +184,8 @@ img {max-width:100%;}
 
 .daily-list ul li img{
   height: 150px;
+  max-width: 100%;
+  width: fit-content;
 }
 
 .daily-list ul li:first-child img{
@@ -210,6 +212,7 @@ img {max-width:100%;}
 }
 .bottom-list ul li img{
   height: 150px;
+
   width: fit-content;
 }
 
