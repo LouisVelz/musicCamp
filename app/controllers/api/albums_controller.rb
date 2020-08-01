@@ -7,15 +7,12 @@ class Api::AlbumsController < ApplicationController
       @albums = Album.where(artist_id: params[:user_id])
     else
         @albums = Album.order('RANDOM()').joins(:artist)
-        # .where(artist_id: params[:artist_id])
     end
-
     render :index
   end
 
   def create 
     @album = Album.new(album_params)
-
     @album.artist_id = current_user.id
 
     if @album.save

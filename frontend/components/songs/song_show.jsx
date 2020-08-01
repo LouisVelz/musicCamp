@@ -70,13 +70,15 @@ class SongShow extends React.Component{
                     <div className="icon-bottom">
                       {playPause} 
                     </div>
-                    <Link to={`albums/${song.album_id}`}>{song.album.albumName}</Link>
-                    <Link to={`users/${song.artist_id}`}>by {song.artist.artistName}</Link>
+                    <Link to={`/albums/${song.album_id}`}>{song.album.albumName}</Link>
+                    <Link to={`/users/${song.artist_id}`}>by {song.artist.artistName}</Link>
                   </div>
                   <div className="goto-and-buy">
                     <p>BUY</p>
-                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '}WISHLIST</p>
-                    <p><Link to={`albums/${song.album_id}`}>GO TO ALBUM</Link></p>
+                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '} 
+                    <a href={`http://${song.songUrl}`}>DOWNLOAD</a>
+                    </p>
+                    <p><Link to={`/albums/${song.album_id}`}>GO TO ALBUM</Link></p>
                   </div>
                 </div>
               </div>
