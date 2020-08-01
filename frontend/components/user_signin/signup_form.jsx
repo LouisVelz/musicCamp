@@ -22,15 +22,17 @@ class SignUpForm extends React.Component{
     let passwordError = null
     let userError = null
     let emailError = null
-    this.props.errors.forEach(error => {
-      if (error[0] === "U"){
-        userError = <p className='errors'>{error}</p>
-      }else if (error[0] === "P"){
-        passwordError = <p className='errors'>{error}</p>
-      }else {
-        emailError = <p className='errors'>{error}</p> 
-      }
-    });
+    if(!!this.props.errors){
+      this.props.errors.forEach(error => {
+        if (error[0] === "U"){
+          userError = <p className='errors'>{error}</p>
+        }else if (error[0] === "P"){
+          passwordError = <p className='errors'>{error}</p>
+        }else {
+          emailError = <p className='errors'>{error}</p> 
+        }
+      });
+    }
     let checkboxError = null
     return (
       <div className='signup-main'>

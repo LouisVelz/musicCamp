@@ -11,80 +11,88 @@ User.destroy_all
 Album.destroy_all
 Song.destroy_all
 
-new_artist = User.create(
-email: "new_artist@gmail.com",
+jimi_hendrix = User.create(
+ email: "jimi_hendrix@gmail.com",
  password: "hunter12",
- username: "Guitar Player",
- description: "Artist 1 decription Lorem ipsum dolor sit amet,
- consectetur adipisicing elit. Delectus quod, placeat accusamus.")
+ username: "Jimi Hendrix",
+ description: "James Marshall 'Jimi' Hendrix is
+  an American rock guitarist, singer, and songwriter. He is widely 
+  regarded as one of the most influential guitarists in history and one of 
+  the most celebrated musicians of the 20th century.")
 
- new_artist_photo = open('https://musiccamp-seeds.s3.amazonaws.com/music.jpg')
- new_artist.photo.attach(io: new_artist_photo, filename: "music.jpeg")
+ jimi_hendrix_photo = open('https://musiccamp-seeds.s3.amazonaws.com/music.jpg')
+ jimi_hendrix.photo.attach(io: jimi_hendrix_photo, filename: "music.jpeg")
 
-new_artist_1 = User.create(
-email: "new_artist24@gmail.com",
+taylor_swift = User.create(
+email: "taylor_swift@gmail.com",
  password: "hunter12",
- username: "Singer",
- description: "Artist 2 descriptio Lorem ipsum dolor sit amet,
- consectetur adipisicing elit. Delectus quod, placeat accusamus.")
+ username: "Taylor Swift",
+ description: "Taylor Alison Swift is an American singer-songwriter.
+  Her narrative songwriting, which often centers around her personal life, has
+  received widespread critical praise and media coverage")
 
- new_artist_photo_1 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar.jpg')
- new_artist_1.photo.attach(io: new_artist_photo_1, filename: "guitar.jpeg")
+ taylor_swift_photo_1 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar.jpg')
+ taylor_swift.photo.attach(io: taylor_swift_photo_1, filename: "guitar.jpeg")
 
-new_artist_2 = User.create(
-email: "new_artist54@gmail.com",
+nina_simone = User.create(
+email: "nina_simone@gmail.com",
  password: "hunter12",
- username: "Experienced Musician",
- description: "Artist 3 description Lorem ipsum dolor sit amet,
- consectetur adipisicing elit. Delectus quod, placeat accusamus.")
+ username: "Nina Simone",
+ description: "Eunice Kathleen Waymon, known professionally as
+  Nina Simone, was an American singer, songwriter, musician, arranger,
+  and civil rights activist. Her music spanned a broad range of musical
+  styles including classical,
+  jazz, blues, folk, R&B, gospel, and pop.")
 
- new_artist_photo_2 = open('https://musiccamp-seeds.s3.amazonaws.com/clem-onojeghuo-zGCxdJHklhA-unsplash.jpg')
- new_artist_2.photo.attach(io: new_artist_photo_2, filename: "clem-onojeghuo-zGCxdJHklhA-unsplash.jpg")
+ nina_simone_photo_2 = open('https://musiccamp-seeds.s3.amazonaws.com/kobe-subramaniam-QcM7_gq95_Y-unsplash.jpg')
+ nina_simone.photo.attach(io: nina_simone_photo_2, filename: "kobe-subramaniam-QcM7_gq95_Y-unsplash.jpg")
 
-new_artist_3 = User.create(
-email: "new_artist74@gmail.com",
+sarah_lipstate = User.create(
+email: "sarah_lipstate@gmail.com",
  password: "hunter12",
- username: "Guitar Player Girl",
- description: "Artist 4 description Lorem ipsum dolor sit amet,
- consectetur adipisicing elit. Delectus quod, placeat accusamus.")
+ username: "Sarah Lipstate",
+ description: "Lipstate is all about soundscapes,
+  using her looping devices to create grand textural atmospheres")
 
- new_artist_photo_3 = open('https://musiccamp-seeds.s3.amazonaws.com/girl1.jpg')
- new_artist_3.photo.attach(io: new_artist_photo_3, filename: "girl1.jpg")
+ sarah_lipstate_photo_3 = open('https://musiccamp-seeds.s3.amazonaws.com/girl1.jpg')
+ sarah_lipstate.photo.attach(io: sarah_lipstate_photo_3, filename: "girl1.jpg")
 
-new_artist_4 = User.create(
- email: "new_artist95@gmail.com",
+eric_clapton = User.create(
+ email: "eric_clapton@gmail.com",
  password: "hunter12",
- username: "Guitar Player Guy",
+ username: "Eric Clapton",
  description: "Artist 5 description Lorem ipsum dolor sit amet,
  consectetur adipisicing elit. Delectus quod, placeat accusamus.")
 
- new_artist_photo_4 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar2.jpg')
- new_artist_4.photo.attach(io: new_artist_photo_4, filename: "guitar2.jpg")
+ eric_clapton_photo_4 = open('https://musiccamp-seeds.s3.amazonaws.com/guitar2.jpg')
+ eric_clapton.photo.attach(io: eric_clapton_photo_4, filename: "guitar2.jpg")
 
  album01 = Album.create(
-   title: "Album 1",
-   description: "Album 1 description Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.",
-  artist_id: new_artist.id
+   title: "IN RAINBOWS",
+   description: "Ever since In Rainbows arrived in everyone's inbox simultaneously
+    and listeners experienced those torrid first notes of '15 Step' together,
+     many artists have tried to 'pull a Radiohead,' with Beyoncé and U2 succeeding in delivering
+      their music in a similarly egalitarian manner",
+  artist_id: jimi_hendrix.id
  )
  album01_photo = open('https://musiccamp-seeds.s3.amazonaws.com/girl_radio.jpg')
  album01.photo.attach(io: album01_photo, filename: "girl_radio.jpg")
 
  album02 = Album.create(
-   title: "Album 2",
-   description: "Album 2 descriptionLorem ipsum dolor sit amet,
+   title: "THE CHRONIC",
+   description: "THE CHRONIC descriptionLorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist.id
+  artist_id: jimi_hendrix.id
  )
 
  album02_photo = open('https://musiccamp-seeds.s3.amazonaws.com/red_lights.jpg')
  album02.photo.attach(io: album02_photo, filename: "red_lights.jpg")
 
  album03 = Album.create(
-   title: "Album 3",
-   description: "Album 3 descriptionLorem ipsum dolor sit amet,
+   title: "NEVERMIND",
+   description: "NEVERMIND descriptionLorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist.id
+  artist_id: jimi_hendrix.id
  )
 
  album03_photo = open('https://musiccamp-seeds.s3.amazonaws.com/you_are_what.jpg')
@@ -94,7 +102,7 @@ new_artist_4 = User.create(
    title: "Album 4",
    description: "Album 4 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist.id
+  artist_id: jimi_hendrix.id
  )
 
  album04_photo = open('https://musiccamp-seeds.s3.amazonaws.com/cassette2.jpg')
@@ -104,7 +112,7 @@ new_artist_4 = User.create(
    title: "Album 5",
    description: "Album 5 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_1.id
+  artist_id: taylor_swift.id
  )
 
  album05_photo = open('https://musiccamp-seeds.s3.amazonaws.com/keyboard.jpg')
@@ -114,7 +122,7 @@ new_artist_4 = User.create(
    title: "Album 6",
    description: "Album 6 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_1.id
+  artist_id: taylor_swift.id
  )
 
  album06_photo = open('https://musiccamp-seeds.s3.amazonaws.com/headphones.jpg')
@@ -124,7 +132,7 @@ new_artist_4 = User.create(
    title: "Album 7",
    description: "Album 7 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_1.id
+  artist_id: taylor_swift.id
  )
 
  album07_photo = open('https://musiccamp-seeds.s3.amazonaws.com/nice_guitar.jpg')
@@ -134,7 +142,7 @@ new_artist_4 = User.create(
    title: "Album 8",
    description: "Album 8 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_2.id
+  artist_id: nina_simone.id
  )
 
  album08_photo = open('https://musiccamp-seeds.s3.amazonaws.com/vinyl.jpg')
@@ -144,7 +152,7 @@ new_artist_4 = User.create(
    title: "Album 9",
    description: "Album 9 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_2.id
+  artist_id: nina_simone.id
  )
 
  album09_photo = open('https://musiccamp-seeds.s3.amazonaws.com/drumset.jpg')
@@ -154,7 +162,7 @@ new_artist_4 = User.create(
    title: "Album 10",
    description: "Album 10 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_3.id
+  artist_id: sarah_lipstate.id
  )
 
  album10_photo = open('https://musiccamp-seeds.s3.amazonaws.com/black_and_white.jpg')
@@ -164,7 +172,7 @@ new_artist_4 = User.create(
    title: "Album 11",
    description: "Album 11 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_3.id
+  artist_id: sarah_lipstate.id
  )
 
  album11_photo = open('https://musiccamp-seeds.s3.amazonaws.com/playing_guitar.jpg')
@@ -174,7 +182,7 @@ new_artist_4 = User.create(
    title: "Album 12",
    description: "Album 12 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_3.id
+  artist_id: sarah_lipstate.id
  )
 
  album12_photo = open('https://musiccamp-seeds.s3.amazonaws.com/guitars3.jpg')
@@ -184,7 +192,7 @@ new_artist_4 = User.create(
    title: "Album 13",
    description: "Album 13 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_4.id
+  artist_id: eric_clapton.id
  )
 
  album13_photo = open('https://musiccamp-seeds.s3.amazonaws.com/pink_headphones.jpg')
@@ -194,7 +202,7 @@ new_artist_4 = User.create(
    title: "Album 14",
    description: "Album 14 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_4.id
+  artist_id: eric_clapton.id
  )
 
  album14_photo = open('https://musiccamp-seeds.s3.amazonaws.com/fire_guitar.jpg')
@@ -204,7 +212,7 @@ new_artist_4 = User.create(
    title: "Album 15",
    description: "Album 15 description Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit.",
-  artist_id: new_artist_4.id
+  artist_id: eric_clapton.id
  )
 
  album15_photo = open('https://musiccamp-seeds.s3.amazonaws.com/other_cassette.jpg')
