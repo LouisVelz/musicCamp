@@ -5,6 +5,7 @@ json.album do
 end
 json.songUrl url_for(song.song)
 json.photoUrl url_for(song.photo)
+json.download rails_blob_path(song.song, disposition: 'attachment')
   json.artist do
     json.artistName song.artist.username
     json.photo url_for(song.artist.photo) 

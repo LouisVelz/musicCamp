@@ -75,8 +75,8 @@ class SongShow extends React.Component{
                   </div>
                   <div className="goto-and-buy">
                     <p>BUY</p>
-                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '} 
-                    <a href={`http://${song.songUrl}`}>DOWNLOAD</a>
+                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '} <a href={song.download}>Download</a>
+                    
                     </p>
                     <p><Link to={`/albums/${song.album_id}`}>GO TO ALBUM</Link></p>
                   </div>
