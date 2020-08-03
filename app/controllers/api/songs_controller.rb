@@ -5,9 +5,9 @@ class Api::SongsController < ApplicationController
 
     if params[:album_id] != 'undefined'
       @songs = Song.where(album_id: params[:album_id]).limit(2)
+      @album_id = params[:album_id]
     else
         @songs = Song.order('RANDOM()').joins(:artist, :album).limit(1)
-        # .where(artist_id: params[:artist_id])
     end
         render :index
   end
@@ -43,8 +43,7 @@ class Api::SongsController < ApplicationController
 
   private
   def song_params
-
-    params.require(:song).permit(:title, :track_num, :description, :album_id, :song)
+    params.require(:song).permit(:title, :track_num, :description, :album_id, :song, :photo)
   end
 end
 

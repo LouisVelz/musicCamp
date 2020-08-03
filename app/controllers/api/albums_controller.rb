@@ -3,6 +3,7 @@ class Api::AlbumsController < ApplicationController
   def index
     if params[:user_id] != 'undefined'
       @albums = Album.where(artist_id: params[:user_id])
+      @user_id = params[:user_id]
     else
         @albums = Album.order('RANDOM()').joins(:artist)
     end

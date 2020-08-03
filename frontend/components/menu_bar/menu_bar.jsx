@@ -101,8 +101,4 @@ class MenuBar extends React.Component{
     return pageContent
   }
 }
-    // OutsideAlerter.propTypes = {
-    //   children: PropTypes.element.isRequired,
-    // };
-
 export default MenuBar;
