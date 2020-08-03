@@ -74,8 +74,7 @@ class SongShow extends React.Component{
                     <Link to={`/users/${song.artist_id}`}>by {song.artist.artistName}</Link>
                   </div>
                   <div className="goto-and-buy">
-                    <p>BUY</p>
-                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '} <a href={song.download}>Download</a>
+                    <p><FontAwesomeIcon icon={faHeartBroken} size="lg" />{'  '} <a href={song.download}>DOWNLOAD</a>
                     
                     </p>
                     <p><Link to={`/albums/${song.album_id}`}>GO TO ALBUM</Link></p>

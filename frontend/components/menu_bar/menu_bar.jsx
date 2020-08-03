@@ -56,8 +56,6 @@ class MenuBar extends React.Component{
         <ul className='logged-menu-bar-left'>
           <li><div className="rhomboid"></div><Link to='/'><strong>musiccamp</strong></Link></li>
           <li>
-            {/* <input type="text" placeholder='    Search and discover music' />
-            <button>{search}</button> */}
             <Search />
           </li>
         </ul>
@@ -70,9 +68,6 @@ class MenuBar extends React.Component{
                 <li><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link></li>
                 <li><Link to ={`/songs/new`}>Edit profile</Link></li>
                 <li><Link to ={`/songs/new`}>Upload songs</Link></li>
-                <li><Link to ={`/album/index`}>subscription</Link></li>
-                <li><Link to ={`/album/index`}>settings</Link></li>
-                <li><Link to ={`/album/index`}>help</Link></li>
 
                 <li><button onClick={() => this.props.logout()}>Log Out</button></li>
               </ul>
@@ -89,14 +84,12 @@ class MenuBar extends React.Component{
           <li><div className='rhomboid'></div><Link to='/'><strong>musiccamp</strong></Link></li>
 
           <li>
-            {/* <input type="text" placeholder='    Search and discover music' />
-            <button>{search}</button> */}
             <Search />
           </li>
         </ul>
 
         <ul className="menu-bar-bottom">
-          <li>Discover amazing new music and <Link to='/'>directly support</Link> the artists who make it.</li>
+          <li>Discover amazing new music and <span>directly support</span> the artists who make it.</li>
           <li>
             <button onClick={() => this.props.openModal('signup')}>sign up</button>
             <Link to='/login'><button>log in</button></Link>

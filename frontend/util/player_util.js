@@ -1,6 +1,5 @@
 
 export const togglePlay = (isPlaying, isPaused) => {
-  debugger
   let audioPlayer = document.getElementById("audioPlayer");
   
   if (audioPlayer !== null ) {

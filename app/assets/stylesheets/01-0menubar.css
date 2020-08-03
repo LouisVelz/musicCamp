@@ -54,7 +54,7 @@
   margin-right: 50px;
   padding-left: 25px;
 }
-.menu-bar-bottom li:first-child a{
+.menu-bar-bottom li:first-child span{
   font-weight: bold;
   background: -webkit-linear-gradient(#1DA0C3, #6046FE);
   background-clip: text;
