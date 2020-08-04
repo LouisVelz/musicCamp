@@ -1,5 +1,5 @@
 import React from 'react'
-import AlbumIndex from '../albums/album_index'
+import AlbumIndex from '../albums/album_index_container'
 
 class UserPage extends React.Component{
   constructor(props){
@@ -19,7 +19,8 @@ class UserPage extends React.Component{
       return(
         <div className="artist-page">
           <h1>{artist.username}</h1>
-          <AlbumIndex fetchAlbums={this.props.fetchAlbums} userId = {artist.id}/>
+          {/* <AlbumIndex fetchAlbums={this.props.fetchAlbums} userId = {artist.id}/> */}
+          <AlbumIndex userId = {artist.id}/>
         </div>
       )
     }

@@ -68,7 +68,7 @@ class SignUpForm extends React.Component{
               <br/>
               {userError}
           </label>
-          <p><input type="checkbox"/>I have read and agreed to <Link to='terms'>Terms of Use</Link>.</p>
+          <p><input type="checkbox"/>I have read and agreed to Terms of Use.</p>
           <button type='submit'>Sign up</button>
         </form>
 

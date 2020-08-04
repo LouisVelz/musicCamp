@@ -1,12 +1,17 @@
-.artist-albums ul{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 11%;
-  margin-top: 20px;
-  font-size: 13px;
-  padding-bottom: 5px;
-
-}
+.artist-albums{
+    margin: 0 11%;
+    margin-top: 20px;
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    padding-bottom: 5px;
+  }
+  .no-albums h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+} 
 
 .artist-albums ul li {
   height: 255px;

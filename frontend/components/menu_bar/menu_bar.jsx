@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
-import { faBolt } from '@fortawesome/free-solid-svg-icons'
 import Search from './search'
 
 
@@ -45,10 +43,7 @@ class MenuBar extends React.Component{
 
 
   render(){
-
-    let search = <FontAwesomeIcon icon={faSearch} size='1x'/>
     let heart = <FontAwesomeIcon icon={faBell} size='lg' />
-    let bolt = <FontAwesomeIcon icon={faBolt} size='lg' />
 
     let pageContent
     if (this.props.currentUser){
