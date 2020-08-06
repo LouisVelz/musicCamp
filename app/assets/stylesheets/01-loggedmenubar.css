@@ -67,7 +67,7 @@
   background-color: white;
   right: 5px;
   width: 230px;
-  height: 335px;
+  height: auto;
   z-index: 9999;
   border: 1px solid lightgray;
   border-radius: 5px;
@@ -84,6 +84,12 @@
   border-bottom: 1px dotted lightgray;
   margin-bottom: 20px;
   padding-bottom: 20px;
+}
+
+.dropdown ul li:nth-child(5) {
+  /* border-bottom: 1px dotted lightgray; */
+  margin-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 
 

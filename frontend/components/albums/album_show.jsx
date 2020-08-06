@@ -1,6 +1,6 @@
 import React from 'react'
 import SongIndex from '../songs/song_index_container'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Player from '../audio_player/audio_player_container'
 
 class AlbumShow extends React.Component {

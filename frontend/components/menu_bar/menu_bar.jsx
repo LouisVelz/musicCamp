@@ -63,6 +63,7 @@ class MenuBar extends React.Component{
                 <li><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link></li>
                 <li><Link to ={`/songs/new`}>Edit profile</Link></li>
                 <li><Link to ={`/songs/new`}>Upload songs</Link></li>
+                <li><Link to ={`/albums/new`}>Upload albums</Link></li>
 
                 <li><button onClick={() => this.props.logout()}>Log Out</button></li>
               </ul>

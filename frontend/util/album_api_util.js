@@ -8,6 +8,7 @@ export const fetchAlbums = (userId) => {
 };
 
 export const fetchAlbum = (albumId) => {
+  debugger
   return $.ajax({
     url: `/api/albums/${albumId}`,
   });
@@ -29,4 +30,5 @@ export const deleteAlbum = albumId => {
     url: `api/albums/${albumId}`
   })
 }
+
 

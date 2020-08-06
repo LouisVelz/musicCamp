@@ -1,4 +1,8 @@
   
   
   json.partial! 'api/albums/album', album: @album
-  json.photoUrl url_for(@album.photo)
+  if @album.photo.attached?
+    json.photoUrl url_for(@album.photo)
+  else
+    json.photoUrl image_url('no-image-found.png')
+  end

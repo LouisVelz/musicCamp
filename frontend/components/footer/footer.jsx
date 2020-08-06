@@ -50,26 +50,26 @@ class Footer extends React.Component{
             <li>Mobile view</li> */}
           </ul>
         </div>
-        {/* <div className="lower">
+        <div className="lower">
           <ul>
-            <li>Terms of use</li>
-            <li>Privacy</li>
+            <li><Link to='/disclaimer'>Disclaimer</Link></li>
+            {/* <li>Privacy</li>
             <li>Copyrigth Policy</li>
             <li>
               <a href="https://angel.co/u/louis-velazquez">
                 <FontAwesomeIcon icon={faGithub} size="1x" />
               </a>
-            </li>
+            </li> */}
           </ul>
           <ul>
             <li></li>
           </ul>
           <ul>
-            <li className="english-link">
+            {/* <li className="english-link">
               <p>Language: </p>English
-            </li>
+            </li> */}
           </ul>
-        </div> */}
+        </div>
       </div>
     );
   }

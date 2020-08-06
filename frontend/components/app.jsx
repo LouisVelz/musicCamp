@@ -11,7 +11,8 @@ import SongFormContainer from './songs/song_form_container'
 import AlbumShowContainer from "./albums/album_show_container";
 import SongShowContainer from './songs/song_show_container'
 import Footer from './footer/footer'
-
+import Disclaimer from './disclaimer/disclaimer'
+import AlbumFormContainer from './albums/album_form_container'
 
 const App = () => (
 
@@ -23,10 +24,12 @@ const App = () => (
     </Switch>
     <Route path='/' component={DummyContainer} />
     <Switch>
+      <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
+      <ProtectedRoute exact path='/albums/new' component={AlbumFormContainer} />
       <Route exact path='/users/:userId' component={UserContainer} />
       <Route exact path='/albums/:albumId' component={AlbumShowContainer} />
-      <ProtectedRoute exact path='/songs/new' component={SongFormContainer} />
       <Route exact path='/songs/:songId' component={SongShowContainer} />
+      <Route exact path='/disclaimer' component={Disclaimer} />
       <Route exact path='/' component={MainPageContainer}/>
     </Switch>
     <Footer/>
