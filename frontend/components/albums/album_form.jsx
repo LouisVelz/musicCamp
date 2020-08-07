@@ -8,7 +8,7 @@ class AlbumForm extends React.Component {
         title: "",
         description: "",
         pictureFile: null
-      },
+      }, 
     
     
     this.handleSubmit = this.handleSubmit.bind(this)

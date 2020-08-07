@@ -13,6 +13,7 @@ class Api::SongsController < ApplicationController
   end
 
   def create
+
     @song = Song.new(song_params)
     @song.artist_id = current_user.id
 
@@ -24,6 +25,10 @@ class Api::SongsController < ApplicationController
     end
 
   end
+
+  # def create_all(array)
+
+  # end
 
   def destroy
     @song = Song.find(params[:id])

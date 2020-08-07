@@ -30,9 +30,6 @@ class SongForm extends React.Component {
     })
   }
 
-  // update(type) {
-  //   return (e) => this.setState({ [type]: e.currentTarget.value });
-  // }
 
 
   render() {
