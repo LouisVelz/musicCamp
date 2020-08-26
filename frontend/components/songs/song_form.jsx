@@ -1,25 +1,28 @@
-import React from 'react'
+import React from "react";
 
 class SongForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { songs: [] };
-    this.handleAlbumCall = this.handleAlbumCall.bind(this)
-    this.handleSongCreate = this.handleSongCreate.bind(this)
+    this.handleAlbumCall = this.handleAlbumCall.bind(this);
+    this.handleSongCreate = this.handleSongCreate.bind(this);
   }
 
   handleAlbumCall(title) {
     e.preventDefault();
-    this.props.fetchAlbum(title).then(res => {
-      debugger
-      this.state.songs.push(<SongFields albumId={res.id}
+    this.props.fetchAlbum(title).then((res) => {
+      this.state.songs.push(
+        <SongFields
+          albumId={res.id}
           handleSongCreate={this.handleSongCreate}
-          songErrors= {this.props.songErrors}/>)
+          songErrors={this.props.songErrors}
+        />
+      );
     });
   }
 
-  handleSongCreate (formData){
-    this.props.createSong(formData).then(res => {
+  handleSongCreate(formData) {
+    this.props.createSong(formData).then((res) => {
       this.state.songs.push(
         <SongFields
           albumId={res.album_id}
@@ -27,10 +30,8 @@ class SongForm extends React.Component {
           songErrors={this.props.songErrors}
         />
       );
-    })
+    });
   }
-
-
 
   render() {
     return (
@@ -48,44 +49,36 @@ class SongForm extends React.Component {
   }
 }
 
-
-
-
-class FindAlbum extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = { title: '' }
-    this.update = this.update.bind(this)
-
+class FindAlbum extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { title: "" };
+    this.update = this.update.bind(this);
   }
 
   update() {
-    return e => this.setState({ title: e.currentTarget.value })
+    return (e) => this.setState({ title: e.currentTarget.value });
   }
 
-  render(){
-
-    return(
+  render() {
+    return (
       <div className="find-album">
-
-        <form onSubmit={this.props.handleAlbumCall} >
-          <label >Enter album's title to add song to:
-              <input
-              type="text"
-              onChange = {this.update}
-            />
+        <form onSubmit={this.props.handleAlbumCall}>
+          <label>
+            Enter album's title to add song to:
+            <input type="text" onChange={this.update} />
           </label>
-          <button type='submit'>Find Album</button>
+          <button type="submit">Find Album</button>
         </form>
-        {this.props.albumErrors.length === 0 ? null : 
-        <div className='errors'>
-          <p>{this.props.albumErrors[0]}</p>
-        </div>}
+        {this.props.albumErrors.length === 0 ? null : (
+          <div className="errors">
+            <p>{this.props.albumErrors[0]}</p>
+          </div>
+        )}
       </div>
-    )
+    );
   }
 }
-
 
 class SongFields extends React.Component {
   constructor(props) {
@@ -126,7 +119,7 @@ class SongFields extends React.Component {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
     reader.onloadend = () =>
-    this.setState({ songUrl: reader.result, songFile: file });
+      this.setState({ songUrl: reader.result, songFile: file });
     reader.readAsDataURL(file);
   }
 
@@ -185,7 +178,6 @@ class SongFields extends React.Component {
     );
   }
 }
-
 
 // song: { title: "", track_num: "", description: "", album_id: "", artist_id: "" }
 export default SongForm;

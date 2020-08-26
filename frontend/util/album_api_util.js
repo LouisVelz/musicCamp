@@ -1,14 +1,10 @@
-
-
 export const fetchAlbums = (userId) => {
-
   return $.ajax({
     url: `/api/users/${userId}/albums`,
   });
 };
 
 export const fetchAlbum = (albumId) => {
-  debugger
   return $.ajax({
     url: `/api/albums/${albumId}`,
   });
@@ -22,13 +18,11 @@ export const postAlbum = (formData) => {
     contentType: false,
     processData: false,
   });
-};   
+};
 
-export const deleteAlbum = albumId => {
+export const deleteAlbum = (albumId) => {
   return $.ajax({
     method: "delete",
-    url: `api/albums/${albumId}`
-  })
-}
-
-
+    url: `api/albums/${albumId}`,
+  });
+};
