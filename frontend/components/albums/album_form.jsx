@@ -1,55 +1,60 @@
-import React from 'react'
-import SongCreator from './../songs/song_form_container'
+import React from "react";
+import SongCreator from "./../songs/song_form_container";
 
 class AlbumForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-        title: "",
-        description: "",
-        pictureFile: null
-      }, 
-    
-    
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.fileReader = this.fileReader.bind(this)
-    this.handleFile = this.handleFile.bind(this)
+      title: "",
+      description: "",
+      pictureFile: null,
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileReader = this.fileReader.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     // this.handleNewSong = this.handleNewSong.bind(this)
   }
 
   update(type) {
-    return e => this.setState({ [type]: e.currentTarget.value })
+    return (e) => this.setState({ [type]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('album[title]', this.state.title);
-    formData.append('album[description]', this.state.description);
-    formData.append('album[photo]', this.state.pictureFile);
-    this.props.createAlbum(formData)
+    formData.append("album[title]", this.state.title);
+    formData.append("album[description]", this.state.description);
+    formData.append("album[photo]", this.state.pictureFile);
+    this.props.createAlbum(formData);
     // .then(res => {
     //   this.state.songs.push(<SongCreator albumId={res.album.id} />)
     // })
   }
 
   handleFile(e) {
-    this.setState({ pictureFile: e.currentTarget.files[0] })
+    this.setState({ pictureFile: e.currentTarget.files[0] });
   }
 
-  fileReader(e){
+  fileReader(e) {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
-    reader.onloadend = () => this.setState({ photoUrl: reader.result, pictureFile: file });
+    reader.onloadend = () =>
+      this.setState({ photoUrl: reader.result, pictureFile: file });
     reader.readAsDataURL(file);
   }
 
-
   render() {
-    
     return (
       <div className="album-form">
-        <h4>Upload an Album</h4>
+        <div className="album-title">
+          <h4>
+            {this.state.title === "" ? "Untitled Album" : this.state.title}
+          </h4>
+          <p>
+            by <span>{this.props.currentUser.username}</span>
+          </p>
+          <p>$7.00 or more</p>
+        </div>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label>
             Title:
@@ -57,6 +62,7 @@ class AlbumForm extends React.Component {
               type="text"
               onChange={this.update("title")}
               value={this.state.title}
+              placeholder="album name"
             />
             <br />
           </label>
@@ -94,7 +100,6 @@ class AlbumForm extends React.Component {
     );
   }
 }
-
 
 // song: { title: "", track_num: "", description: "", album_id: "", artist_id: "" }
 export default AlbumForm;
