@@ -55,43 +55,44 @@ class AlbumForm extends React.Component {
           </p>
           <p>$7.00 or more</p>
         </div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <label>
-            Title:
-            <input
-              type="text"
-              onChange={this.update("title")}
-              value={this.state.title}
-              placeholder="album name"
-            />
+        <div className="album-information">
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <label>
+              <input
+                type="text"
+                onChange={this.update("title")}
+                value={this.state.title}
+                placeholder="album name"
+              />
+              <br />
+            </label>
+            {this.props.errors.length === 0 ? null : (
+              <div className="errors">{this.props.errors}</div>
+            )}
             <br />
-          </label>
-          {this.props.errors.length === 0 ? null : (
-            <div className="errors">{this.props.errors}</div>
-          )}
-          <br />
-          <label>
-            Description:
-            <input
-              type="text"
-              onChange={this.update("description")}
-              value={this.state.description}
-            />
+            <label>
+              Description:
+              <input
+                type="text"
+                onChange={this.update("description")}
+                value={this.state.description}
+              />
+              <br />
+            </label>
             <br />
-          </label>
-          <br />
-          <label>
-            Picture:
-            <input
-              type="file"
-              onChange={this.handleFile.bind(this)}
-              onChange={this.fileReader}
-            />
+            <label>
+              Picture:
+              <input
+                type="file"
+                onChange={this.handleFile.bind(this)}
+                onChange={this.fileReader}
+              />
+              <br />
+            </label>
             <br />
-          </label>
-          <br />
-          <button type="submit">Create Album</button>
-        </form>
+            <button type="submit">Create Album</button>
+          </form>
+        </div>
         {/* {this.state.songs.length === 0 ? null : 
         this.state.songs.map(song => {
           return song
