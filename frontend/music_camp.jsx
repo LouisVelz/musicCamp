@@ -5,25 +5,22 @@ import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  let preloadedState = undefined
+  let preloadedState = undefined;
   if (window.currentUser) {
     preloadedState = {
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
+        users: { [window.currentUser.id]: window.currentUser },
       },
-      session: { currentUser: window.currentUser.id }
-    }
-    const secretInfo = document.querySelector("#bootstrap-current-user")
-    secretInfo.parentElement.removeChild(secretInfo)
-
+      session: { currentUser: window.currentUser.id },
+    };
+    const secretInfo = document.querySelector("#bootstrap-current-user");
+    secretInfo.parentElement.removeChild(secretInfo);
   }
   const store = configureStore(preloadedState);
   delete window.currentUser;
 
-  
-
-  window.getState = store.getState;
+  // window.getState = store.getState;
   // window.dispatch = store.dispatch;
 
-  ReactDOM.render(<Root store={ store }/>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
